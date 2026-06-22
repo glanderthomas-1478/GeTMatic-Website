@@ -1,0 +1,270 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 780" width="100%" height="auto" role="img" aria-label="Getränkeverpackung Produktion Tetra Pak">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f8f5"/>
+      <stop offset="100%" style="stop-color:#c8ece6"/>
+    </linearGradient>
+    <linearGradient id="machineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#b0bec5"/>
+      <stop offset="100%" style="stop-color:#78909c"/>
+    </linearGradient>
+    <linearGradient id="conveyorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#90a4ae"/>
+      <stop offset="100%" style="stop-color:#546e7a"/>
+    </linearGradient>
+    <linearGradient id="packGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e0f7fa"/>
+      <stop offset="100%" style="stop-color:#80deea"/>
+    </linearGradient>
+    <linearGradient id="packGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#b2ebf2"/>
+      <stop offset="100%" style="stop-color:#4dd0e1"/>
+    </linearGradient>
+    <linearGradient id="rollGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff9c4"/>
+      <stop offset="100%" style="stop-color:#f9a825"/>
+    </linearGradient>
+    <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff9c4"/>
+      <stop offset="100%" style="stop-color:#f9a825;stop-opacity:0.7"/>
+    </linearGradient>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00796b"/>
+      <stop offset="100%" style="stop-color:#209d9d"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#00000028"/>
+    </filter>
+    <filter id="shadow2">
+      <feDropShadow dx="1" dy="1" stdDeviation="2" flood-color="#00000020"/>
+    </filter>
+    <style>text { font-family: Arial, Helvetica, sans-serif; }</style>
+  </defs>
+
+  <!-- Hintergrund -->
+  <rect width="400" height="780" fill="url(#bg)"/>
+
+  <!-- Kopfleiste -->
+  <rect width="400" height="56" fill="url(#headerGrad)"/>
+  <text x="200" y="30" font-size="17" font-weight="bold" fill="white" text-anchor="middle">Getränkeverpackung</text>
+  <text x="200" y="48" font-size="11" fill="#b2dfdb" text-anchor="middle">Aseptische Kartonverpackung · TetraPak-Linie</text>
+
+  <!-- ===== PROZESSSCHRITTE 3+3 ===== -->
+  <!-- Reihe 1 -->
+  <rect x="14" y="64" width="108" height="50" rx="10" fill="#00796b" filter="url(#shadow)"/>
+  <text x="68" y="83" font-size="11" font-weight="bold" fill="white" text-anchor="middle">① Rollenmaterial</text>
+  <text x="68" y="98" font-size="10" fill="#b2dfdb" text-anchor="middle">Karton / Folie</text>
+
+  <polygon points="125,89 137,83 137,95" fill="#00796b" opacity="0.8"/>
+
+  <rect x="146" y="64" width="108" height="50" rx="10" fill="#0277bd" filter="url(#shadow)"/>
+  <text x="200" y="83" font-size="11" font-weight="bold" fill="white" text-anchor="middle">② Formen</text>
+  <text x="200" y="98" font-size="10" fill="#b3ddf8" text-anchor="middle">Tubus / Schlauch</text>
+
+  <polygon points="257,89 269,83 269,95" fill="#0277bd" opacity="0.8"/>
+
+  <rect x="278" y="64" width="108" height="50" rx="10" fill="#e65100" filter="url(#shadow)"/>
+  <text x="332" y="83" font-size="11" font-weight="bold" fill="white" text-anchor="middle">③ Füllen</text>
+  <text x="332" y="98" font-size="10" fill="#ffd180" text-anchor="middle">Aseptisch, steril</text>
+
+  <!-- Verbindung rechts runter -->
+  <path d="M386,89 Q398,89 398,114 Q398,144 386,144" stroke="#e65100" stroke-width="2" fill="none" opacity="0.7" stroke-dasharray="4,2"/>
+
+  <!-- Reihe 2 (rechts nach links) -->
+  <rect x="278" y="120" width="108" height="50" rx="10" fill="#6a1b9a" filter="url(#shadow)"/>
+  <text x="332" y="139" font-size="11" font-weight="bold" fill="white" text-anchor="middle">④ Versiegeln</text>
+  <text x="332" y="154" font-size="10" fill="#e1bee7" text-anchor="middle">Längs- &amp; Quernaht</text>
+
+  <polygon points="275,145 263,139 263,151" fill="#6a1b9a" opacity="0.8"/>
+
+  <rect x="146" y="120" width="108" height="50" rx="10" fill="#00897b" filter="url(#shadow)"/>
+  <text x="200" y="139" font-size="11" font-weight="bold" fill="white" text-anchor="middle">⑤ Schneiden</text>
+  <text x="200" y="154" font-size="10" fill="#b2dfdb" text-anchor="middle">Trennung / Falten</text>
+
+  <polygon points="143,145 131,139 131,151" fill="#00897b" opacity="0.8"/>
+
+  <rect x="14" y="120" width="108" height="50" rx="10" fill="#37474f" filter="url(#shadow)"/>
+  <text x="68" y="139" font-size="11" font-weight="bold" fill="white" text-anchor="middle">⑥ Ausgabe</text>
+  <text x="68" y="154" font-size="10" fill="#b0bec5" text-anchor="middle">Fertige Packung</text>
+
+  <!-- Verbindung links runter -->
+  <path d="M14,145 Q2,145 2,120 Q2,89 14,89" stroke="#00796b" stroke-width="2" fill="none" opacity="0.5" stroke-dasharray="4,2"/>
+
+  <!-- ===== PRODUKTIONSLINIE ILLUSTRATION ===== -->
+
+  <!-- Maschinenboden / Rahmen -->
+  <rect x="14" y="182" width="372" height="200" rx="14" fill="url(#machineGrad)" filter="url(#shadow)" stroke="#546e7a" stroke-width="2"/>
+  <rect x="20" y="186" width="360" height="7" rx="3" fill="white" opacity="0.18"/>
+
+  <!-- Förderband -->
+  <rect x="30" y="330" width="340" height="16" rx="8" fill="url(#conveyorGrad)" stroke="#37474f" stroke-width="1.5"/>
+  <!-- Band-Rillen -->
+  <line x1="60"  y1="330" x2="60"  y2="346" stroke="#37474f" stroke-width="1" opacity="0.5"/>
+  <line x1="100" y1="330" x2="100" y2="346" stroke="#37474f" stroke-width="1" opacity="0.5"/>
+  <line x1="140" y1="330" x2="140" y2="346" stroke="#37474f" stroke-width="1" opacity="0.5"/>
+  <line x1="180" y1="330" x2="180" y2="346" stroke="#37474f" stroke-width="1" opacity="0.5"/>
+  <line x1="220" y1="330" x2="220" y2="346" stroke="#37474f" stroke-width="1" opacity="0.5"/>
+  <line x1="260" y1="330" x2="260" y2="346" stroke="#37474f" stroke-width="1" opacity="0.5"/>
+  <line x1="300" y1="330" x2="300" y2="346" stroke="#37474f" stroke-width="1" opacity="0.5"/>
+  <line x1="340" y1="330" x2="340" y2="346" stroke="#37474f" stroke-width="1" opacity="0.5"/>
+  <!-- Räder -->
+  <circle cx="38"  cy="338" r="9" fill="#455a64" stroke="#37474f" stroke-width="1.5"/>
+  <circle cx="38"  cy="338" r="4" fill="#78909c"/>
+  <circle cx="362" cy="338" r="9" fill="#455a64" stroke="#37474f" stroke-width="1.5"/>
+  <circle cx="362" cy="338" r="4" fill="#78909c"/>
+
+  <!-- === ROLLE links (Ausgangsmaterial) === -->
+  <circle cx="62" cy="258" r="34" fill="url(#rollGrad)" stroke="#f57f17" stroke-width="2" filter="url(#shadow2)"/>
+  <circle cx="62" cy="258" r="22" fill="#fff9c4" stroke="#f9a825" stroke-width="1.5"/>
+  <circle cx="62" cy="258" r="10" fill="#f9a825" stroke="#f57f17" stroke-width="1.5"/>
+  <circle cx="62" cy="258" r="4"  fill="#e65100"/>
+  <!-- Achse -->
+  <rect x="58" y="192" width="8" height="28" rx="3" fill="#546e7a"/>
+  <!-- Spirallinien auf Rolle -->
+  <circle cx="62" cy="258" r="16" fill="none" stroke="#f9a825" stroke-width="1" opacity="0.6"/>
+  <circle cx="62" cy="258" r="27" fill="none" stroke="#f9a825" stroke-width="1" opacity="0.4"/>
+  <!-- Label -->
+  <text x="62" y="308" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Rollenmaterial</text>
+
+  <!-- Material-Bahn (Pfeil nach rechts) -->
+  <path d="M96,258 L130,258" stroke="#f9a825" stroke-width="3" fill="none" stroke-dasharray="6,3"/>
+  <polygon points="130,254 140,258 130,262" fill="#f9a825"/>
+
+  <!-- === FORMGEBUNG (Mitte-links) === -->
+  <rect x="148" y="210" width="52" height="110" rx="8" fill="#455a64" stroke="#37474f" stroke-width="1.5" filter="url(#shadow2)"/>
+  <rect x="154" y="216" width="40" height="30" rx="4" fill="#546e7a"/>
+  <!-- Trichter -->
+  <polygon points="154,246 194,246 188,278 160,278" fill="#37474f"/>
+  <rect x="162" y="278" width="24" height="42" rx="3" fill="#90a4ae"/>
+  <!-- Schlauch-Output (Tubus) -->
+  <rect x="166" y="310" width="16" height="20" rx="2" fill="#cfd8dc" stroke="#90a4ae" stroke-width="1"/>
+  <text x="174" y="305" font-size="9" fill="white" text-anchor="middle">Formen</text>
+
+  <!-- === FÜLLROHR === -->
+  <rect x="212" y="200" width="14" height="98" rx="4" fill="#1565c0" stroke="#0d47a1" stroke-width="1.5" filter="url(#shadow2)"/>
+  <!-- Flüssigkeit im Rohr -->
+  <rect x="214" y="202" width="10" height="94" rx="3" fill="url(#liquidGrad)" opacity="0.7"/>
+  <!-- Tropfen -->
+  <ellipse cx="219" cy="302" rx="6" ry="4" fill="#f9a825" opacity="0.9"/>
+  <path d="M219,296 Q222,300 219,306 Q216,300 219,296z" fill="#f9a825"/>
+  <text x="219" y="196" font-size="9" fill="white" text-anchor="middle">Füllen</text>
+  <!-- Pfeil Füllung -->
+  <polygon points="215,195 223,195 219,201" fill="#1565c0"/>
+
+  <!-- === VERSIEGELUNG === -->
+  <rect x="238" y="220" width="50" height="90" rx="8" fill="#455a64" stroke="#37474f" stroke-width="1.5" filter="url(#shadow2)"/>
+  <!-- Schweißbacken -->
+  <rect x="242" y="238" width="18" height="52" rx="4" fill="#6a1b9a" stroke="#4a148c" stroke-width="1"/>
+  <rect x="266" y="238" width="18" height="52" rx="4" fill="#6a1b9a" stroke="#4a148c" stroke-width="1"/>
+  <!-- Hitze-Symbol -->
+  <path d="M252,252 Q256,246 260,252 Q264,258 260,264" stroke="#ff6f00" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M255,252 Q259,246 263,252" stroke="#ff6f00" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <text x="263" y="305" font-size="9" fill="white" text-anchor="middle">Siegeln</text>
+
+  <!-- === FERTIGE PACKUNGEN (rechts) === -->
+  <!-- Packung 1 (hinten) -->
+  <rect x="305" y="248" width="32" height="72" rx="3" fill="url(#packGrad)" stroke="#26c6da" stroke-width="1.5" filter="url(#shadow2)"/>
+  <rect x="305" y="248" width="32" height="12" rx="3" fill="#4dd0e1" opacity="0.8"/>
+  <!-- Giebel -->
+  <polygon points="305,248 321,238 337,248" fill="#80deea"/>
+  <!-- Dekor -->
+  <rect x="309" y="265" width="24" height="3" rx="1" fill="#26c6da" opacity="0.5"/>
+  <rect x="309" y="272" width="18" height="2" rx="1" fill="#26c6da" opacity="0.4"/>
+  <rect x="309" y="278" width="22" height="2" rx="1" fill="#26c6da" opacity="0.4"/>
+  <!-- Griffstreifen -->
+  <rect x="313" y="296" width="12" height="16" rx="2" fill="#4dd0e1" opacity="0.6"/>
+
+  <!-- Packung 2 (vorne) -->
+  <rect x="328" y="255" width="32" height="72" rx="3" fill="url(#packGrad2)" stroke="#00acc1" stroke-width="1.5" filter="url(#shadow2)"/>
+  <rect x="328" y="255" width="32" height="12" rx="3" fill="#26c6da" opacity="0.8"/>
+  <polygon points="328,255 344,245 360,255" fill="#4dd0e1"/>
+  <rect x="332" y="272" width="24" height="3" rx="1" fill="#00acc1" opacity="0.5"/>
+  <rect x="332" y="279" width="18" height="2" rx="1" fill="#00acc1" opacity="0.4"/>
+  <rect x="332" y="285" width="22" height="2" rx="1" fill="#00acc1" opacity="0.4"/>
+  <rect x="336" y="303" width="12" height="16" rx="2" fill="#26c6da" opacity="0.6"/>
+
+  <!-- Pfeile zwischen Stationen -->
+  <polygon points="144,258 134,254 134,262" fill="#cfd8dc" opacity="0.8"/>
+  <polygon points="232,258 242,254 242,262" fill="#cfd8dc" opacity="0.8"/>
+  <polygon points="292,258 302,254 302,262" fill="#cfd8dc" opacity="0.8"/>
+
+  <!-- ===== PARAMETER-KARTEN ===== -->
+  <rect x="14" y="392" width="178" height="62" rx="10" fill="white" filter="url(#shadow)" opacity="0.95"/>
+  <rect x="14" y="392" width="8" height="62" rx="4" fill="#209d9d"/>
+  <text x="32" y="412" font-size="13" font-weight="bold" fill="#1a3a5c">Faltgeschwindigkeit</text>
+  <text x="32" y="434" font-size="20" font-weight="bold" fill="#209d9d">700 m/min</text>
+  <text x="32" y="448" font-size="10" fill="#78909c">Packungen pro Stunde</text>
+
+  <rect x="208" y="392" width="178" height="62" rx="10" fill="white" filter="url(#shadow)" opacity="0.95"/>
+  <rect x="208" y="392" width="8" height="62" rx="4" fill="#e65100"/>
+  <text x="226" y="412" font-size="13" font-weight="bold" fill="#1a3a5c">Siegeltemperatur</text>
+  <text x="226" y="434" font-size="20" font-weight="bold" fill="#e65100">500 – 650°C</text>
+  <text x="226" y="448" font-size="10" fill="#78909c">Ultraschall / Wärme</text>
+
+  <rect x="14" y="462" width="178" height="62" rx="10" fill="white" filter="url(#shadow)" opacity="0.95"/>
+  <rect x="14" y="462" width="8" height="62" rx="4" fill="#6a1b9a"/>
+  <text x="32" y="482" font-size="13" font-weight="bold" fill="#1a3a5c">Schichtaufbau</text>
+  <text x="32" y="504" font-size="20" font-weight="bold" fill="#6a1b9a">6 Lagen</text>
+  <text x="32" y="518" font-size="10" fill="#78909c">PE · Karton · PE · Alu · PE · PE</text>
+
+  <rect x="208" y="462" width="178" height="62" rx="10" fill="white" filter="url(#shadow)" opacity="0.95"/>
+  <rect x="208" y="462" width="8" height="62" rx="4" fill="#2e7d32"/>
+  <text x="226" y="482" font-size="13" font-weight="bold" fill="#1a3a5c">Sterilisation</text>
+  <text x="226" y="504" font-size="20" font-weight="bold" fill="#2e7d32">H₂O₂</text>
+  <text x="226" y="518" font-size="10" fill="#78909c">Aseptisch · Keimabtötung</text>
+
+  <!-- ===== SCHICHTAUFBAU VISUALISIERUNG ===== -->
+  <rect x="14" y="534" width="372" height="72" rx="10" fill="white" filter="url(#shadow)" opacity="0.93"/>
+  <text x="30" y="553" font-size="12" font-weight="bold" fill="#1a3a5c">Materialschichten (Querschnitt)</text>
+  <!-- Schichten -->
+  <rect x="30"  y="558" width="52" height="34" rx="0" fill="#e3f2fd"/>
+  <rect x="82"  y="558" width="52" height="34" rx="0" fill="#fff9c4"/>
+  <rect x="134" y="558" width="52" height="34" rx="0" fill="#e3f2fd"/>
+  <rect x="186" y="558" width="52" height="34" rx="0" fill="#cfd8dc"/>
+  <rect x="238" y="558" width="52" height="34" rx="0" fill="#e3f2fd"/>
+  <rect x="290" y="558" width="52" height="34" rx="0" fill="#e3f2fd"/>
+  <!-- Rahmen gesamt -->
+  <rect x="30" y="558" width="312" height="34" rx="3" fill="none" stroke="#90a4ae" stroke-width="1.5"/>
+  <!-- Trennlinien -->
+  <line x1="82"  y1="558" x2="82"  y2="592" stroke="#90a4ae" stroke-width="1"/>
+  <line x1="134" y1="558" x2="134" y2="592" stroke="#90a4ae" stroke-width="1"/>
+  <line x1="186" y1="558" x2="186" y2="592" stroke="#90a4ae" stroke-width="1"/>
+  <line x1="238" y1="558" x2="238" y2="592" stroke="#90a4ae" stroke-width="1"/>
+  <line x1="290" y1="558" x2="290" y2="592" stroke="#90a4ae" stroke-width="1"/>
+  <!-- Beschriftungen -->
+  <text x="56"  y="579" font-size="9" fill="#1565c0" text-anchor="middle" font-weight="bold">PE</text>
+  <text x="108" y="579" font-size="9" fill="#e65100" text-anchor="middle" font-weight="bold">Karton</text>
+  <text x="160" y="579" font-size="9" fill="#1565c0" text-anchor="middle" font-weight="bold">PE</text>
+  <text x="212" y="579" font-size="9" fill="#546e7a" text-anchor="middle" font-weight="bold">Alu</text>
+  <text x="264" y="579" font-size="9" fill="#1565c0" text-anchor="middle" font-weight="bold">PE</text>
+  <text x="316" y="579" font-size="9" fill="#1565c0" text-anchor="middle" font-weight="bold">PE</text>
+  <!-- Außen / Innen Marker -->
+  <text x="30"  y="603" font-size="9" fill="#546e7a">außen</text>
+  <text x="342" y="603" font-size="9" fill="#546e7a" text-anchor="end">innen</text>
+
+  <!-- ===== FUSSZEILE ===== -->
+  <rect x="0" y="618" width="400" height="162" fill="#1a3a5c"/>
+  <text x="200" y="640" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Normen &amp; Automatisierung</text>
+  <line x1="30" y1="648" x2="370" y2="648" stroke="#3a6a9c" stroke-width="1"/>
+
+  <!-- Badges -->
+  <rect x="14"  y="656" width="112" height="34" rx="8" fill="#0d47a1" opacity="0.8"/>
+  <text x="70" y="670" font-size="9" fill="#90caf9" text-anchor="middle" font-weight="bold">FDA 21 CFR</text>
+  <text x="70" y="683" font-size="8" fill="#64b5f6" text-anchor="middle">Lebensmittelsicherheit</text>
+
+  <rect x="144" y="656" width="112" height="34" rx="8" fill="#0d47a1" opacity="0.8"/>
+  <text x="200" y="670" font-size="9" fill="#90caf9" text-anchor="middle" font-weight="bold">EN ISO 11607</text>
+  <text x="200" y="683" font-size="8" fill="#64b5f6" text-anchor="middle">Sterilverpackung</text>
+
+  <rect x="274" y="656" width="112" height="34" rx="8" fill="#0d47a1" opacity="0.8"/>
+  <text x="330" y="670" font-size="9" fill="#90caf9" text-anchor="middle" font-weight="bold">IFS / BRC</text>
+  <text x="330" y="683" font-size="8" fill="#64b5f6" text-anchor="middle">Qualitätsstandard</text>
+
+  <!-- Steuerungsinfo -->
+  <rect x="14" y="700" width="372" height="50" rx="8" fill="#0d2a4a" opacity="0.6"/>
+  <text x="200" y="717" font-size="11" font-weight="bold" fill="#5ad7d7" text-anchor="middle">Steuerungstechnik</text>
+  <text x="200" y="732" font-size="10" fill="#90caf9" text-anchor="middle">SPS-Steuerung · Servotechnik · HMI-Visualisierung</text>
+  <text x="200" y="746" font-size="10" fill="#78b8d8" text-anchor="middle">Druckregelung · Temperaturüberwachung · Qualitätssensorik</text>
+
+  <text x="200" y="768" font-size="9" fill="#3a6080" text-anchor="middle">GeTMatic Automatisierungstechnik · Krefeld</text>
+</svg>

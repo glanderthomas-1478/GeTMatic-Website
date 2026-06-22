@@ -1,0 +1,208 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="100%" height="100%" role="img" aria-label="Medizin und Sterilisation Autoklav Prozesssteuerung EN ISO 17665">
+  <defs>
+    <linearGradient id="msBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="50%" style="stop-color:#0d1f3c"/>
+      <stop offset="100%" style="stop-color:#071020"/>
+    </linearGradient>
+    <linearGradient id="msPanelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2a45"/>
+      <stop offset="100%" style="stop-color:#0f1e35"/>
+    </linearGradient>
+    <linearGradient id="msChamberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#42a5f5"/>
+      <stop offset="50%" style="stop-color:#1976d2"/>
+      <stop offset="100%" style="stop-color:#0d47a1"/>
+    </linearGradient>
+    <linearGradient id="msDoorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#90a4ae"/>
+      <stop offset="100%" style="stop-color:#546e7a"/>
+    </linearGradient>
+    <linearGradient id="msHmiGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d2137"/>
+      <stop offset="100%" style="stop-color:#071525"/>
+    </linearGradient>
+    <linearGradient id="msTealGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00796b"/>
+      <stop offset="100%" style="stop-color:#209d9d"/>
+    </linearGradient>
+    <linearGradient id="msPaperG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#eef2f6"/>
+    </linearGradient>
+    <filter id="msGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="msShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <style>text { font-family: 'Courier New', Courier, monospace; }</style>
+  </defs>
+
+  <rect width="1200" height="620" fill="url(#msBgGrad)"/>
+  <defs>
+    <pattern id="msGridSmall" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="#152540" stroke-width="0.3" opacity="0.5"/>
+    </pattern>
+    <pattern id="msGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a3050" stroke-width="0.5" opacity="0.4"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="620" fill="url(#msGridSmall)"/>
+  <rect width="1200" height="620" fill="url(#msGrid)"/>
+  <ellipse cx="220" cy="280" rx="320" ry="200" fill="#1976d2" opacity="0.05"/>
+  <ellipse cx="900" cy="320" rx="320" ry="200" fill="#209d9d" opacity="0.05"/>
+
+  <!-- ===== AUTOKLAV (links) ===== -->
+  <rect x="50" y="270" width="220" height="40" rx="6" fill="#37474f" stroke="#263238" stroke-width="1.5" filter="url(#msShadow)"/>
+  <rect x="50" y="100" width="220" height="180" rx="14" fill="url(#msPanelGrad)" stroke="#1e3a5a" stroke-width="2" filter="url(#msShadow)"/>
+  <rect x="50" y="100" width="220" height="22" rx="10" fill="#00796b" opacity="0.9"/>
+  <text x="160" y="116" font-size="9.5" fill="white" text-anchor="middle" font-weight="bold">AUTOKLAV · STERILISATION</text>
+
+  <!-- Tür / Sichtfenster -->
+  <circle cx="160" cy="195" r="62" fill="url(#msDoorGrad)" stroke="#37474f" stroke-width="2.5" filter="url(#msShadow)"/>
+  <circle cx="160" cy="195" r="52" fill="none" stroke="#90a4ae" stroke-width="1.5"/>
+  <circle cx="160" cy="195" r="40" fill="#cfe8ee" stroke="#90a4ae" stroke-width="1" opacity="0.9"/>
+  <path d="M148,184 Q151,178 154,184 Q157,190 160,184 Q163,178 166,184" stroke="#fff" stroke-width="1.6" fill="none" opacity="0.75"/>
+  <path d="M148,195 Q151,189 154,195 Q157,201 160,195 Q163,189 166,195" stroke="#fff" stroke-width="1.6" fill="none" opacity="0.55"/>
+  <!-- Türbolzen -->
+  <circle cx="160" cy="138" r="5" fill="#78909c" stroke="#37474f" stroke-width="1"/>
+  <circle cx="160" cy="252" r="5" fill="#78909c" stroke="#37474f" stroke-width="1"/>
+  <circle cx="103" cy="195" r="5" fill="#78909c" stroke="#37474f" stroke-width="1"/>
+  <circle cx="217" cy="195" r="5" fill="#78909c" stroke="#37474f" stroke-width="1"/>
+
+  <!-- Status-LEDs -->
+  <rect x="232" y="150" width="14" height="64" rx="3" fill="#0d1e35" stroke="#1a3050" stroke-width="1"/>
+  <circle cx="239" cy="161" r="4" fill="#00e676" filter="url(#msGlow)"/>
+  <circle cx="239" cy="178" r="4" fill="#00e676" filter="url(#msGlow)"/>
+  <circle cx="239" cy="195" r="4" fill="#ffd54f" filter="url(#msGlow)"/>
+  <circle cx="239" cy="212" r="4" fill="#546e7a"/>
+
+  <!-- Temp/Druck Readout unter dem Gerät -->
+  <rect x="62" y="232" width="76" height="36" rx="5" fill="url(#msHmiGrad)" stroke="#209d9d" stroke-width="1.2"/>
+  <text x="100" y="245" font-size="7" fill="#5ad7d7" text-anchor="middle" font-family="monospace">TEMPERATUR</text>
+  <text x="100" y="260" font-size="11" fill="#ff8f00" text-anchor="middle" font-weight="bold" font-family="monospace">134.2 °C</text>
+  <rect x="182" y="232" width="76" height="36" rx="5" fill="url(#msHmiGrad)" stroke="#209d9d" stroke-width="1.2"/>
+  <text x="220" y="245" font-size="7" fill="#5ad7d7" text-anchor="middle" font-family="monospace">DRUCK</text>
+  <text x="220" y="260" font-size="11" fill="#42a5f5" text-anchor="middle" font-weight="bold" font-family="monospace">3.04 bar</text>
+
+  <text x="160" y="468" font-size="10" fill="#42a5f5" text-anchor="middle" font-weight="bold">AUTOKLAV AK-03</text>
+  <text x="160" y="483" font-size="8" fill="#546e7a" text-anchor="middle">Dampfsterilisation · Kammer 80 L</text>
+
+  <!-- Verbindung Autoklav -> Zykluskurve -->
+  <path d="M270,190 Q310,190 340,170" stroke="#209d9d" stroke-width="2.5" fill="none" stroke-dasharray="6,4" opacity="0.7"/>
+  <circle cx="300" cy="183" r="3" fill="#209d9d" opacity="0.9" filter="url(#msGlow)"/>
+
+  <!-- ===== ZYKLUS-PHASEN & KURVE (Mitte) ===== -->
+  <rect x="340" y="100" width="380" height="320" rx="10" fill="url(#msPanelGrad)" stroke="#37474f" stroke-width="2" filter="url(#msShadow)"/>
+  <rect x="348" y="108" width="364" height="18" rx="4" fill="#0d2040"/>
+  <text x="530" y="121" font-size="9" fill="#5ad7d7" text-anchor="middle" font-family="monospace">STERILISATIONSZYKLUS · CHARGE 247</text>
+
+  <!-- Phasen-Balken -->
+  <rect x="358" y="134" width="346" height="26" rx="4" fill="#0d1e35" stroke="#1a3050" stroke-width="1"/>
+  <rect x="360" y="136" width="86"  height="22" rx="3" fill="#1976d2" opacity="0.85"/>
+  <text x="403" y="151" font-size="7" fill="white" text-anchor="middle" font-weight="bold">AUFHEIZEN</text>
+  <rect x="450" y="136" width="170" height="22" rx="3" fill="#00796b"/>
+  <text x="535" y="151" font-size="7" fill="white" text-anchor="middle" font-weight="bold">HALTEPHASE · 134°C</text>
+  <rect x="624" y="136" width="78"  height="22" rx="3" fill="#0d1e35" stroke="#37474f" stroke-width="1"/>
+  <text x="663" y="151" font-size="7" fill="#78909c" text-anchor="middle">ABKÜHLEN</text>
+  <path d="M535,136 L535,158" stroke="#ffd54f" stroke-width="2"/>
+  <polygon points="528,128 542,128 535,138" fill="#ffd54f"/>
+
+  <!-- Chart -->
+  <rect x="358" y="172" width="346" height="150" rx="3" fill="url(#msHmiGrad)" stroke="#209d9d" stroke-width="1"/>
+  <line x1="358" y1="196" x2="704" y2="196" stroke="#1a3040" stroke-width="0.8"/>
+  <line x1="358" y1="220" x2="704" y2="220" stroke="#1a3040" stroke-width="0.8"/>
+  <line x1="358" y1="244" x2="704" y2="244" stroke="#1a3040" stroke-width="0.8"/>
+  <line x1="358" y1="268" x2="704" y2="268" stroke="#1a3040" stroke-width="0.8"/>
+  <line x1="358" y1="292" x2="704" y2="292" stroke="#1a3040" stroke-width="0.8"/>
+  <text x="352" y="200" font-size="6" fill="#546e7a" text-anchor="end" font-family="monospace">150</text>
+  <text x="352" y="224" font-size="6" fill="#546e7a" text-anchor="end" font-family="monospace">134</text>
+  <text x="352" y="248" font-size="6" fill="#546e7a" text-anchor="end" font-family="monospace">100</text>
+  <text x="352" y="272" font-size="6" fill="#546e7a" text-anchor="end" font-family="monospace">50</text>
+  <text x="352" y="296" font-size="6" fill="#546e7a" text-anchor="end" font-family="monospace">20</text>
+  <line x1="358" y1="221" x2="704" y2="221" stroke="#ff8f00" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+  <text x="708" y="224" font-size="6" fill="#ff8f00" font-family="monospace">134°C</text>
+  <polyline points="362,310 380,308 395,295 415,255 440,210 465,222 700,222" stroke="#ff5722" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#msGlow)"/>
+  <polyline points="362,310 380,309 395,300 415,265 440,228 465,232 700,232" stroke="#42a5f5" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+  <line x1="365" y1="332" x2="381" y2="332" stroke="#ff5722" stroke-width="2"/>
+  <text x="385" y="335" font-size="6.5" fill="#ff5722" font-family="monospace">Temperatur</text>
+  <line x1="460" y1="332" x2="476" y2="332" stroke="#42a5f5" stroke-width="2"/>
+  <text x="480" y="335" font-size="6.5" fill="#42a5f5" font-family="monospace">Druck</text>
+
+  <rect x="358" y="350" width="346" height="20" rx="3" fill="url(#msTealGrad)" opacity="0.9"/>
+  <text x="531" y="364" font-size="8" fill="white" text-anchor="middle" font-weight="bold">F0-WERT 21.4 · ZYKLUS ABGESCHLOSSEN · STERIL</text>
+
+  <text x="531" y="402" font-size="9" fill="#546e7a" text-anchor="middle">Vollautomatische Aufzeichnung von Temperatur, Druck &amp; Zykluszeit</text>
+
+  <!-- ===== COMPLIANCE / GMP (rechts) ===== -->
+  <rect x="752" y="100" width="398" height="320" rx="10" fill="#0f1e30" stroke="#209d9d" stroke-width="2.2" filter="url(#msShadow)"/>
+  <rect x="760" y="108" width="382" height="18" rx="4" fill="#00796b" opacity="0.9"/>
+  <text x="951" y="121" font-size="9" fill="white" text-anchor="middle" font-weight="bold">QUALITÄTSSICHERUNG &amp; FREIGABE</text>
+
+  <!-- Normkarte EN ISO 17665 -->
+  <rect x="770" y="138" width="180" height="80" rx="6" fill="url(#msHmiGrad)" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="860" y="160" font-size="11" fill="#42a5f5" text-anchor="middle" font-weight="bold">EN ISO 17665</text>
+  <text x="860" y="176" font-size="8" fill="#90caf9" text-anchor="middle">Dampfsterilisation</text>
+  <text x="860" y="190" font-size="8" fill="#90caf9" text-anchor="middle">normkonform bestätigt</text>
+  <circle cx="860" cy="204" r="6" fill="#00e676" filter="url(#msGlow)"/>
+
+  <!-- Normkarte GMP -->
+  <rect x="962" y="138" width="172" height="80" rx="6" fill="url(#msHmiGrad)" stroke="#209d9d" stroke-width="1.5"/>
+  <text x="1048" y="160" font-size="11" fill="#5ad7d7" text-anchor="middle" font-weight="bold">GMP</text>
+  <text x="1048" y="176" font-size="8" fill="#80cbc4" text-anchor="middle">Good Manufacturing</text>
+  <text x="1048" y="190" font-size="8" fill="#80cbc4" text-anchor="middle">Practice — konform</text>
+  <circle cx="1048" cy="204" r="6" fill="#00e676" filter="url(#msGlow)"/>
+
+  <!-- Digitales Protokoll -->
+  <rect x="770" y="230" width="364" height="100" rx="6" fill="url(#msPaperG)" stroke="#90a4ae" stroke-width="1"/>
+  <rect x="770" y="230" width="364" height="18" rx="6" fill="#1565c0" opacity="0.9"/>
+  <text x="952" y="243" font-size="8" fill="white" text-anchor="middle" font-weight="bold">DIGITALES STERILISATIONSPROTOKOLL</text>
+  <text x="780" y="262" font-size="7" fill="#455a64" font-weight="bold">Charge:</text>
+  <text x="830" y="262" font-size="7" fill="#1a3a5c">247 / 03.06.2026</text>
+  <text x="780" y="276" font-size="7" fill="#455a64" font-weight="bold">T-max / p-max:</text>
+  <text x="880" y="276" font-size="7" fill="#1a3a5c">134.2 °C / 3.04 bar</text>
+  <text x="780" y="290" font-size="7" fill="#455a64" font-weight="bold">Ergebnis:</text>
+  <text x="830" y="290" font-size="7" fill="#00796b" font-weight="bold">STERIL ✓ · F0 21.4</text>
+  <rect x="780" y="300" width="34" height="20" rx="3" fill="#e53935" opacity="0.9"/>
+  <text x="797" y="313" font-size="7" fill="white" text-anchor="middle" font-weight="bold">PDF</text>
+  <text x="822" y="310" font-size="6.5" fill="#455a64">automatisch nach jeder Charge</text>
+  <text x="822" y="320" font-size="6.5" fill="#90a4ae">Maschinennetz / Klinik-LAN getrennt</text>
+
+  <!-- ===== INFO-KARTEN unten ===== -->
+  <rect x="50" y="525" width="265" height="62" rx="8" fill="#0d1e35" stroke="#1976d2" stroke-width="1.5" filter="url(#msShadow)"/>
+  <rect x="50" y="525" width="6" height="62" rx="4" fill="#1976d2"/>
+  <text x="68" y="544" font-size="10" font-weight="bold" fill="#e3f2fd">Prozess</text>
+  <text x="68" y="560" font-size="13" font-weight="bold" fill="#42a5f5">Dampf-Autoklav</text>
+  <text x="68" y="576" font-size="8" fill="#546e7a">Temperatur · Druck · Zykluszeit</text>
+
+  <rect x="335" y="525" width="265" height="62" rx="8" fill="#0d1e35" stroke="#209d9d" stroke-width="1.5" filter="url(#msShadow)"/>
+  <rect x="335" y="525" width="6" height="62" rx="4" fill="#209d9d"/>
+  <text x="353" y="544" font-size="10" font-weight="bold" fill="#e0f7fa">Norm</text>
+  <text x="353" y="560" font-size="13" font-weight="bold" fill="#209d9d">EN ISO 17665 · GMP</text>
+  <text x="353" y="576" font-size="8" fill="#546e7a">Validierte Prozessdokumentation</text>
+
+  <rect x="620" y="525" width="265" height="62" rx="8" fill="#0d1e35" stroke="#4caf50" stroke-width="1.5" filter="url(#msShadow)"/>
+  <rect x="620" y="525" width="6" height="62" rx="4" fill="#2e7d32"/>
+  <text x="638" y="544" font-size="10" font-weight="bold" fill="#e8f5e9">Dokumentation</text>
+  <text x="638" y="560" font-size="13" font-weight="bold" fill="#4caf50">PDF &amp; Web-Dashboard</text>
+  <text x="638" y="576" font-size="8" fill="#546e7a">automatisch nach jeder Charge</text>
+
+  <rect x="905" y="525" width="245" height="62" rx="8" fill="#0d1e35" stroke="#ff9800" stroke-width="1.5" filter="url(#msShadow)"/>
+  <rect x="905" y="525" width="6" height="62" rx="4" fill="#e65100"/>
+  <text x="923" y="544" font-size="10" font-weight="bold" fill="#fff3e0">Netztrennung</text>
+  <text x="923" y="560" font-size="13" font-weight="bold" fill="#ff9800">Maschine ⇄ Klinik-LAN</text>
+  <text x="923" y="576" font-size="8" fill="#546e7a">physisch getrennte Netzwerke</text>
+
+  <line x1="0" y1="0" x2="100" y2="0" stroke="#1976d2" stroke-width="2" opacity="0.5"/>
+  <line x1="0" y1="0" x2="0" y2="100" stroke="#1976d2" stroke-width="2" opacity="0.5"/>
+  <line x1="1200" y1="0" x2="1100" y2="0" stroke="#209d9d" stroke-width="2" opacity="0.5"/>
+  <line x1="1200" y1="0" x2="1200" y2="100" stroke="#209d9d" stroke-width="2" opacity="0.5"/>
+  <line x1="0" y1="620" x2="100" y2="620" stroke="#1976d2" stroke-width="2" opacity="0.5"/>
+  <line x1="0" y1="620" x2="0" y2="520" stroke="#1976d2" stroke-width="2" opacity="0.5"/>
+  <line x1="1200" y1="620" x2="1100" y2="620" stroke="#209d9d" stroke-width="2" opacity="0.5"/>
+  <line x1="1200" y1="620" x2="1200" y2="520" stroke="#209d9d" stroke-width="2" opacity="0.5"/>
+
+  <text x="600" y="608" font-size="9" fill="#1a3050" text-anchor="middle" letter-spacing="4">GeTMatic Automatisierungstechnik · Krefeld</text>
+</svg>

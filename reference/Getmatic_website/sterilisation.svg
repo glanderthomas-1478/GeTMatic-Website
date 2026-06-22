@@ -1,0 +1,267 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 760" width="400" height="760" role="img" aria-label="Sterilisationsprozess">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#eef6ff"/>
+      <stop offset="100%" style="stop-color:#cde4f8"/>
+    </linearGradient>
+    <linearGradient id="autoclaveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#b8d4ec"/>
+      <stop offset="100%" style="stop-color:#6a9ec0"/>
+    </linearGradient>
+    <linearGradient id="doorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9ac0dc"/>
+      <stop offset="100%" style="stop-color:#4e8db0"/>
+    </linearGradient>
+    <linearGradient id="chamberGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fffde7"/>
+      <stop offset="100%" style="stop-color:#fff176;stop-opacity:0.5"/>
+    </linearGradient>
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#455a64"/>
+      <stop offset="100%" style="stop-color:#263238"/>
+    </linearGradient>
+    <linearGradient id="killGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e53935"/>
+      <stop offset="60%" style="stop-color:#fb8c00"/>
+      <stop offset="100%" style="stop-color:#43a047"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#00000028"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Hintergrund -->
+  <rect width="400" height="760" fill="url(#bgGrad)"/>
+  <!-- Kopfleiste -->
+  <rect width="400" height="52" fill="#1a5f9e"/>
+  <text x="200" y="32" font-size="17" font-weight="bold" fill="white" text-anchor="middle">Sterilisationsprozess</text>
+  <text x="200" y="46" font-size="11" fill="#a8d4f5" text-anchor="middle">Dampf-Autoklav &#xB7; EN ISO 17665</text>
+
+  <!-- ===== PROZESSSCHRITTE 3+3 Grid ===== -->
+  <!-- Reihe 1 -->
+  <!-- Schritt 1 -->
+  <rect x="14" y="62" width="108" height="48" rx="10" fill="#1a6eae" filter="url(#shadow)"/>
+  <text x="68" y="80" font-size="11" font-weight="bold" fill="white" text-anchor="middle">① Beladung</text>
+  <text x="68" y="95" font-size="10" fill="#cce4f8" text-anchor="middle">Gut einlegen</text>
+
+  <!-- Schritt 2 -->
+  <rect x="146" y="62" width="108" height="48" rx="10" fill="#0277bd" filter="url(#shadow)"/>
+  <text x="200" y="80" font-size="11" font-weight="bold" fill="white" text-anchor="middle">② Evakuierung</text>
+  <text x="200" y="95" font-size="10" fill="#b3ddf8" text-anchor="middle">Luft entfernen</text>
+
+  <!-- Schritt 3 -->
+  <rect x="278" y="62" width="108" height="48" rx="10" fill="#e65100" filter="url(#shadow)"/>
+  <text x="332" y="80" font-size="11" font-weight="bold" fill="white" text-anchor="middle">③ Dampfphase</text>
+  <text x="332" y="95" font-size="10" fill="#ffd180" text-anchor="middle">Dampf einleiten</text>
+
+  <!-- Pfeil runter links -->
+  <polygon points="122,86 134,80 134,92" fill="#1a6eae" opacity="0.7"/>
+  <polygon points="256,86 268,80 268,92" fill="#0277bd" opacity="0.7"/>
+
+  <!-- Reihe 2 (umgekehrte Richtung, Pfeil links) -->
+  <!-- Schritt 6 -->
+  <rect x="14" y="118" width="108" height="48" rx="10" fill="#37474f" filter="url(#shadow)"/>
+  <text x="68" y="136" font-size="11" font-weight="bold" fill="white" text-anchor="middle">⑥ Entnahme</text>
+  <text x="68" y="151" font-size="10" fill="#b0bec5" text-anchor="middle">Gut entnehmen</text>
+
+  <!-- Schritt 5 -->
+  <rect x="146" y="118" width="108" height="48" rx="10" fill="#2e7d32" filter="url(#shadow)"/>
+  <text x="200" y="136" font-size="11" font-weight="bold" fill="white" text-anchor="middle">⑤ Trocknung</text>
+  <text x="200" y="151" font-size="10" fill="#a5d6a7" text-anchor="middle">Vakuum / Wärme</text>
+
+  <!-- Schritt 4 -->
+  <rect x="278" y="118" width="108" height="48" rx="10" fill="#6a1b9a" filter="url(#shadow)"/>
+  <text x="332" y="136" font-size="11" font-weight="bold" fill="white" text-anchor="middle">④ Sterilisation</text>
+  <text x="332" y="151" font-size="10" fill="#e1bee7" text-anchor="middle">134&#xB0;C &#xB7; 18 min</text>
+
+  <!-- Verbindungspfeil Reihe 1 → 2 (Kurve rechts) -->
+  <path d="M386,86 Q398,86 398,110 Q398,142 386,142" stroke="#e65100" stroke-width="2" fill="none" opacity="0.7" stroke-dasharray="4,2"/>
+  <!-- Pfeil Reihe 2 (von rechts nach links) -->
+  <polygon points="278,142 266,136 266,148" fill="#2e7d32" opacity="0.7"/>
+  <polygon points="146,142 134,136 134,148" fill="#37474f" opacity="0.7"/>
+
+  <!-- ===== AUTOKLAV ===== -->
+  <!-- Dampfrohr oben -->
+  <rect x="175" y="178" width="50" height="12" rx="5" fill="#78909c" stroke="#546e7a" stroke-width="1"/>
+  <rect x="193" y="166" width="14" height="14" rx="3" fill="#546e7a"/>
+  <!-- Dampfwolke -->
+  <ellipse cx="200" cy="161" rx="10" ry="7" fill="#e3f2fd" opacity="0.85"/>
+  <ellipse cx="191" cy="156" rx="8" ry="6" fill="#e3f2fd" opacity="0.7"/>
+  <ellipse cx="210" cy="154" rx="7" ry="5" fill="#e3f2fd" opacity="0.65"/>
+  <ellipse cx="200" cy="148" rx="9" ry="6" fill="#e3f2fd" opacity="0.5"/>
+  <ellipse cx="192" cy="142" rx="6" ry="5" fill="#e3f2fd" opacity="0.35"/>
+  <ellipse cx="210" cy="140" rx="6" ry="4" fill="#e3f2fd" opacity="0.25"/>
+
+  <!-- Manometer links oben -->
+  <circle cx="100" cy="198" r="24" fill="white" stroke="#5a8fb0" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="100" cy="198" r="19" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="100" y="188" font-size="8" fill="#546e7a" text-anchor="middle">bar</text>
+  <line x1="100" y1="198" x2="91" y2="184" stroke="#e53935" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="100" cy="198" r="3" fill="#37474f"/>
+  <!-- Skala -->
+  <line x1="100" y1="180" x2="100" y2="184" stroke="#546e7a" stroke-width="1.5"/>
+  <line x1="86"  y1="185" x2="89"  y2="188" stroke="#546e7a" stroke-width="1.5"/>
+  <line x1="114" y1="185" x2="111" y2="188" stroke="#546e7a" stroke-width="1.5"/>
+  <text x="100" y="210" font-size="10" font-weight="bold" fill="#b71c1c" text-anchor="middle">2.1 bar</text>
+
+  <!-- Thermometer rechts oben -->
+  <circle cx="300" cy="198" r="24" fill="white" stroke="#5a8fb0" stroke-width="2" filter="url(#shadow)"/>
+  <circle cx="300" cy="198" r="19" fill="#fafafa" stroke="#cfd8dc" stroke-width="1"/>
+  <text x="300" y="188" font-size="8" fill="#546e7a" text-anchor="middle">&#xB0;C</text>
+  <line x1="300" y1="198" x2="291" y2="184" stroke="#e53935" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="300" cy="198" r="3" fill="#37474f"/>
+  <line x1="300" y1="180" x2="300" y2="184" stroke="#546e7a" stroke-width="1.5"/>
+  <line x1="286"  y1="185" x2="289"  y2="188" stroke="#546e7a" stroke-width="1.5"/>
+  <line x1="314" y1="185" x2="311" y2="188" stroke="#546e7a" stroke-width="1.5"/>
+  <text x="300" y="210" font-size="10" font-weight="bold" fill="#b71c1c" text-anchor="middle">134 &#xB0;C</text>
+
+  <!-- Gehäuse -->
+  <rect x="24" y="216" width="352" height="210" rx="18" fill="url(#autoclaveGrad)" filter="url(#shadow)" stroke="#5080a0" stroke-width="2"/>
+  <rect x="30" y="220" width="340" height="8" rx="4" fill="white" opacity="0.2"/>
+
+  <!-- Tür links -->
+  <rect x="30" y="224" width="48" height="196" rx="12" fill="url(#doorGrad)" stroke="#4080a0" stroke-width="1.5"/>
+  <circle cx="54" cy="322" r="11" fill="#2c5f7a" stroke="#1a3a5c" stroke-width="2"/>
+  <circle cx="54" cy="322" r="4" fill="#90caf9"/>
+  <rect x="34" y="252" width="8" height="28" rx="3" fill="#5090b0"/>
+  <rect x="34" y="295" width="8" height="28" rx="3" fill="#5090b0"/>
+  <rect x="34" y="338" width="8" height="28" rx="3" fill="#5090b0"/>
+
+  <!-- Kammer Innenraum -->
+  <rect x="84" y="232" width="242" height="186" rx="10" fill="url(#chamberGrad)" stroke="#5a8fb0" stroke-width="1.5"/>
+
+  <!-- Dampfwellen -->
+  <path d="M100,360 Q125,344 150,358 Q175,372 200,352 Q225,332 250,348 Q275,364 300,352" stroke="#90caf9" stroke-width="2.5" fill="none" opacity="0.8"/>
+  <path d="M100,378 Q130,364 160,376 Q190,388 220,370 Q250,352 280,366 Q295,373 310,366" stroke="#64b5f6" stroke-width="2" fill="none" opacity="0.65"/>
+  <path d="M100,394 Q135,382 165,392 Q195,402 225,386 Q255,370 285,380 Q298,385 310,378" stroke="#42a5f5" stroke-width="1.5" fill="none" opacity="0.5"/>
+
+  <!-- Dampfsäulen -->
+  <ellipse cx="140" cy="408" rx="14" ry="5" fill="#bbdefb" opacity="0.55"/>
+  <path d="M133,408 Q130,388 136,368 Q142,348 135,330" stroke="#90caf9" stroke-width="2.5" fill="none" opacity="0.5" stroke-linecap="round"/>
+  <ellipse cx="205" cy="408" rx="14" ry="5" fill="#bbdefb" opacity="0.55"/>
+  <path d="M198,408 Q195,384 202,364 Q209,344 203,325" stroke="#90caf9" stroke-width="2.5" fill="none" opacity="0.5" stroke-linecap="round"/>
+  <ellipse cx="270" cy="408" rx="14" ry="5" fill="#bbdefb" opacity="0.55"/>
+  <path d="M263,408 Q260,386 267,366 Q274,346 268,328" stroke="#90caf9" stroke-width="2.5" fill="none" opacity="0.5" stroke-linecap="round"/>
+
+  <!-- Tablett -->
+  <rect x="100" y="398" width="210" height="12" rx="4" fill="#bdbdbd" stroke="#9e9e9e" stroke-width="1"/>
+
+  <!-- Instrumente -->
+  <!-- Skalpell -->
+  <rect x="118" y="370" width="5" height="30" rx="2" fill="#78909c"/>
+  <polygon points="116,370 127,370 121,358" fill="#90a4ae"/>
+  <!-- Pinzette -->
+  <line x1="140" y1="398" x2="135" y2="366" stroke="#78909c" stroke-width="3" stroke-linecap="round"/>
+  <line x1="140" y1="398" x2="145" y2="366" stroke="#78909c" stroke-width="3" stroke-linecap="round"/>
+  <!-- Spritze -->
+  <rect x="163" y="374" width="34" height="10" rx="3" fill="#e0e0e0" stroke="#9e9e9e" stroke-width="1"/>
+  <rect x="195" y="376" width="11" height="6" rx="1" fill="#bdbdbd"/>
+  <line x1="206" y1="379" x2="214" y2="379" stroke="#9e9e9e" stroke-width="1.5"/>
+  <!-- Schere -->
+  <line x1="235" y1="398" x2="229" y2="366" stroke="#78909c" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="235" y1="398" x2="241" y2="366" stroke="#78909c" stroke-width="2.5" stroke-linecap="round"/>
+  <ellipse cx="232" cy="386" rx="4" ry="3.5" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+  <ellipse cx="238" cy="380" rx="4" ry="3.5" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+  <!-- Klemme -->
+  <rect x="258" y="374" width="4" height="26" rx="2" fill="#78909c"/>
+  <rect x="266" y="374" width="4" height="26" rx="2" fill="#78909c"/>
+  <line x1="258" y1="387" x2="270" y2="387" stroke="#546e7a" stroke-width="2"/>
+  <!-- Behälter -->
+  <rect x="284" y="374" width="20" height="26" rx="3" fill="#b2ebf2" stroke="#80cbc4" stroke-width="1.5"/>
+  <rect x="286" y="371" width="16" height="5" rx="2" fill="#80cbc4"/>
+
+  <!-- Bedienfeld rechts -->
+  <rect x="332" y="224" width="38" height="196" rx="10" fill="url(#panelGrad)" stroke="#263238" stroke-width="1.5"/>
+  <!-- Display -->
+  <rect x="336" y="234" width="30" height="38" rx="3" fill="#1a237e" stroke="#283593" stroke-width="1"/>
+  <text x="351" y="248" font-family="monospace" font-size="8" fill="#00e676" text-anchor="middle">134&#xB0;C</text>
+  <text x="351" y="261" font-family="monospace" font-size="8" fill="#00e676" text-anchor="middle">2.1bar</text>
+  <!-- Tasten -->
+  <rect x="338" y="280" width="11" height="9" rx="2" fill="#e53935"/>
+  <rect x="353" y="280" width="11" height="9" rx="2" fill="#43a047"/>
+  <rect x="338" y="295" width="11" height="9" rx="2" fill="#1e88e5"/>
+  <rect x="353" y="295" width="11" height="9" rx="2" fill="#fb8c00"/>
+  <!-- LEDs -->
+  <circle cx="343" cy="316" r="5" fill="#ff1744" filter="url(#glow)"/>
+  <circle cx="357" cy="316" r="5" fill="#00e676" filter="url(#glow)"/>
+  <text x="351" y="330" font-size="7" fill="#90a4ae" text-anchor="middle">STATUS</text>
+  <!-- Ventil -->
+  <rect x="340" y="338" width="22" height="22" rx="4" fill="#546e7a"/>
+  <circle cx="351" cy="349" r="7" fill="none" stroke="#90a4ae" stroke-width="2"/>
+  <line x1="351" y1="342" x2="351" y2="356" stroke="#90a4ae" stroke-width="2"/>
+  <line x1="344" y1="349" x2="358" y2="349" stroke="#90a4ae" stroke-width="2"/>
+  <!-- Rohr Ventil unten -->
+  <rect x="347" y="360" width="8" height="56" rx="3" fill="#546e7a"/>
+
+  <!-- ===== PARAMETER KARTEN ===== -->
+  <!-- Karte 1 -->
+  <rect x="14" y="436" width="178" height="60" rx="10" fill="white" filter="url(#shadow)" opacity="0.95"/>
+  <rect x="14" y="436" width="8" height="60" rx="4" fill="#e65100"/>
+  <text x="32" y="455" font-size="13" font-weight="bold" fill="#1a3a5c">Temperatur</text>
+  <text x="32" y="473" font-size="20" font-weight="bold" fill="#e65100">134 &#xB0;C</text>
+  <text x="32" y="489" font-size="10" fill="#78909c">121&#x2013;134&#xB0;C (Norm)</text>
+
+  <!-- Karte 2 -->
+  <rect x="208" y="436" width="178" height="60" rx="10" fill="white" filter="url(#shadow)" opacity="0.95"/>
+  <rect x="208" y="436" width="8" height="60" rx="4" fill="#0277bd"/>
+  <text x="226" y="455" font-size="13" font-weight="bold" fill="#1a3a5c">Druck</text>
+  <text x="226" y="473" font-size="20" font-weight="bold" fill="#0277bd">2.1 bar</text>
+  <text x="226" y="489" font-size="10" fill="#78909c">Überdruck (Sattdampf)</text>
+
+  <!-- Karte 3 -->
+  <rect x="14" y="505" width="178" height="60" rx="10" fill="white" filter="url(#shadow)" opacity="0.95"/>
+  <rect x="14" y="505" width="8" height="60" rx="4" fill="#6a1b9a"/>
+  <text x="32" y="524" font-size="13" font-weight="bold" fill="#1a3a5c">Haltezeit</text>
+  <text x="32" y="542" font-size="20" font-weight="bold" fill="#6a1b9a">18 min</text>
+  <text x="32" y="558" font-size="10" fill="#78909c">15&#x2013;30 min je Zyklus</text>
+
+  <!-- Karte 4 -->
+  <rect x="208" y="505" width="178" height="60" rx="10" fill="white" filter="url(#shadow)" opacity="0.95"/>
+  <rect x="208" y="505" width="8" height="60" rx="4" fill="#2e7d32"/>
+  <text x="226" y="524" font-size="13" font-weight="bold" fill="#1a3a5c">SAL-Level</text>
+  <text x="226" y="542" font-size="20" font-weight="bold" fill="#2e7d32">10&#x207B;&#x2076;</text>
+  <text x="226" y="558" font-size="10" fill="#78909c">Sterilisationssicherheit</text>
+
+  <!-- ===== KEIMREDUKTION BALKEN ===== -->
+  <rect x="14" y="575" width="372" height="68" rx="10" fill="white" filter="url(#shadow)" opacity="0.93"/>
+  <text x="30" y="593" font-size="12" font-weight="bold" fill="#1a3a5c">Keimreduktion</text>
+  <!-- Balken -->
+  <rect x="30" y="600" width="340" height="14" rx="7" fill="#e0e0e0"/>
+  <rect x="30" y="600" width="340" height="14" rx="7" fill="url(#killGrad)"/>
+  <text x="30"  y="630" font-size="9" fill="#e53935">kontaminiert</text>
+  <text x="370" y="630" font-size="9" fill="#2e7d32" text-anchor="end">steril &#x2713;</text>
+  <!-- Marker -->
+  <line x1="335" y1="597" x2="335" y2="617" stroke="#1a3a5c" stroke-width="2"/>
+  <polygon points="329,595 341,595 335,601" fill="#1a3a5c"/>
+  <text x="335" y="593" font-size="9" fill="#1a3a5c" text-anchor="middle">SAL 10&#x207B;&#x2076;</text>
+
+  <!-- ===== FUSSZEILE ===== -->
+  <rect x="0" y="650" width="400" height="110" fill="#1a3a5c"/>
+  <text x="200" y="673" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Normen &amp; Validierung</text>
+  <line x1="30" y1="680" x2="370" y2="680" stroke="#3a6a9c" stroke-width="1"/>
+
+  <!-- Badge 1 -->
+  <rect x="20" y="688" width="108" height="32" rx="8" fill="#0d47a1" opacity="0.8"/>
+  <text x="74" y="701" font-size="9" fill="#90caf9" text-anchor="middle" font-weight="bold">EN ISO 17665</text>
+  <text x="74" y="714" font-size="8" fill="#64b5f6" text-anchor="middle">Feuchte Hitze</text>
+
+  <!-- Badge 2 -->
+  <rect x="146" y="688" width="108" height="32" rx="8" fill="#0d47a1" opacity="0.8"/>
+  <text x="200" y="701" font-size="9" fill="#90caf9" text-anchor="middle" font-weight="bold">MPG §14</text>
+  <text x="200" y="714" font-size="8" fill="#64b5f6" text-anchor="middle">Validierungspflicht</text>
+
+  <!-- Badge 3 -->
+  <rect x="272" y="688" width="108" height="32" rx="8" fill="#0d47a1" opacity="0.8"/>
+  <text x="326" y="701" font-size="9" fill="#90caf9" text-anchor="middle" font-weight="bold">DIN 58946</text>
+  <text x="326" y="714" font-size="8" fill="#64b5f6" text-anchor="middle">Aufbereitung</text>
+
+  <text x="200" y="745" font-size="10" fill="#5a88b8" text-anchor="middle">Medium: Sattdampf (H&#x2082;O) &#xB7; Typ B Autoklav</text>
+  <text x="200" y="758" font-size="9" fill="#3a6080" text-anchor="middle">Validierung &#xB7; Routineüberwachung &#xB7; Freigabe</text>
+</svg>

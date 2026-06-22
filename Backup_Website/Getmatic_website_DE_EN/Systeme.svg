@@ -1,0 +1,535 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="100%" height="100%" role="img" aria-label="Steuerungssysteme SPS TIA Portal Siemens">
+  <defs>
+    <!-- Hintergründe -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="50%" style="stop-color:#0d1f3c"/>
+      <stop offset="100%" style="stop-color:#071020"/>
+    </linearGradient>
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2a45"/>
+      <stop offset="100%" style="stop-color:#0f1e35"/>
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#001830"/>
+      <stop offset="100%" style="stop-color:#002244"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00796b"/>
+      <stop offset="100%" style="stop-color:#209d9d"/>
+    </linearGradient>
+    <linearGradient id="siemensBlue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1976d2"/>
+      <stop offset="100%" style="stop-color:#0d47a1"/>
+    </linearGradient>
+    <linearGradient id="cpuGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#263238"/>
+      <stop offset="100%" style="stop-color:#1a2328"/>
+    </linearGradient>
+    <linearGradient id="moduleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e3a5a"/>
+      <stop offset="100%" style="stop-color:#152e48"/>
+    </linearGradient>
+    <linearGradient id="glowLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#209d9d;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#209d9d;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#209d9d;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="barGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2e7d32"/>
+      <stop offset="100%" style="stop-color:#66bb6a"/>
+    </linearGradient>
+    <linearGradient id="barOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e65100"/>
+      <stop offset="100%" style="stop-color:#ffa726"/>
+    </linearGradient>
+    <linearGradient id="barBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0d47a1"/>
+      <stop offset="100%" style="stop-color:#42a5f5"/>
+    </linearGradient>
+    <linearGradient id="hmiGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d2137"/>
+      <stop offset="100%" style="stop-color:#071525"/>
+    </linearGradient>
+
+    <!-- Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowStrong" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <filter id="innerGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <style>text { font-family: 'Courier New', Courier, monospace; }</style>
+  </defs>
+
+  <!-- ===== HINTERGRUND ===== -->
+  <rect width="1200" height="620" fill="url(#bgGrad)"/>
+
+  <!-- Grid-Muster (Blueprint) -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a3050" stroke-width="0.5" opacity="0.4"/>
+    </pattern>
+    <pattern id="gridSmall" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="#152540" stroke-width="0.3" opacity="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="620" fill="url(#gridSmall)"/>
+  <rect width="1200" height="620" fill="url(#grid)"/>
+
+  <!-- Atmosphärische Lichteffekte -->
+  <ellipse cx="200" cy="310" rx="300" ry="200" fill="#1565c0" opacity="0.04"/>
+  <ellipse cx="600" cy="200" rx="400" ry="200" fill="#209d9d" opacity="0.05"/>
+  <ellipse cx="1000" cy="350" rx="280" ry="180" fill="#1976d2" opacity="0.04"/>
+
+  <!-- ===== NETZWERK-TOPOLOGIE (Hintergrund-Ebene) ===== -->
+
+  <!-- PROFINET Hauptlinie (horizontal) -->
+  <line x1="80" y1="500" x2="1120" y2="500" stroke="url(#glowLine)" stroke-width="2" opacity="0.6"/>
+  <line x1="80" y1="500" x2="1120" y2="500" stroke="#209d9d" stroke-width="1" opacity="0.3" stroke-dasharray="8,4"/>
+
+  <!-- Vertikale Verbindungen zu Geräten -->
+  <line x1="200" y1="420" x2="200" y2="500" stroke="#209d9d" stroke-width="1.5" opacity="0.5" stroke-dasharray="4,3"/>
+  <line x1="420" y1="390" x2="420" y2="500" stroke="#209d9d" stroke-width="1.5" opacity="0.5" stroke-dasharray="4,3"/>
+  <line x1="600" y1="370" x2="600" y2="500" stroke="#1976d2" stroke-width="2" opacity="0.6" stroke-dasharray="4,3"/>
+  <line x1="800" y1="390" x2="800" y2="500" stroke="#209d9d" stroke-width="1.5" opacity="0.5" stroke-dasharray="4,3"/>
+  <line x1="990" y1="420" x2="990" y2="500" stroke="#209d9d" stroke-width="1.5" opacity="0.5" stroke-dasharray="4,3"/>
+
+  <!-- Netzwerk-Knoten -->
+  <circle cx="200" cy="500" r="5" fill="#209d9d" opacity="0.8" filter="url(#glow)"/>
+  <circle cx="420" cy="500" r="5" fill="#209d9d" opacity="0.8" filter="url(#glow)"/>
+  <circle cx="600" cy="500" r="6" fill="#42a5f5" opacity="0.9" filter="url(#glow)"/>
+  <circle cx="800" cy="500" r="5" fill="#209d9d" opacity="0.8" filter="url(#glow)"/>
+  <circle cx="990" cy="500" r="5" fill="#209d9d" opacity="0.8" filter="url(#glow)"/>
+
+  <!-- PROFINET Label -->
+  <text x="600" y="525" font-size="10" fill="#209d9d" text-anchor="middle" opacity="0.7" letter-spacing="3">P R O F I N E T</text>
+
+  <!-- ===== SPS-RACK (Siemens S7 / links-mitte) ===== -->
+  <!-- Hutschiene -->
+  <rect x="55" y="200" width="490" height="200" rx="10" fill="url(#panelGrad)" stroke="#1e3a5a" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="55" y="200" width="490" height="6" rx="3" fill="#1976d2" opacity="0.6"/>
+  <rect x="55" y="390" width="490" height="6" rx="3" fill="#1976d2" opacity="0.3"/>
+
+  <!-- Hutschiene-Schiene -->
+  <rect x="65" y="380" width="470" height="10" rx="3" fill="#263238" stroke="#37474f" stroke-width="1"/>
+  <rect x="65" y="383" width="470" height="4" rx="2" fill="#455a64" opacity="0.5"/>
+
+  <!-- Rack-Label -->
+  <text x="300" y="220" font-size="11" fill="#42a5f5" text-anchor="middle" letter-spacing="2" opacity="0.8">SIEMENS S7-1500 · PROFINET STEUERUNGSSYSTEM</text>
+
+  <!-- === CPU-Modul (Mitte des Racks) === -->
+  <rect x="200" y="228" width="80" height="148" rx="5" fill="url(#cpuGrad)" stroke="#1976d2" stroke-width="2" filter="url(#shadow)"/>
+  <!-- CPU Gehäuse-Detail -->
+  <rect x="204" y="232" width="72" height="90" rx="3" fill="#0d1e35" stroke="#1565c0" stroke-width="1"/>
+  <!-- CPU Mini-Display -->
+  <rect x="208" y="236" width="64" height="40" rx="2" fill="#001428" stroke="#1976d2" stroke-width="1"/>
+  <text x="240" y="252" font-size="7" fill="#42a5f5" text-anchor="middle" font-weight="bold">CPU 1516-3</text>
+  <text x="240" y="263" font-size="6" fill="#0d6efd" text-anchor="middle">PN/DP</text>
+  <!-- Status-LEDs auf CPU -->
+  <circle cx="212" cy="282" r="4" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="222" cy="282" r="4" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="232" cy="282" r="4" fill="#ff9800" filter="url(#glow)"/>
+  <circle cx="242" cy="282" r="4" fill="#f44336" opacity="0.4"/>
+  <!-- LED Labels -->
+  <text x="212" y="293" font-size="5" fill="#78909c" text-anchor="middle">RUN</text>
+  <text x="222" y="293" font-size="5" fill="#78909c" text-anchor="middle">DC</text>
+  <text x="232" y="293" font-size="5" fill="#78909c" text-anchor="middle">ERR</text>
+  <text x="242" y="293" font-size="5" fill="#78909c" text-anchor="middle">MAINT</text>
+  <!-- RJ45-Stecker unten -->
+  <rect x="208" y="302" width="64" height="20" rx="2" fill="#1a2a3a"/>
+  <rect x="212" y="305" width="18" height="12" rx="1" fill="#0d1e35" stroke="#1976d2" stroke-width="0.8"/>
+  <rect x="234" y="305" width="18" height="12" rx="1" fill="#0d1e35" stroke="#209d9d" stroke-width="0.8"/>
+  <rect x="256" y="305" width="12" height="12" rx="1" fill="#0d1e35" stroke="#37474f" stroke-width="0.8"/>
+  <!-- Frontbeschriftung -->
+  <rect x="204" y="332" width="72" height="30" rx="3" fill="#152030"/>
+  <text x="240" y="344" font-size="6" fill="#546e7a" text-anchor="middle">SIMATIC</text>
+  <text x="240" y="356" font-size="8" fill="#1976d2" text-anchor="middle" font-weight="bold">S7-1500</text>
+  <!-- Steckerleiste unten -->
+  <rect x="210" y="366" width="60" height="8" rx="2" fill="#263238" stroke="#37474f" stroke-width="1"/>
+  <rect x="214" y="368" width="6" height="4" rx="1" fill="#1976d2" opacity="0.6"/>
+  <rect x="222" y="368" width="6" height="4" rx="1" fill="#1976d2" opacity="0.6"/>
+  <rect x="230" y="368" width="6" height="4" rx="1" fill="#209d9d" opacity="0.6"/>
+  <rect x="238" y="368" width="6" height="4" rx="1" fill="#209d9d" opacity="0.6"/>
+  <rect x="246" y="368" width="6" height="4" rx="1" fill="#1976d2" opacity="0.6"/>
+  <rect x="254" y="368" width="6" height="4" rx="1" fill="#1976d2" opacity="0.6"/>
+  <rect x="262" y="368" width="4" height="4" rx="1" fill="#37474f"/>
+
+  <!-- === Digitales Eingangs-Modul (DI) links von CPU === -->
+  <rect x="140" y="228" width="56" height="148" rx="5" fill="url(#moduleGrad)" stroke="#1a3a5a" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="144" y="232" width="48" height="15" rx="2" fill="#1565c0" opacity="0.6"/>
+  <text x="168" y="243" font-size="7" fill="#90caf9" text-anchor="middle" font-weight="bold">DI 32×24V</text>
+  <!-- Kanal-LEDs -->
+  <circle cx="150" cy="260" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="160" cy="260" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="170" cy="260" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="180" cy="260" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="150" cy="270" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="160" cy="270" r="3" fill="#ff9800" filter="url(#glow)"/>
+  <circle cx="170" cy="270" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="180" cy="270" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="150" cy="280" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="160" cy="280" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="170" cy="280" r="3" fill="#f44336" opacity="0.5"/>
+  <circle cx="180" cy="280" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="150" cy="290" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="160" cy="290" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="170" cy="290" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="180" cy="290" r="3" fill="#ff9800" filter="url(#glow)"/>
+  <!-- Klemmenbereich unten -->
+  <rect x="144" y="340" width="48" height="30" rx="2" fill="#0f1e35"/>
+  <line x1="148" y1="345" x2="148" y2="368" stroke="#37474f" stroke-width="1"/>
+  <line x1="156" y1="345" x2="156" y2="368" stroke="#37474f" stroke-width="1"/>
+  <line x1="164" y1="345" x2="164" y2="368" stroke="#37474f" stroke-width="1"/>
+  <line x1="172" y1="345" x2="172" y2="368" stroke="#37474f" stroke-width="1"/>
+  <line x1="180" y1="345" x2="180" y2="368" stroke="#37474f" stroke-width="1"/>
+  <text x="168" y="382" font-size="6" fill="#546e7a" text-anchor="middle">DI</text>
+
+  <!-- === DO Modul === -->
+  <rect x="80" y="228" width="56" height="148" rx="5" fill="url(#moduleGrad)" stroke="#1a3a5a" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="84" y="232" width="48" height="15" rx="2" fill="#00695c" opacity="0.7"/>
+  <text x="108" y="243" font-size="7" fill="#80cbc4" text-anchor="middle" font-weight="bold">DO 32×24V</text>
+  <circle cx="90" cy="260" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="100" cy="260" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="110" cy="260" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="120" cy="260" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="90" cy="270" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="100" cy="270" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="110" cy="270" r="3" fill="#ff9800" filter="url(#glow)"/>
+  <circle cx="120" cy="270" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="90" cy="280" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="100" cy="280" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="110" cy="280" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="120" cy="280" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <rect x="84" y="340" width="48" height="30" rx="2" fill="#0f1e35"/>
+  <line x1="88" y1="345" x2="88" y2="368" stroke="#37474f" stroke-width="1"/>
+  <line x1="96" y1="345" x2="96" y2="368" stroke="#37474f" stroke-width="1"/>
+  <line x1="104" y1="345" x2="104" y2="368" stroke="#37474f" stroke-width="1"/>
+  <line x1="112" y1="345" x2="112" y2="368" stroke="#37474f" stroke-width="1"/>
+  <line x1="120" y1="345" x2="120" y2="368" stroke="#37474f" stroke-width="1"/>
+  <text x="108" y="382" font-size="6" fill="#546e7a" text-anchor="middle">DO</text>
+
+  <!-- === Analog-Modul (AI/AO) === -->
+  <rect x="284" y="228" width="56" height="148" rx="5" fill="url(#moduleGrad)" stroke="#1a3a5a" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="288" y="232" width="48" height="15" rx="2" fill="#4a148c" opacity="0.7"/>
+  <text x="312" y="243" font-size="7" fill="#ce93d8" text-anchor="middle" font-weight="bold">AI 8×U/I</text>
+  <!-- Analog-Anzeige -->
+  <rect x="290" y="255" width="44" height="60" rx="3" fill="#0d1525" stroke="#4a148c" stroke-width="1"/>
+  <!-- Balken-Diagramm -->
+  <rect x="295" y="305" width="6" height="5"  rx="1" fill="url(#barGreen)"/>
+  <rect x="295" y="295" width="6" height="15" rx="1" fill="url(#barGreen)"/>
+  <rect x="303" y="285" width="6" height="25" rx="1" fill="url(#barBlue)"/>
+  <rect x="311" y="290" width="6" height="20" rx="1" fill="url(#barGreen)"/>
+  <rect x="319" y="270" width="6" height="40" rx="1" fill="url(#barOrange)"/>
+  <rect x="327" y="280" width="4" height="30" rx="1" fill="url(#barGreen)"/>
+  <text x="312" y="382" font-size="6" fill="#546e7a" text-anchor="middle">AI</text>
+
+  <!-- === Kommunikations-Modul (CM) === -->
+  <rect x="344" y="228" width="56" height="148" rx="5" fill="url(#moduleGrad)" stroke="#1a3a5a" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="348" y="232" width="48" height="15" rx="2" fill="#b71c1c" opacity="0.6"/>
+  <text x="372" y="243" font-size="7" fill="#ef9a9a" text-anchor="middle" font-weight="bold">CM PtP</text>
+  <!-- Serielle Verbindung Symbol -->
+  <rect x="352" y="258" width="36" height="22" rx="3" fill="#0d1525" stroke="#b71c1c" stroke-width="1"/>
+  <line x1="356" y1="264" x2="384" y2="264" stroke="#ef9a9a" stroke-width="1.5" opacity="0.8"/>
+  <line x1="356" y1="270" x2="384" y2="270" stroke="#ef9a9a" stroke-width="1" opacity="0.5"/>
+  <line x1="356" y1="276" x2="384" y2="276" stroke="#ef9a9a" stroke-width="1" opacity="0.3"/>
+  <circle cx="356" cy="264" r="2" fill="#f44336" opacity="0.8"/>
+  <circle cx="384" cy="264" r="2" fill="#f44336" opacity="0.8"/>
+  <!-- RS485 Label -->
+  <text x="372" y="295" font-size="6" fill="#ef9a9a" text-anchor="middle">RS-485</text>
+  <text x="372" y="305" font-size="5.5" fill="#78909c" text-anchor="middle">PROFIBUS DP</text>
+  <text x="372" y="382" font-size="6" fill="#546e7a" text-anchor="middle">CM</text>
+
+  <!-- === Power-Modul (PM) === -->
+  <rect x="404" y="228" width="56" height="148" rx="5" fill="url(#moduleGrad)" stroke="#1a3a5a" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="408" y="232" width="48" height="15" rx="2" fill="#e65100" opacity="0.6"/>
+  <text x="432" y="243" font-size="7" fill="#ffcc80" text-anchor="middle" font-weight="bold">PM 70W</text>
+  <!-- Spannung Symbol -->
+  <text x="432" y="275" font-size="18" fill="#ff9800" text-anchor="middle" font-weight="bold" opacity="0.9">24V</text>
+  <text x="432" y="290" font-size="8" fill="#ffa726" text-anchor="middle">DC</text>
+  <!-- LED Statusanzeige -->
+  <circle cx="420" cy="305" r="5" fill="#4caf50" filter="url(#glow)"/>
+  <text x="432" y="309" font-size="7" fill="#78909c">PWR OK</text>
+  <text x="432" y="382" font-size="6" fill="#546e7a" text-anchor="middle">PM</text>
+
+  <!-- === Interface-Modul (IM) === -->
+  <rect x="464" y="228" width="72" height="148" rx="5" fill="url(#cpuGrad)" stroke="#209d9d" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="468" y="232" width="64" height="15" rx="2" fill="#004d40" opacity="0.8"/>
+  <text x="500" y="243" font-size="7" fill="#80cbc4" text-anchor="middle" font-weight="bold">IM 155-6 PN</text>
+  <!-- Ethernet RJ45 -->
+  <rect x="472" y="258" width="20" height="14" rx="2" fill="#0d1e35" stroke="#209d9d" stroke-width="1"/>
+  <text x="472" y="282" font-size="6" fill="#80cbc4">PN 1</text>
+  <rect x="496" y="258" width="20" height="14" rx="2" fill="#0d1e35" stroke="#209d9d" stroke-width="1"/>
+  <text x="496" y="282" font-size="6" fill="#80cbc4">PN 2</text>
+  <!-- Aktiv-LED -->
+  <circle cx="474" cy="296" r="3" fill="#209d9d" filter="url(#glow)"/>
+  <circle cx="484" cy="296" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <circle cx="494" cy="296" r="3" fill="#209d9d" filter="url(#glow)"/>
+  <text x="500" y="382" font-size="6" fill="#546e7a" text-anchor="middle">IM</text>
+
+  <!-- ===== TIA PORTAL HMI-SCREEN (rechts, groß) ===== -->
+  <!-- Monitor-Gehäuse -->
+  <rect x="620" y="80" width="520" height="350" rx="12" fill="#0f1e30" stroke="#1976d2" stroke-width="2.5" filter="url(#shadow)"/>
+  <rect x="623" y="83" width="514" height="344" rx="10" fill="#0a1525"/>
+  <!-- Bildschirm-Bezel -->
+  <rect x="630" y="90" width="500" height="330" rx="8" fill="url(#hmiGrad)" stroke="#1a3050" stroke-width="1"/>
+
+  <!-- TIA Portal Titelleiste -->
+  <rect x="630" y="90" width="500" height="28" rx="8" fill="#1565c0"/>
+  <rect x="630" y="104" width="500" height="14" fill="#1565c0"/>
+  <!-- Fenster-Buttons -->
+  <circle cx="1112" cy="104" r="5" fill="#f44336" opacity="0.8"/>
+  <circle cx="1100" cy="104" r="5" fill="#ff9800" opacity="0.8"/>
+  <circle cx="1088" cy="104" r="5" fill="#4caf50" opacity="0.8"/>
+  <!-- TIA Portal Titel -->
+  <text x="760" y="108" font-size="10" fill="white" text-anchor="middle" font-weight="bold">TIA Portal V18 — Hauptprogramm [OB1] — Online</text>
+  <!-- Siemens Logo -->
+  <text x="645" y="108" font-size="9" fill="#90caf9" font-weight="bold">SIEMENS</text>
+
+  <!-- Menüleiste -->
+  <rect x="630" y="118" width="500" height="20" fill="#0d2040"/>
+  <text x="648" y="131" font-size="8" fill="#90caf9">Datei</text>
+  <text x="676" y="131" font-size="8" fill="#90caf9">Bearbeiten</text>
+  <text x="720" y="131" font-size="8" fill="#90caf9">Ansicht</text>
+  <text x="752" y="131" font-size="8" fill="#90caf9">Online</text>
+  <text x="780" y="131" font-size="8" fill="#209d9d" font-weight="bold">Diagnose</text>
+  <text x="813" y="131" font-size="8" fill="#90caf9">Extras</text>
+
+  <!-- Linkes Panel (Projekt-Navigation) -->
+  <rect x="630" y="138" width="120" height="282" fill="#0d1e35" stroke="#1a3050" stroke-width="1"/>
+  <rect x="630" y="138" width="120" height="16" fill="#152540"/>
+  <text x="690" y="149" font-size="7" fill="#42a5f5" text-anchor="middle" font-weight="bold">PROJEKTNAVIGATION</text>
+  <!-- Baumstruktur -->
+  <text x="638" y="164" font-size="7" fill="#64b5f6">▼ PLC_1 [CPU 1516]</text>
+  <text x="644" y="175" font-size="7" fill="#4caf50">  ▶ Programm</text>
+  <text x="644" y="185" font-size="7" fill="#42a5f5">  ▼ OB1 Main</text>
+  <text x="652" y="195" font-size="7" fill="#90caf9">    FC1 Antrieb</text>
+  <text x="652" y="205" font-size="7" fill="#90caf9">    FC2 Sensorik</text>
+  <text x="652" y="215" font-size="7" fill="#90caf9">    FC3 Rezept</text>
+  <text x="652" y="225" font-size="7" fill="#ff9800">    FB1 PID-Regler</text>
+  <text x="644" y="235" font-size="7" fill="#42a5f5">  ▼ HMI_1 [TP1500]</text>
+  <text x="652" y="245" font-size="7" fill="#90caf9">    Übersicht</text>
+  <text x="652" y="255" font-size="7" fill="#90caf9">    Diagnose</text>
+  <text x="652" y="265" font-size="7" fill="#90caf9">    Alarmliste</text>
+  <text x="644" y="275" font-size="7" fill="#546e7a">  ▶ Geräte &amp; Netze</text>
+  <text x="644" y="285" font-size="7" fill="#546e7a">  ▶ Datenbaustein</text>
+  <text x="644" y="295" font-size="7" fill="#546e7a">  ▶ Variablentabelle</text>
+  <text x="644" y="305" font-size="7" fill="#546e7a">  ▶ Watchdog</text>
+  <text x="644" y="315" font-size="7" fill="#4caf50">  ● ONLINE</text>
+
+  <!-- Hauptarbeitsbereich — Ladder-Diagramm / KOP -->
+  <rect x="750" y="138" width="380" height="200" fill="#071428" stroke="#1a3050" stroke-width="1"/>
+  <!-- KOP-Netzwerk Titel -->
+  <rect x="750" y="138" width="380" height="16" fill="#0d2040"/>
+  <text x="940" y="149" font-size="8" fill="#42a5f5" text-anchor="middle">Netzwerk 1: Antriebssteuerung Motor_A</text>
+  <!-- Stromschiene links -->
+  <line x1="768" y1="158" x2="768" y2="318" stroke="#42a5f5" stroke-width="3" opacity="0.7"/>
+  <!-- Stromschiene rechts -->
+  <line x1="1118" y1="158" x2="1118" y2="318" stroke="#42a5f5" stroke-width="3" opacity="0.7"/>
+  <!-- Netzwerk 1 — Reihe 1 -->
+  <line x1="768" y1="180" x2="820" y2="180" stroke="#42a5f5" stroke-width="1.5" opacity="0.8"/>
+  <!-- Kontakt Schließer (Sensor OK) -->
+  <line x1="820" y1="170" x2="820" y2="190" stroke="#4caf50" stroke-width="2"/>
+  <line x1="840" y1="170" x2="840" y2="190" stroke="#4caf50" stroke-width="2"/>
+  <line x1="820" y1="180" x2="830" y2="180" stroke="#4caf50" stroke-width="1.5"/>
+  <line x1="830" y1="180" x2="840" y2="180" stroke="#4caf50" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <text x="830" y="166" font-size="6" fill="#80cbc4" text-anchor="middle">Sensor_OK</text>
+  <text x="830" y="198" font-size="5.5" fill="#4caf50" text-anchor="middle">%I0.0</text>
+  <line x1="840" y1="180" x2="890" y2="180" stroke="#42a5f5" stroke-width="1.5" opacity="0.8"/>
+  <!-- Kontakt Schließer (Freigabe) -->
+  <line x1="890" y1="170" x2="890" y2="190" stroke="#4caf50" stroke-width="2"/>
+  <line x1="910" y1="170" x2="910" y2="190" stroke="#4caf50" stroke-width="2"/>
+  <line x1="890" y1="180" x2="900" y2="180" stroke="#4caf50" stroke-width="1.5"/>
+  <line x1="900" y1="180" x2="910" y2="180" stroke="#4caf50" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <text x="900" y="166" font-size="6" fill="#80cbc4" text-anchor="middle">Freigabe</text>
+  <text x="900" y="198" font-size="5.5" fill="#4caf50" text-anchor="middle">%M0.1</text>
+  <line x1="910" y1="180" x2="1040" y2="180" stroke="#42a5f5" stroke-width="1.5" opacity="0.8"/>
+  <!-- Spule (Motor AN) -->
+  <ellipse cx="1060" cy="180" rx="14" ry="14" fill="none" stroke="#ff9800" stroke-width="2"/>
+  <text x="1060" y="184" font-size="7" fill="#ff9800" text-anchor="middle">( )</text>
+  <text x="1060" y="166" font-size="6" fill="#ffcc80" text-anchor="middle">Motor_AN</text>
+  <text x="1060" y="200" font-size="5.5" fill="#ff9800" text-anchor="middle">%Q0.0</text>
+  <line x1="1074" y1="180" x2="1118" y2="180" stroke="#42a5f5" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Netzwerk 2 — Reihe 2 -->
+  <line x1="768" y1="228" x2="820" y2="228" stroke="#42a5f5" stroke-width="1.5" opacity="0.8"/>
+  <!-- NOT-Kontakt (Öffner) -->
+  <line x1="820" y1="218" x2="820" y2="238" stroke="#f44336" stroke-width="2"/>
+  <line x1="840" y1="218" x2="840" y2="238" stroke="#f44336" stroke-width="2"/>
+  <line x1="822" y1="216" x2="838" y2="220" stroke="#f44336" stroke-width="1.5"/>
+  <line x1="830" y1="228" x2="840" y2="228" stroke="#f44336" stroke-width="1.5"/>
+  <text x="830" y="214" font-size="6" fill="#ef9a9a" text-anchor="middle">NOT_Halt</text>
+  <text x="830" y="246" font-size="5.5" fill="#f44336" text-anchor="middle">%I0.3</text>
+  <line x1="840" y1="228" x2="1040" y2="228" stroke="#42a5f5" stroke-width="1.5" opacity="0.8"/>
+  <!-- Timer-Baustein -->
+  <rect x="960" y="210" width="60" height="36" rx="3" fill="#1a2a40" stroke="#1976d2" stroke-width="1.5"/>
+  <text x="990" y="222" font-size="6" fill="#42a5f5" text-anchor="middle" font-weight="bold">TON</text>
+  <text x="990" y="231" font-size="5.5" fill="#90caf9" text-anchor="middle">Timer_1</text>
+  <text x="968" y="240" font-size="5" fill="#64b5f6">IN    PT=T#2s</text>
+  <line x1="1020" y1="228" x2="1118" y2="228" stroke="#42a5f5" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Netzwerk 3 — PID-Block -->
+  <line x1="768" y1="276" x2="820" y2="276" stroke="#42a5f5" stroke-width="1.5" opacity="0.8"/>
+  <rect x="820" y="258" width="80" height="50" rx="3" fill="#1a1a3a" stroke="#9c27b0" stroke-width="1.5"/>
+  <text x="860" y="270" font-size="7" fill="#ce93d8" text-anchor="middle" font-weight="bold">PID_Compact</text>
+  <text x="824" y="280" font-size="5.5" fill="#90caf9">SP ─</text>
+  <text x="824" y="290" font-size="5.5" fill="#90caf9">PV ─</text>
+  <text x="824" y="300" font-size="5.5" fill="#90caf9">MAN─</text>
+  <text x="882" y="285" font-size="5.5" fill="#ff9800">─ OUT</text>
+  <line x1="900" y1="276" x2="1118" y2="276" stroke="#42a5f5" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Unteres Panel — Diagnose/Variablen-Watch -->
+  <rect x="750" y="338" width="380" height="82" fill="#060f1e" stroke="#1a3050" stroke-width="1"/>
+  <rect x="750" y="338" width="380" height="16" fill="#0d2040"/>
+  <text x="940" y="349" font-size="7" fill="#209d9d" text-anchor="middle" font-weight="bold">ONLINE DIAGNOSE — Variablen Watch</text>
+  <!-- Tabellen-Header -->
+  <rect x="752" y="354" width="376" height="12" fill="#0a1a30"/>
+  <text x="795" y="363" font-size="6" fill="#64b5f6" font-weight="bold">Name</text>
+  <text x="905" y="363" font-size="6" fill="#64b5f6" font-weight="bold">Adresse</text>
+  <text x="990" y="363" font-size="6" fill="#64b5f6" font-weight="bold">Typ</text>
+  <text x="1050" y="363" font-size="6" fill="#64b5f6" font-weight="bold">Istwert</text>
+  <text x="1100" y="363" font-size="6" fill="#64b5f6" font-weight="bold">Status</text>
+  <!-- Zeile 1 -->
+  <rect x="752" y="366" width="376" height="11" fill="#071525"/>
+  <text x="760" y="374" font-size="6" fill="#4caf50">Motor_AN</text>
+  <text x="900" y="374" font-size="6" fill="#90caf9">%Q0.0</text>
+  <text x="990" y="374" font-size="6" fill="#90caf9">Bool</text>
+  <text x="1050" y="374" font-size="6" fill="#4caf50" font-weight="bold">TRUE</text>
+  <circle cx="1115" cy="371" r="3" fill="#4caf50" filter="url(#glow)"/>
+  <!-- Zeile 2 -->
+  <rect x="752" y="377" width="376" height="11" fill="#060f1c"/>
+  <text x="760" y="385" font-size="6" fill="#90caf9">Drehzahl_Ist</text>
+  <text x="900" y="385" font-size="6" fill="#90caf9">%MW10</text>
+  <text x="990" y="385" font-size="6" fill="#90caf9">Int</text>
+  <text x="1050" y="385" font-size="6" fill="#ff9800" font-weight="bold">1450 rpm</text>
+  <circle cx="1115" cy="382" r="3" fill="#ff9800" filter="url(#glow)"/>
+  <!-- Zeile 3 -->
+  <rect x="752" y="388" width="376" height="11" fill="#071525"/>
+  <text x="760" y="396" font-size="6" fill="#90caf9">Temp_PID_Out</text>
+  <text x="900" y="396" font-size="6" fill="#90caf9">%MD20</text>
+  <text x="990" y="396" font-size="6" fill="#90caf9">Real</text>
+  <text x="1050" y="396" font-size="6" fill="#42a5f5" font-weight="bold">72.4 %</text>
+  <circle cx="1115" cy="393" r="3" fill="#42a5f5" filter="url(#glow)"/>
+  <!-- Zeile 4 -->
+  <rect x="752" y="399" width="376" height="11" fill="#060f1c"/>
+  <text x="760" y="407" font-size="6" fill="#f44336">NOT_Halt</text>
+  <text x="900" y="407" font-size="6" fill="#90caf9">%I0.3</text>
+  <text x="990" y="407" font-size="6" fill="#90caf9">Bool</text>
+  <text x="1050" y="407" font-size="6" fill="#f44336" font-weight="bold">FALSE</text>
+  <circle cx="1115" cy="404" r="3" fill="#f44336" opacity="0.5"/>
+
+  <!-- Monitor-Fuß -->
+  <rect x="840" y="430" width="80" height="12" rx="3" fill="#0d1e30" stroke="#1a3050" stroke-width="1"/>
+  <rect x="860" y="442" width="40" height="8" rx="2" fill="#0a1525" stroke="#1a3050" stroke-width="1"/>
+
+  <!-- ===== HMI TOUCHPANEL (klein, vorne rechts) ===== -->
+  <rect x="630" y="455" width="200" height="130" rx="10" fill="#0f1e30" stroke="#209d9d" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="636" y="461" width="188" height="118" rx="7" fill="#071828"/>
+  <!-- HMI Screen -->
+  <rect x="640" y="465" width="180" height="108" rx="5" fill="#04101e" stroke="#1a3050" stroke-width="1"/>
+  <!-- HMI Titelleiste -->
+  <rect x="640" y="465" width="180" height="16" rx="5" fill="url(#tealGrad)"/>
+  <rect x="640" y="473" width="180" height="8" fill="url(#tealGrad)"/>
+  <text x="730" y="476" font-size="7" fill="white" text-anchor="middle" font-weight="bold">ANLAGE ÜBERSICHT</text>
+  <!-- Status-Kacheln -->
+  <rect x="644" y="485" width="50" height="30" rx="3" fill="#0d2a0d" stroke="#2e7d32" stroke-width="1"/>
+  <text x="669" y="497" font-size="7" fill="#4caf50" text-anchor="middle" font-weight="bold">MOTOR</text>
+  <text x="669" y="508" font-size="8" fill="#81c784" text-anchor="middle">AN</text>
+
+  <rect x="698" y="485" width="50" height="30" rx="3" fill="#1a1a00" stroke="#f57f17" stroke-width="1"/>
+  <text x="723" y="497" font-size="7" fill="#ff9800" text-anchor="middle" font-weight="bold">TEMP</text>
+  <text x="723" y="508" font-size="8" fill="#ffcc02" text-anchor="middle">185°C</text>
+
+  <rect x="752" y="485" width="64" height="30" rx="3" fill="#001830" stroke="#1976d2" stroke-width="1"/>
+  <text x="784" y="497" font-size="7" fill="#42a5f5" text-anchor="middle" font-weight="bold">DREHZAHL</text>
+  <text x="784" y="508" font-size="8" fill="#64b5f6" text-anchor="middle">1450 rpm</text>
+
+  <!-- Prozessbalken -->
+  <text x="648" y="526" font-size="6" fill="#78909c">Auslastung:</text>
+  <rect x="644" y="530" width="172" height="8" rx="4" fill="#0d1e35" stroke="#1a3050" stroke-width="1"/>
+  <rect x="644" y="530" width="124" height="8" rx="4" fill="url(#barGreen)" opacity="0.8"/>
+  <text x="732" y="536" font-size="6" fill="white" text-anchor="middle">72%</text>
+
+  <!-- Alarm Zeile -->
+  <rect x="644" y="543" width="172" height="14" rx="3" fill="#1a0d00" stroke="#e65100" stroke-width="1" opacity="0.7"/>
+  <text x="648" y="553" font-size="6" fill="#ff9800">⚠ Wartung fällig in 120h</text>
+
+  <!-- HMI Label -->
+  <text x="730" y="580" font-size="8" fill="#209d9d" text-anchor="middle" font-weight="bold">SIMATIC HMI TP1500</text>
+
+  <!-- ===== INFO-KARTEN (unten mitte) ===== -->
+  <!-- Karte 1: SPS-Typ -->
+  <rect x="855" y="455" width="135" height="60" rx="8" fill="#0d1e35" stroke="#1976d2" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="855" y="455" width="6" height="60" rx="4" fill="#1976d2"/>
+  <text x="871" y="472" font-size="10" font-weight="bold" fill="#e3f2fd">S7-1500 CPU</text>
+  <text x="871" y="486" font-size="16" font-weight="bold" fill="#42a5f5">1516-3 PN</text>
+  <text x="871" y="500" font-size="8" fill="#546e7a">IEC 61131-3 konform</text>
+
+  <!-- Karte 2: Zykluszeit -->
+  <rect x="1000" y="455" width="135" height="60" rx="8" fill="#0d1e35" stroke="#209d9d" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="1000" y="455" width="6" height="60" rx="4" fill="#209d9d"/>
+  <text x="1016" y="472" font-size="10" font-weight="bold" fill="#e0f7fa">Zykluszeit</text>
+  <text x="1016" y="486" font-size="16" font-weight="bold" fill="#209d9d">0.5 ms</text>
+  <text x="1016" y="500" font-size="8" fill="#546e7a">Echtzeit-Steuerung</text>
+
+  <!-- Karte 3: PROFINET -->
+  <rect x="855" y="525" width="135" height="60" rx="8" fill="#0d1e35" stroke="#4caf50" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="855" y="525" width="6" height="60" rx="4" fill="#2e7d32"/>
+  <text x="871" y="542" font-size="10" font-weight="bold" fill="#e8f5e9">Netzwerk</text>
+  <text x="871" y="556" font-size="16" font-weight="bold" fill="#4caf50">PROFINET</text>
+  <text x="871" y="570" font-size="8" fill="#546e7a">IRT · 100 Mbit/s</text>
+
+  <!-- Karte 4: TIA Portal -->
+  <rect x="1000" y="525" width="135" height="60" rx="8" fill="#0d1e35" stroke="#ff9800" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="1000" y="525" width="6" height="60" rx="4" fill="#e65100"/>
+  <text x="1016" y="542" font-size="10" font-weight="bold" fill="#fff3e0">Engineering</text>
+  <text x="1016" y="556" font-size="16" font-weight="bold" fill="#ff9800">TIA V18</text>
+  <text x="1016" y="570" font-size="8" fill="#546e7a">KOP · FUP · SCL · AWL</text>
+
+  <!-- ===== DATENPAKETE (animierte Punkte auf Netzwerklinie) ===== -->
+  <circle cx="280" cy="500" r="3" fill="#209d9d" opacity="0.9" filter="url(#glow)"/>
+  <circle cx="500" cy="500" r="3" fill="#42a5f5" opacity="0.9" filter="url(#glow)"/>
+  <circle cx="700" cy="500" r="3" fill="#209d9d" opacity="0.9" filter="url(#glow)"/>
+  <circle cx="900" cy="500" r="3" fill="#42a5f5" opacity="0.9" filter="url(#glow)"/>
+
+  <!-- ===== LABEL NETZWERK-GERÄTE (unterhalb PROFINET) ===== -->
+  <text x="200" y="515" font-size="7" fill="#546e7a" text-anchor="middle">ET200SP</text>
+  <text x="420" y="515" font-size="7" fill="#546e7a" text-anchor="middle">Antrieb VFD</text>
+  <text x="600" y="515" font-size="7" fill="#42a5f5" text-anchor="middle" font-weight="bold">CPU 1516</text>
+  <text x="800" y="515" font-size="7" fill="#546e7a" text-anchor="middle">I/O Remote</text>
+  <text x="990" y="515" font-size="7" fill="#546e7a" text-anchor="middle">HMI TP1500</text>
+
+  <!-- ===== DEKORATIVE ELEMENTS ===== -->
+  <!-- Glühende Ecken / Rahmen-Akzente -->
+  <line x1="0" y1="0" x2="100" y2="0" stroke="#1976d2" stroke-width="2" opacity="0.5"/>
+  <line x1="0" y1="0" x2="0" y2="100" stroke="#1976d2" stroke-width="2" opacity="0.5"/>
+  <line x1="1200" y1="0" x2="1100" y2="0" stroke="#209d9d" stroke-width="2" opacity="0.5"/>
+  <line x1="1200" y1="0" x2="1200" y2="100" stroke="#209d9d" stroke-width="2" opacity="0.5"/>
+  <line x1="0" y1="620" x2="100" y2="620" stroke="#1976d2" stroke-width="2" opacity="0.5"/>
+  <line x1="0" y1="620" x2="0" y2="520" stroke="#1976d2" stroke-width="2" opacity="0.5"/>
+  <line x1="1200" y1="620" x2="1100" y2="620" stroke="#209d9d" stroke-width="2" opacity="0.5"/>
+  <line x1="1200" y1="620" x2="1200" y2="520" stroke="#209d9d" stroke-width="2" opacity="0.5"/>
+
+  <!-- Scan-Linie Effekt -->
+  <rect width="1200" height="620" fill="url(#scanLine)" opacity="0.03"/>
+  <defs>
+    <linearGradient id="scanLine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:white;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:white;stop-opacity:0.02"/>
+      <stop offset="100%" style="stop-color:white;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- GeTMatic Watermark -->
+  <text x="600" y="598" font-size="9" fill="#1a3050" text-anchor="middle" letter-spacing="4">GeTMatic Automatisierungstechnik · Krefeld</text>
+</svg>
