@@ -10,6 +10,8 @@
 - **2026-06-22:** Eigene Unterseiten für alle 6 Einsatzbereiche umgesetzt (Plan: `plans/2026-06-22-einsatzbereiche-unterseiten.md`, Status: Implementiert). 5 Branchenseiten (`einsatzbereich-*.html`) + eigene Produktseite `docucontrol.html` mit prominentem Autarkie-Block (kein Eingriff in Maschine/Kundennetzwerk, Recherche-Basis: DocuPi-3000-Konzept aus `claude-workspace-docupi`). Jede Anlagen-Karte (Bild + Text) und der Hero-Slide-2-Button verlinken auf die jeweilige Unterseite. Neuer CSS-Abschnitt `EINSATZBEREICH-DETAIL` in `style.css`.
 - **2026-06-22, bestätigt behoben:** Hero-Slider-Bug war ein Re-Upload-Rückstand (alte Live-Dateien) — nach Upload der 6 slider-relevanten Dateien (`index.html`, `style.css`, `Systeme.svg`, `dokumentation.svg`, `medizin-sterilisation.svg`, `antriebstechnik.svg`) funktioniert der Slider live korrekt (auto + manuelle Pfeile).
 - **2026-06-22, bestätigt behoben:** Nach dem ersten Upload der neuen Unterseiten wiederholte sich der Seiteninhalt endlos nach unten. Ursache: 4 Dateien (`einsatzbereich-transport.html`, `-papier.html`, `-lebensmittel.html`, `-medizin.html`) wurden beim FTP-Upload **8-fach aneinandergehängt** (vermutlich Resume-Modus statt Überschreiben) — bestätigt per `curl`-Abgleich Dateigröße live vs. lokal. Nach Löschen + saubererem Re-Upload (ohne Resume) behoben. **Lerneffekt:** Bei künftigen Uploads auf 1blu/FileZilla nicht „Fortsetzen", sondern Überschreiben/normalen Upload verwenden, sonst droht erneute Duplizierung.
+- **2026-06-25:** Aufräumen `reference/Getmatic_website/` — 24 ungenutzte Alt-Assets gelöscht (~24 MB: alte GIFs/PNGs von 2019, Template-Reste in `images/` von 2012). Abgleich per Grep aller `*.html`+`style.css` gegen Dateibestand.
+- **2026-06-25:** DocuControl-Unterseite (`docucontrol.html`) um Abschnitt „DocuControl in der Praxis" erweitert — 3 Screenshots (Live-Monitor, Chargenübersicht, Dateiverwaltung, Quelle: `reference/Screen_DcoCuntrol/`) mit CSS-Browser-Mockup-Frame (Titelleiste, Schatten, abgerundete Ecken) statt roher Screenshot-Kanten. Neue CSS-Klassen `.einsatz-screens`/`.einsatz-screen`/`.screen-frame` in `style.css`. DE/EN übersetzt. **Noch hochzuladen:** `docucontrol.html`, `style.css`, `docucontrol-livemonitor.png`, `docucontrol-chargen.png`, `docucontrol-dateien.png`.
 
 ---
 
@@ -50,7 +52,8 @@ Aktuelle Arbeitsdateien — diese werden auf den Server hochgeladen:
   - `einsatzbereich-lebensmittel.html` — Lebensmittelindustrie
   - `einsatzbereich-getraenke.html` — Getränkeverpackung
   - `einsatzbereich-medizin.html` — Medizin & Sterilisation (verlinkt zusätzlich auf `docucontrol.html`)
-  - `docucontrol.html` — eigene Produktseite für DocuControl (statt Branchenkarte 06 „Dokumentation"), mit Autarkie-Vorteile-Block
+  - `docucontrol.html` — eigene Produktseite für DocuControl (statt Branchenkarte 06 „Dokumentation"), mit Autarkie-Vorteile-Block + Screenshot-Sektion (2026-06-25)
+  - `docucontrol-livemonitor.png`, `docucontrol-chargen.png`, `docucontrol-dateien.png` — Software-Screenshots für die Praxis-Sektion auf `docucontrol.html`
 
 ## Backup-Ordner
 
@@ -64,6 +67,7 @@ Aktuelle Arbeitsdateien — diese werden auf den Server hochgeladen:
 
 - [x] Re-Upload nach Hero-Slider-Umbau — erledigt und live bestätigt (2026-06-22)
 - [x] Re-Upload nach Einsatzbereiche-Unterseiten — erledigt und live bestätigt (2026-06-22), inkl. Behebung der 8-fachen Datei-Duplizierung bei 4 Unterseiten
+- [ ] Re-Upload nach DocuControl-Screenshot-Sektion (2026-06-25) — `docucontrol.html`, `style.css`, 3 PNGs
 - [ ] Verifizieren, ob `glander-led.de` dem User gehört → ggf. 301-Redirect auf `getmatic.de` einrichten (Canonical-Tag allein reicht u.U. nicht)
 - [ ] **`getmatic-website`-Skill erstellen** — Plan liegt vor: `plans/2026-06-02-website-creator-skills-aufbauen.md`
 - [ ] Fehlende Barlow-Font-Gewichte beschaffen (Condensed 400/600/700, Regular 300/500) für sauberes Rendering
