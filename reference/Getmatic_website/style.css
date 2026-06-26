@@ -994,6 +994,51 @@ body {
   height: auto;
 }
 
+/* TCP Live-Terminal */
+.tcp-screen {
+  grid-column: 1 / -1;
+  grid-template-columns: 1.5fr 1fr;
+}
+.tcp-screen .screen-frame {
+  overflow-x: auto;
+}
+.tcp-terminal {
+  background: #0e0e0e;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: clamp(6.5px, 0.68vw, 8px);
+  line-height: 1.55;
+  padding: 14px 16px 18px;
+  color: #00df70;
+  height: 310px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.tcp-pre {
+  margin: 0;
+  white-space: pre;
+  color: inherit;
+}
+.tcp-cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.1em;
+  background: #00df70;
+  vertical-align: text-bottom;
+  margin-left: 1px;
+  animation: tcpblink 1.1s step-end infinite;
+}
+@keyframes tcpblink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+@media (max-width: 767px) {
+  .tcp-screen,
+  .tcp-screen:nth-child(even) {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+}
+
 .screen-text h3 {
   font-family: var(--font-head);
   font-size: 1.2rem;
