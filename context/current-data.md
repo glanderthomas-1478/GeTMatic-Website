@@ -14,6 +14,7 @@
 - **2026-06-25:** DocuControl-Unterseite (`docucontrol.html`) um Abschnitt „DocuControl in der Praxis" erweitert — 3 Screenshots (Live-Monitor, Chargenübersicht, Dateiverwaltung, Quelle: `reference/Screen_DcoCuntrol/`) mit CSS-Browser-Mockup-Frame (Titelleiste, Schatten, abgerundete Ecken) statt roher Screenshot-Kanten. Neue CSS-Klassen `.einsatz-screens`/`.einsatz-screen`/`.screen-frame` in `style.css`. DE/EN übersetzt. Live bestätigt (2026-06-26).
 - **2026-06-26:** Live-Monitor-Screenshot durch animiertes TCP-Terminal ersetzt — grün auf schwarz, Monospace, Zeile für Zeile (620ms Takt), Rolling-Buffer (20 sichtbare Zeilen, ältere scrollen nach oben raus), Loop mit 4,5s Pause. Daten: echter Sterilisations-Chargenprotokoll (Autoklav, Steri-Nr. 12345). Neue CSS-Klassen `.tcp-screen`/`.tcp-terminal`/`.tcp-pre`/`.tcp-cursor`. Live bestätigt (2026-06-26).
 - **2026-06-26:** SEO-Optimierung aller 7 HTML-Seiten — `getmatic`/`GeTMatic` in alle Keywords + Descriptions eingetragen, `DocuControl` in `docucontrol.html` und `einsatzbereich-medizin.html` verstärkt. `og:image` in `index.html` von gelöschter `images/pic01.gif` auf `getmatic_logo.png` korrigiert. JSON-LD Schema um `logo` und `image` ergänzt. `apple-touch-icon` hinzugefügt. **Noch hochzuladen:** alle 7 HTML-Dateien (inkl. index.html).
+- **2026-07-02:** Ursache für „Google zeigt glander-led.de statt getmatic.de" gefunden: `glander-led.de` liegt im selben 1blu-Webspace (bestätigt per curl) — über HTTP liefert die Domain den vollen getmatic-Inhalt inkl. korrektem Canonical-Tag, über HTTPS dagegen die 1blu-Standard-Platzhalterseite (kein eigenes Zertifikat). Canonical-Tag allein reicht nicht, weil Google die Domain trotzdem crawlen/indexieren kann. **Fix:** `.htaccess` mit 301-Redirect (`glander-led.de` → `https://www.getmatic.de/`) angelegt in `reference/Getmatic_website/.htaccess`. **Noch offen:** Datei auf den Server hochladen (Pfad `www/getmatic/`) und zusätzlich im 1blu-Kundencenter prüfen, ob dort eine saubere Domain-Weiterleitung statt Alias auf denselben Webspace möglich ist.
 
 ---
 
@@ -70,7 +71,8 @@ Aktuelle Arbeitsdateien — diese werden auf den Server hochgeladen:
 - [x] Re-Upload nach Hero-Slider-Umbau — erledigt und live bestätigt (2026-06-22)
 - [x] Re-Upload nach Einsatzbereiche-Unterseiten — erledigt und live bestätigt (2026-06-22), inkl. Behebung der 8-fachen Datei-Duplizierung bei 4 Unterseiten
 - [x] Re-Upload nach DocuControl-Screenshot-Sektion (2026-06-25) — `docucontrol.html`, `style.css`, 3 PNGs — live bestätigt (2026-06-26)
-- [ ] Verifizieren, ob `glander-led.de` dem User gehört → ggf. 301-Redirect auf `getmatic.de` einrichten (Canonical-Tag allein reicht u.U. nicht)
+- [ ] `.htaccess` (mit 301-Redirect glander-led.de → getmatic.de) hochladen nach `www/getmatic/` — Datei liegt bereit in `reference/Getmatic_website/.htaccess`
+- [ ] Im 1blu-Kundencenter prüfen: ist `glander-led.de` als reine Domain-Weiterleitung eingerichtet oder als Alias auf denselben Webspace? Sauberer wäre eine echte Weiterleitung auf Domain-Ebene statt .htaccess-Redirect
 - [ ] **`getmatic-website`-Skill erstellen** — Plan liegt vor: `plans/2026-06-02-website-creator-skills-aufbauen.md`
 - [ ] Fehlende Barlow-Font-Gewichte beschaffen (Condensed 400/600/700, Regular 300/500) für sauberes Rendering
 - [ ] Security Headers auf Server konfigurieren (`X-Frame-Options`, `Content-Security-Policy`)

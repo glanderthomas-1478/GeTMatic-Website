@@ -1,0 +1,6 @@
+# 301-Redirect: alte/fremde Domain glander-led.de -> getmatic.de
+# Grund: glander-led.de zeigt auf denselben 1blu-Webspace und wurde von Google
+# statt getmatic.de indexiert (Canonical-Tag allein hat nicht gereicht).
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^(www\.)?glander-led\.de$ [NC]
+RewriteRule ^(.*)$ https://www.getmatic.de/$1 [R=301,L]
