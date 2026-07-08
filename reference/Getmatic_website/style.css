@@ -628,6 +628,7 @@ body {
   font-weight: 800;
   color: rgba(255,255,255,0.75);
   letter-spacing: -0.5px;
+  text-decoration: none;
 }
 .footer-logo .t { color: var(--teal-light); }
 
@@ -945,6 +946,31 @@ body {
   transition: border-color var(--transition);
 }
 .einsatz-crosslink a:hover { border-bottom-color: var(--teal); }
+
+.docu-3d-wrap {
+  margin-bottom: var(--space-5);
+}
+
+.docu-3d-canvas {
+  width: 100%;
+  height: clamp(280px, 42vw, 460px);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, #f8f7f7 0%, var(--bg-card) 100%);
+  border: 1px solid rgba(0,0,0,0.07);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+}
+.docu-3d-canvas:active { cursor: grabbing; }
+.docu-3d-canvas canvas { display: block; width: 100%; height: 100%; }
+
+.docu-3d-hint {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: var(--space-1);
+}
 
 .einsatz-screens {
   display: grid;

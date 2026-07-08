@@ -1,0 +1,18 @@
+# Kompletter Sperrblock fuer diesen Ordner: alle abgelegten Dateien duerfen
+# ausschliesslich ueber download.php (mit Login-Pruefung) ausgeliefert werden,
+# niemals per direktem HTTP-Zugriff auf die Datei selbst.
+
+# Apache 2.4+
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+
+# Apache 2.2 Fallback
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>
+
+Options -Indexes -ExecCGI
+php_flag engine off
+AddType text/plain .php .php3 .php4 .php5 .phtml .pl .cgi .sh

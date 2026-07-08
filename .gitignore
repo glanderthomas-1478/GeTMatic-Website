@@ -5,3 +5,13 @@ __pycache__/
 *.tmp
 *.bak
 .claude/settings.local.json
+
+# Interner Mitarbeiterbereich (Login/Datei-Upload) — echte Zugangsdaten und
+# hochgeladene/temporaere Nutzerdateien duerfen nie ins Repo gelangen
+reference/Getmatic_website/intern/config.php
+reference/Getmatic_website/intern/files/*
+!reference/Getmatic_website/intern/files/.htaccess
+reference/Getmatic_website/intern/tmp_uploads/*
+!reference/Getmatic_website/intern/tmp_uploads/.htaccess
+reference/Getmatic_website/intern/sql/add_user.php
+reference/Getmatic_website/intern/add_user.php

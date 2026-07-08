@@ -1,0 +1,94 @@
+<?php
+/**
+ * EINMAL-HILFSSKRIPT zum Anlegen von Mitarbeiterkonten fuer den internen Bereich.
+ *
+ * Verwendung:
+ * 1. Diese Datei nach ../add_user.php kopieren (also nach intern/add_user.php,
+ *    NICHT in sql/ liegen lassen — die Pfade unten gehen von intern/ als
+ *    finalem Speicherort aus).
+ * 2. In config.php eine Konstante ADD_USER_SETUP_KEY mit einem eigenen,
+ *    langen Zufallswert definieren (siehe config.example.php).
+ * 3. Im Browser aufrufen: https://www.getmatic.de/intern/add_user.php?key=<ADD_USER_SETUP_KEY>
+ * 4. Benutzername, Anzeigename und Passwort im Formular eintragen und absenden.
+ * 5. WICHTIG: Nach dem Anlegen aller benoetigten Konten diese Datei wieder
+ *    vom Server loeschen (oder zumindest ADD_USER_SETUP_KEY aendern) -
+ *    sonst koennte theoretisch jeder, der den Key kennt/erraet, beliebige
+ *    Konten anlegen.
+ *
+ * Diese Datei wird bewusst NICHT als intern/add_user.php committet
+ * (siehe .gitignore) - nur diese .example-Vorlage liegt im Repo.
+ */
+
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/includes/db.php';
+
+if (!defined('ADD_USER_SETUP_KEY') || ($_GET['key'] ?? '') !== ADD_USER_SETUP_KEY) {
+    http_response_code(403);
+    die('Zugriff verweigert.');
+}
+
+$message = null;
+$success = false;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = trim((string) ($_POST['username'] ?? ''));
+    $displayName = trim((string) ($_POST['display_name'] ?? ''));
+    $password = (string) ($_POST['password'] ?? '');
+
+    if ($username === '' || $displayName === '' || strlen($password) < 8) {
+        $message = 'Bitte alle Felder ausfuellen (Passwort mind. 8 Zeichen).';
+    } else {
+        $db = get_db();
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+
+        $stmt = $db->prepare(
+            'INSERT INTO intern_users (username, password_hash, display_name)
+             VALUES (:username, :hash, :display_name)
+             ON DUPLICATE KEY UPDATE password_hash = :hash2, display_name = :display_name2'
+        );
+        $stmt->execute([
+            'username' => $username,
+            'hash' => $hash,
+            'display_name' => $displayName,
+            'hash2' => $hash,
+            'display_name2' => $displayName,
+        ]);
+
+        $success = true;
+        $message = 'Konto „' . htmlspecialchars($username) . '" wurde angelegt/aktualisiert.';
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Konto anlegen — Setup</title>
+  <style>
+    body { font-family: sans-serif; max-width: 420px; margin: 60px auto; }
+    label { display: block; margin-top: 12px; font-weight: 600; }
+    input { width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box; }
+    button { margin-top: 16px; padding: 10px 16px; }
+    .msg { padding: 10px; margin-bottom: 12px; }
+    .msg.ok { background: #d9f2d9; }
+    .msg.err { background: #fbdada; }
+  </style>
+</head>
+<body>
+  <h1>Mitarbeiterkonto anlegen</h1>
+
+  <?php if ($message): ?>
+    <p class="msg <?= $success ? 'ok' : 'err' ?>"><?= $message ?></p>
+  <?php endif; ?>
+
+  <form method="post">
+    <label>Benutzername<input type="text" name="username" required /></label>
+    <label>Anzeigename<input type="text" name="display_name" required /></label>
+    <label>Passwort<input type="password" name="password" required minlength="8" /></label>
+    <button type="submit">Anlegen</button>
+  </form>
+
+  <p><strong>Nicht vergessen:</strong> diese Datei nach Gebrauch wieder vom Server löschen.</p>
+</body>
+</html>

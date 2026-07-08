@@ -1,0 +1,21 @@
+# Kein Directory-Listing im internen Bereich
+Options -Indexes
+
+# config.php nie direkt ausliefern (falls die PHP-Verarbeitung aus irgendeinem
+# Grund fehlschlaegt, wuerde sonst der Klartext-Inhalt inkl. DB-Zugangsdaten sichtbar)
+<Files "config.php">
+    Require all denied
+</Files>
+
+# includes/ enthaelt nur Bibliotheks-Code, der ueber require_once eingebunden wird
+# - niemals direkt per Browser aufrufen
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^includes/ - [F,L]
+
+    # HTTPS auf Server-Ebene erzwingen (zuverlaessiger als eine PHP-Pruefung,
+    # die je nach Proxy-/Server-Setup $_SERVER['HTTPS'] uneinheitlich sieht
+    # und sonst in eine Redirect-Schleife laufen kann).
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>

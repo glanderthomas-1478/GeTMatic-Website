@@ -1,0 +1,15 @@
+# Gleicher Schutz wie files/.htaccess: hier liegen die noch nicht
+# fertiggestellten Chunk-Upload-Assembly-Dateien. Niemals direkt erreichbar.
+
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>
+
+Options -Indexes -ExecCGI
+php_flag engine off
+AddType text/plain .php .php3 .php4 .php5 .phtml .pl .cgi .sh

@@ -124,6 +124,11 @@
         <h2 style="font-family:var(--font-head);font-size:1.5rem;font-weight:700;color:var(--text-dark);margin-bottom:var(--space-2);" data-i18n="doc-h3">DocuControl in der Praxis</h2>
       </div>
 
+      <div class="docu-3d-wrap animate-in" style="--d:.33s">
+        <div id="docu-3d-canvas" class="docu-3d-canvas" role="img" aria-label="Interaktives 3D-Modell des DocuControl-Geräts"></div>
+        <p class="docu-3d-hint" data-i18n="doc-3d-hint">Schematisches 3D-Modell — klicken und ziehen zum Drehen</p>
+      </div>
+
       <div class="einsatz-screens">
         <div class="einsatz-screen tcp-screen animate-in" style="--d:.35s" id="tcp-anim">
           <div class="screen-frame">
@@ -226,6 +231,7 @@
         'doc-p1': 'Alle Chargenprotokolle werden in Echtzeit automatisch erfasst und strukturiert gespeichert — inklusive robuster Behandlung unvollständiger Protokolle, etwa bei Stromausfall oder Prozessabbruch. Die Auswertung erfolgt als hochwertige PDF-Dokumentation mit grafischer Kurvendarstellung von Druck- und Temperaturverlauf sowie als Web-Dashboard mit Live-Übersicht aller laufenden und vergangenen Chargen.',
         'doc-p2': 'Die Datenspeicherung erfolgt autark auf dem Gerät selbst und auf USB-Stick, optional zusätzlich per Netzwerk auf einem Server. Die Installation ist denkbar einfach: Der vorhandene LAN-Printserver wird abgeklemmt, DocuControl an gleicher Stelle angeschlossen — in der Regel in unter 30&nbsp;Minuten betriebsbereit.',
         'doc-h3': 'DocuControl in der Praxis',
+        'doc-3d-hint': 'Schematisches 3D-Modell — klicken und ziehen zum Drehen',
         'doc-s1-h': 'Live-Monitor',
         'doc-s1-p': 'Der Druckdatenstrom des Sterilisators wird live mitgelesen und Zeile für Zeile angezeigt — Phase, Druck und alle Temperaturfühler in Echtzeit, inklusive Freigabestatus am Ende der Charge.',
         'doc-s2-h': 'Chargenübersicht',
@@ -257,6 +263,7 @@
         'doc-p1': 'All batch records are automatically captured in real time and stored in structured form — including robust handling of incomplete records, for example in the event of a power outage or process abort. Evaluation is provided as high-quality PDF documentation with graphical pressure and temperature curves, as well as a web dashboard with a live overview of all current and past batches.',
         'doc-p2': 'Data is stored locally on the device itself and on a USB stick, optionally also via network on a server. Installation is straightforward: the existing LAN print server is disconnected, DocuControl is connected in the same place — typically ready for operation in under 30 minutes.',
         'doc-h3': 'DocuControl in Practice',
+        'doc-3d-hint': 'Schematic 3D model — click and drag to rotate',
         'doc-s1-h': 'Live Monitor',
         'doc-s1-p': 'The sterilizer\'s print data stream is read live and displayed line by line — phase, pressure and all temperature sensors in real time, including the release status at the end of the batch.',
         'doc-s2-h': 'Batch Overview',
@@ -390,6 +397,11 @@
       obs.observe(anim);
     })();
   </script>
+
+  <script type="importmap">
+  { "imports": { "three": "./vendor/three/three.module.min.js" } }
+  </script>
+  <script type="module" src="docucontrol-3d.js"></script>
 
 </body>
 </html>
