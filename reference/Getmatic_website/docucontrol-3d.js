@@ -23,17 +23,17 @@ if (mount) {
   // -----------------------------------------
   // Beleuchtung (3-Punkt-Studio-Setup)
   // -----------------------------------------
-  scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+  scene.add(new THREE.AmbientLight(0xffffff, 0.85));
 
-  var key = new THREE.DirectionalLight(0xffffff, 1.4);
+  var key = new THREE.DirectionalLight(0xffffff, 1.9);
   key.position.set(8, 10, 6);
   scene.add(key);
 
-  var fill = new THREE.DirectionalLight(0x9fd8d8, 0.5);
+  var fill = new THREE.DirectionalLight(0x9fd8d8, 0.85);
   fill.position.set(-8, 4, -4);
   scene.add(fill);
 
-  var rim = new THREE.DirectionalLight(0x5ad7d7, 0.6);
+  var rim = new THREE.DirectionalLight(0x5ad7d7, 0.55);
   rim.position.set(0, 6, -10);
   scene.add(rim);
 
@@ -41,29 +41,23 @@ if (mount) {
   // Materialien
   // -----------------------------------------
   var bodyMat = new THREE.MeshPhysicalMaterial({
-    color: 0x14161a,
-    roughness: 0.35,
-    metalness: 0.1,
-    clearcoat: 0.6,
-    clearcoatRoughness: 0.25
+    color: 0x33363b,
+    roughness: 0.42,
+    metalness: 0.08,
+    clearcoat: 0.5,
+    clearcoatRoughness: 0.3
   });
 
   var screenMat = new THREE.MeshPhysicalMaterial({
-    color: 0x05070a,
-    roughness: 0.12,
+    color: 0x0a0c0f,
+    roughness: 0.1,
     metalness: 0.0,
     clearcoat: 1.0,
     clearcoatRoughness: 0.08
   });
 
-  var caseMat = new THREE.MeshStandardMaterial({
-    color: 0x3c3f44,
-    roughness: 0.55,
-    metalness: 0.55
-  });
-
   var standMat = new THREE.MeshStandardMaterial({
-    color: 0x1c1d1f,
+    color: 0x2c2e32,
     roughness: 0.5,
     metalness: 0.3
   });
@@ -78,99 +72,149 @@ if (mount) {
     });
   }
 
-  function makeFrontTexture(logo) {
-    var c = document.createElement('canvas');
-    c.width = 1024; c.height = 640;
-    var ctx = c.getContext('2d');
-    ctx.fillStyle = '#05070a';
-    ctx.fillRect(0, 0, c.width, c.height);
-    ctx.strokeStyle = 'rgba(90,215,215,0.35)';
-    ctx.lineWidth = 4;
-    ctx.strokeRect(40, 40, c.width - 80, c.height - 80);
-    var logoW = 440, logoH = logoW * (logo.height / logo.width);
-    ctx.drawImage(logo, (c.width - logoW) / 2, 80, logoW, logoH);
-    ctx.fillStyle = 'rgba(255,255,255,0.92)';
-    ctx.font = '600 46px Arial';
-    ctx.textAlign = 'left';
-    ctx.fillText('DocuControl', 70, c.height - 90);
-    return new THREE.CanvasTexture(c);
-  }
-
-  function makeBackTexture(logo) {
-    // Logo nahe der Oberkante platziert, damit es nicht von der
-    // aufgesetzten Recheneinheit (unterer/mittlerer Bereich) verdeckt wird.
-    var c = document.createElement('canvas');
-    c.width = 1024; c.height = 640;
-    var ctx = c.getContext('2d');
-    ctx.fillStyle = '#14161a';
-    ctx.fillRect(0, 0, c.width, c.height);
-    var logoW = 360, logoH = logoW * (logo.height / logo.width);
-    ctx.drawImage(logo, (c.width - logoW) / 2, 55, logoW, logoH);
-    return new THREE.CanvasTexture(c);
-  }
-
   // -----------------------------------------
-  // Geometrie-Gruppe (Bildschirm + Recheneinheit + Standfuß)
+  // Bildschirm-Gehäuse — nach Referenzfoto (Seitenansicht): schlankes Panel
+  // (Bezel + Display) mit einem dickeren Elektronik-Deck unten hinten angesetzt,
+  // dadurch der charakteristische Keil-Querschnitt von vorne dünn zu hinten dick.
   // -----------------------------------------
   var device = new THREE.Group();
 
-  var screenW = 8.6, screenH = 5.6, screenD = 0.55;
-  var screenGeo = new THREE.BoxGeometry(screenW, screenH, screenD);
-  var screenMesh = new THREE.Mesh(screenGeo, [
-    bodyMat, bodyMat, bodyMat, bodyMat, screenMat, bodyMat
-  ]);
-  screenMesh.position.set(0, 0, 0);
-  device.add(screenMesh);
+  var screenW = 8.6, screenH = 5.6;
+  var slabD = 0.42;   // Gehäusetiefe des schlanken Panels (Bezel + Display)
+  var deckD = 0.78;   // zusätzliche Tiefe des unteren Elektronik-Decks (Gesamttiefe = slabD + deckD)
+  var deckH = 1.55;   // Höhe des unteren, dickeren Decks
+
+  // Hauptpanel — dünner Quader, Front zeigt in +Z
+  var slabGeo = new THREE.BoxGeometry(screenW, screenH, slabD);
+  var slabMesh = new THREE.Mesh(slabGeo, bodyMat);
+  device.add(slabMesh);
+
+  // Elektronik-Deck — sitzt unten hinten an, macht das Gehäuse dort deutlich dicker
+  var deckGeo = new THREE.BoxGeometry(screenW * 0.94, deckH, deckD);
+  var deckMesh = new THREE.Mesh(deckGeo, bodyMat);
+  deckMesh.position.set(0, -screenH / 2 + deckH / 2, -slabD / 2 - deckD / 2);
+  device.add(deckMesh);
+
+  // Display-Fläche — eigenes Panel knapp vor der Gehäusevorderseite eingelassen
+  var faceInset = 0.35;
+  var faceGeo = new THREE.PlaneGeometry(screenW - faceInset * 2, screenH - faceInset * 2 - deckH * 0.35);
+  var faceMesh = new THREE.Mesh(faceGeo, screenMat);
+  faceMesh.position.set(0, deckH * 0.18, slabD / 2 + 0.005);
+  device.add(faceMesh);
+
+  // Rückseite: Lüftungsrippen-Textur (feine horizontale Rillen wie im Referenzfoto)
+  var backTexCanvas = document.createElement('canvas');
+  backTexCanvas.width = 512; backTexCanvas.height = 512;
+  (function () {
+    var ctx = backTexCanvas.getContext('2d');
+    ctx.fillStyle = '#35383d';
+    ctx.fillRect(0, 0, 512, 512);
+    ctx.strokeStyle = 'rgba(0,0,0,0.4)';
+    ctx.lineWidth = 2;
+    for (var y = 10; y < 512; y += 6) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(512, y); ctx.stroke();
+    }
+  })();
+  var ribTex = new THREE.CanvasTexture(backTexCanvas);
+  var ribMat = new THREE.MeshStandardMaterial({ map: ribTex, roughness: 0.7, metalness: 0.1 });
+  var backPlateGeo = new THREE.PlaneGeometry(screenW - 0.1, screenH - deckH - 0.1);
+  var backPlate = new THREE.Mesh(backPlateGeo, ribMat);
+  backPlate.rotation.y = Math.PI;
+  backPlate.position.set(0, screenH / 2 - (screenH - deckH) / 2 - 0.05, -slabD / 2 - 0.005);
+  device.add(backPlate);
+
+  var deckBackPlate = new THREE.Mesh(new THREE.PlaneGeometry(screenW * 0.9, deckH - 0.1), ribMat);
+  deckBackPlate.rotation.y = Math.PI;
+  deckBackPlate.position.set(0, deckMesh.position.y, -slabD / 2 - deckD - 0.005);
+  device.add(deckBackPlate);
 
   loadLogo().then(function (logo) {
-    var frontTex = makeFrontTexture(logo);
-    screenMesh.material[4] = new THREE.MeshPhysicalMaterial({
-      map: frontTex,
-      roughness: 0.1,
-      clearcoat: 1.0,
-      clearcoatRoughness: 0.08
-    });
-    var backTex = makeBackTexture(logo);
-    screenMesh.material[5] = new THREE.MeshPhysicalMaterial({
-      map: backTex,
-      emissiveMap: backTex,
-      emissive: new THREE.Color(0x2a2a2a),
-      emissiveIntensity: 0.6,
-      roughness: 0.3,
-      clearcoat: 0.5,
-      clearcoatRoughness: 0.25
-    });
+    var logoW = screenW * 0.34, logoH = logoW * (logo.height / logo.width);
+    var logoTex = new THREE.Texture(logo);
+    logoTex.colorSpace = THREE.SRGBColorSpace;
+    logoTex.needsUpdate = true;
+    var logoMesh = new THREE.Mesh(
+      new THREE.PlaneGeometry(logoW, logoH),
+      new THREE.MeshBasicMaterial({ map: logoTex, transparent: true, depthWrite: false })
+    );
+    logoMesh.rotation.y = Math.PI;
+    logoMesh.position.set(0, screenH / 2 - logoH / 2 - 0.35, -slabD / 2 - 0.01);
+    device.add(logoMesh);
   }).catch(function () { /* Logo optional — Modell bleibt ohne Branding nutzbar */ });
 
-  var caseW = 2.6, caseH = 1.9, caseD = 1.7;
-  var caseGeo = new THREE.BoxGeometry(caseW, caseH, caseD);
-  var caseMesh = new THREE.Mesh(caseGeo, caseMat);
-  caseMesh.position.set(1.6, 0.35, -(screenD / 2 + caseD / 2 - 0.05));
-  device.add(caseMesh);
-
-  // Lüftungsschlitze auf der Recheneinheit (dünne dunkle Streifen)
-  var slotMat = new THREE.MeshStandardMaterial({ color: 0x101113, roughness: 0.8 });
-  for (var i = 0; i < 5; i++) {
-    var slotGeo = new THREE.BoxGeometry(caseW * 0.75, 0.08, 0.05);
+  // Lautsprecher-Lüftungsschlitze auf der unteren Frontblende rechts (wie im Referenzfoto)
+  var slotMat = new THREE.MeshStandardMaterial({ color: 0x0a0b0d, roughness: 0.8 });
+  for (var i = 0; i < 6; i++) {
+    var slotGeo = new THREE.BoxGeometry(0.05, (screenH / 2 - deckH * 0.35) * 0.5, 0.06);
     var slot = new THREE.Mesh(slotGeo, slotMat);
-    slot.position.set(1.6, 0.85 - i * 0.22, caseMesh.position.z + caseD / 2 + 0.03);
+    slot.position.set(screenW * 0.3 + i * 0.1, -screenH / 2 + 0.45, slabD / 2 + 0.01);
     device.add(slot);
   }
 
-  device.rotation.x = THREE.MathUtils.degToRad(-14);
-  device.position.y = 3.4;
+  device.rotation.x = THREE.MathUtils.degToRad(-24);
+  device.position.set(0, 3.9, 0.35);
   scene.add(device);
 
-  // Standfuß: Arm + Fußplatte
-  var armGeo = new THREE.BoxGeometry(0.5, 2.6, 0.35);
+  // -----------------------------------------
+  // Standfuß — Z-förmiger Knickarm (Doppelgelenk) + Schwenk-Hülse + Keilfuß,
+  // wie im Referenzfoto (Seiten-/Rückansicht). Als 2D-Profil extrudiert und
+  // per geometry.center() selbst-zentriert, um Achsen-Fehler zu vermeiden.
+  // -----------------------------------------
+  var armWidth = 1.5;
+  var armThickness = 0.3;
+
+  var armShape = new THREE.Shape([
+    new THREE.Vector2(-armThickness / 2, 0),
+    new THREE.Vector2(armThickness / 2, 0),
+    new THREE.Vector2(armThickness / 2 + 0.55, 1.3),
+    new THREE.Vector2(armThickness / 2 + 0.15, 2.55),
+    new THREE.Vector2(-armThickness / 2 + 0.15, 2.55),
+    new THREE.Vector2(-armThickness / 2 + 0.55, 1.3)
+  ]);
+  var armGeo = new THREE.ExtrudeGeometry(armShape, { depth: armWidth, bevelEnabled: true, bevelThickness: 0.02, bevelSize: 0.02, bevelSegments: 1 });
+  armGeo.translate(0, 0, -armWidth / 2); // Breite (Extrude-Achse Z) zentrieren, Profil (X/Y) bleibt unverändert
   var arm = new THREE.Mesh(armGeo, standMat);
-  arm.position.set(0.4, 1.7, -0.4);
-  arm.rotation.x = THREE.MathUtils.degToRad(8);
+  // Profil liegt in der lokalen X/Y-Ebene (Fuß bei y=0, Gelenk bei y=2.55) — Rotation um Y
+  // ordnet die Extrude-Breite (lokal Z) der Welt-X-Achse zu, Höhe (lokal Y) bleibt Welt-Y.
+  arm.rotation.y = -Math.PI / 2;
+  arm.position.set(0.1, 0.28, 0.55);
   scene.add(arm);
 
-  var baseGeo = new THREE.BoxGeometry(3.2, 0.28, 2.6);
+  // Schwenkgelenk (Zylinder + zwei Schraubenköpfe) zwischen Arm und Bildschirmrückseite —
+  // als Kind von "device" in LOKALEN Koordinaten platziert, damit es die Kippung der
+  // Baugruppe mitmacht und dadurch immer hinter dem Panel verdeckt bleibt (nicht wie zuvor
+  // in festen Weltkoordinaten, wo es aus manchen Blickwinkeln vor dem Display "schwebte").
+  var hingeMat = new THREE.MeshStandardMaterial({ color: 0x2a2c30, roughness: 0.45, metalness: 0.6 });
+  var hingeGeo = new THREE.CylinderGeometry(0.5, 0.5, 1.55, 20);
+  var hinge = new THREE.Mesh(hingeGeo, hingeMat);
+  hinge.rotation.z = Math.PI / 2;
+  hinge.position.set(0.1, -0.95, -slabD / 2 - 0.55);
+  device.add(hinge);
+
+  var boltGeo = new THREE.CylinderGeometry(0.13, 0.13, 0.08, 16);
+  [-0.78, 0.78].forEach(function (dx) {
+    var bolt = new THREE.Mesh(boltGeo, hingeMat);
+    bolt.rotation.z = Math.PI / 2;
+    bolt.position.set(0.1 + dx, -0.95, -slabD / 2 - 0.55);
+    device.add(bolt);
+  });
+
+  // Fußplatte — keilförmiger Umriss (vorne spitz zulaufend, mit Einkerbung), extrudiert
+  var baseShape = new THREE.Shape();
+  baseShape.moveTo(-1.65, -1.05);
+  baseShape.lineTo(1.65, -1.05);
+  baseShape.lineTo(1.55, 0.75);
+  baseShape.lineTo(0.35, 1.35);
+  baseShape.lineTo(0.12, 1.05);
+  baseShape.lineTo(-0.12, 1.05);
+  baseShape.lineTo(-0.35, 1.35);
+  baseShape.lineTo(-1.55, 0.75);
+  baseShape.closePath();
+  var baseGeo = new THREE.ExtrudeGeometry(baseShape, { depth: 0.3, bevelEnabled: true, bevelThickness: 0.04, bevelSize: 0.04, bevelSegments: 2 });
+  baseGeo.translate(0, 0, -0.15); // Extrude-Tiefe (Z) zentrieren
+  baseGeo.rotateX(-Math.PI / 2);
   var base = new THREE.Mesh(baseGeo, standMat);
-  base.position.set(0.4, 0.32, 0.1);
+  base.position.set(0.1, 0.3, -0.15);
   scene.add(base);
 
   // Bodenschatten (weiche Ellipse statt echter Shadow-Map, performant & stilvoll)
@@ -188,7 +232,7 @@ if (mount) {
   var shadowMat = new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, depthWrite: false });
   var shadowMesh = new THREE.Mesh(new THREE.PlaneGeometry(6, 4.5), shadowMat);
   shadowMesh.rotation.x = -Math.PI / 2;
-  shadowMesh.position.set(0.4, 0.02, 0.1);
+  shadowMesh.position.set(0.1, 0.02, -0.15);
   scene.add(shadowMesh);
 
   // -----------------------------------------
