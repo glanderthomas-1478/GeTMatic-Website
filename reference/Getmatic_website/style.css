@@ -947,13 +947,15 @@ body {
 }
 .einsatz-crosslink a:hover { border-bottom-color: var(--teal); }
 
-.docu-3d-wrap {
-  margin-bottom: var(--space-5);
+.docu-3d-row {
+  margin-bottom: var(--space-6);
+  direction: rtl;
 }
+.docu-3d-row .screen-text { direction: ltr; }
 
 .docu-3d-canvas {
   width: 100%;
-  height: clamp(280px, 42vw, 460px);
+  height: clamp(240px, 24vw, 380px);
   border-radius: var(--radius);
   background: linear-gradient(180deg, #f8f7f7 0%, var(--bg-card) 100%);
   border: 1px solid rgba(0,0,0,0.07);
@@ -1165,7 +1167,7 @@ body {
   /* Einsatzbereich-Detail */
   .einsatz-vorteile { grid-template-columns: 1fr; }
   .einsatz-crosslink { flex-direction: column; align-items: flex-start; }
-  .einsatz-screen, .einsatz-screen:nth-child(even) {
+  .einsatz-screen, .einsatz-screen:nth-child(even), .docu-3d-row {
     grid-template-columns: 1fr;
     direction: ltr;
   }

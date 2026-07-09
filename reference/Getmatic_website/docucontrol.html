@@ -75,12 +75,18 @@
       <div class="einsatz-hero animate-in" style="--img: url('dokumentation.svg'); --d:.1s" role="img" aria-label="DocuControl Technische Dokumentation"></div>
 
       <div class="einsatz-header animate-in" style="--d:.15s">
-        <div class="einsatz-label" data-i18n="doc-label">Eigenentwicklung</div>
+        <div class="einsatz-label" data-i18n="doc-label">Individuelle Lösungen</div>
         <h1 data-i18n="doc-h1">DocuControl</h1>
       </div>
 
       <div class="einsatz-content animate-in" style="--d:.2s">
-        <p data-i18n="doc-intro">DocuControl zeichnet Sterilisationsprozesse vollautomatisch auf und dokumentiert sie normkonform nach EN&nbsp;ISO&nbsp;17665 — als durchsuchbare PDF-Chargendokumentation mit Druck- und Temperaturkurven sowie als Web-Dashboard. Der entscheidende Vorteil: <strong>DocuControl benötigt dafür weder einen Eingriff in die Maschine noch in Ihr Netzwerk.</strong></p>
+        <p data-i18n="doc-intro">DocuControl zeichnet Chargen- und Prozessdaten vollautomatisch auf — von Sterilisationsprozessen im Dampf-Autoklav nach EN&nbsp;ISO&nbsp;17665 bis zur Abfüllung von Druckgasflaschen — und dokumentiert sie normkonform als durchsuchbare PDF-Chargendokumentation mit Druck- und Temperaturkurven sowie als Web-Dashboard. Der entscheidende Vorteil: <strong>DocuControl benötigt dafür weder einen Eingriff in die Maschine noch in Ihr Netzwerk.</strong></p>
+      </div>
+
+      <div class="einsatz-content animate-in" style="--d:.22s">
+        <h2 style="font-family:var(--font-head);font-size:1.5rem;font-weight:700;color:var(--text-dark);margin-bottom:var(--space-2);" data-i18n="doc-proc-h">Dokumentierte Prozesse</h2>
+        <p data-i18n="doc-proc1"><strong>Sterilisation im Dampf-Autoklav</strong> — Chargenprotokolle nach EN&nbsp;ISO&nbsp;17665, mit vollständiger Druck- und Temperaturkurve je Zyklus.</p>
+        <p data-i18n="doc-proc2"><strong>Abfüllung von Sauerstoff- und Druckgasflaschen</strong> — Fülldruck, Füllstand und Prüfdruck werden je Charge normkonform dokumentiert.</p>
       </div>
 
       <div class="einsatz-vorteile animate-in" style="--d:.25s">
@@ -124,9 +130,15 @@
         <h2 style="font-family:var(--font-head);font-size:1.5rem;font-weight:700;color:var(--text-dark);margin-bottom:var(--space-2);" data-i18n="doc-h3">DocuControl in der Praxis</h2>
       </div>
 
-      <div class="docu-3d-wrap animate-in" style="--d:.33s">
-        <div id="docu-3d-canvas" class="docu-3d-canvas" role="img" aria-label="Interaktives 3D-Modell des DocuControl-Geräts"></div>
-        <p class="docu-3d-hint" data-i18n="doc-3d-hint">Schematisches 3D-Modell — klicken und ziehen zum Drehen</p>
+      <div class="einsatz-screen docu-3d-row animate-in" style="--d:.33s">
+        <div class="docu-3d-wrap">
+          <div id="docu-3d-canvas" class="docu-3d-canvas" role="img" aria-label="Interaktives 3D-Modell des DocuControl-Geräts"></div>
+          <p class="docu-3d-hint" data-i18n="doc-3d-hint">Schematisches 3D-Modell — klicken und ziehen zum Drehen</p>
+        </div>
+        <div class="screen-text">
+          <h3 data-i18n="doc-device-h">Das Gerät</h3>
+          <p data-i18n="doc-device-p">Kompaktes Tischgerät mit hochauflösendem Bildschirm-Panel, integrierter Recheneinheit und schwenkbarem Doppelgelenk-Standfuß – flexibel neben jedem Sterilisator oder jeder Abfüllstation positionierbar. Passiv zwischengeschaltet, ohne Eingriff in die Maschine, robust ausgelegt für den Dauerbetrieb in Produktionsumgebungen.</p>
+        </div>
       </div>
 
       <div class="einsatz-screens">
@@ -216,9 +228,12 @@
         'nav-impressum':  'Impressum',
         'foot-start':     'Startseite',
         'einsatz-back': '&#8592; Zurück zur Übersicht',
-        'doc-label': 'Eigenentwicklung',
+        'doc-label': 'Individuelle Lösungen',
         'doc-h1':    'DocuControl',
-        'doc-intro': 'DocuControl zeichnet Sterilisationsprozesse vollautomatisch auf und dokumentiert sie normkonform nach EN&nbsp;ISO&nbsp;17665 — als durchsuchbare PDF-Chargendokumentation mit Druck- und Temperaturkurven sowie als Web-Dashboard. Der entscheidende Vorteil: <strong>DocuControl benötigt dafür weder einen Eingriff in die Maschine noch in Ihr Netzwerk.</strong>',
+        'doc-intro': 'DocuControl zeichnet Chargen- und Prozessdaten vollautomatisch auf — von Sterilisationsprozessen im Dampf-Autoklav nach EN&nbsp;ISO&nbsp;17665 bis zur Abfüllung von Druckgasflaschen — und dokumentiert sie normkonform als durchsuchbare PDF-Chargendokumentation mit Druck- und Temperaturkurven sowie als Web-Dashboard. Der entscheidende Vorteil: <strong>DocuControl benötigt dafür weder einen Eingriff in die Maschine noch in Ihr Netzwerk.</strong>',
+        'doc-proc-h': 'Dokumentierte Prozesse',
+        'doc-proc1': '<strong>Sterilisation im Dampf-Autoklav</strong> — Chargenprotokolle nach EN&nbsp;ISO&nbsp;17665, mit vollständiger Druck- und Temperaturkurve je Zyklus.',
+        'doc-proc2': '<strong>Abfüllung von Sauerstoff- und Druckgasflaschen</strong> — Fülldruck, Füllstand und Prüfdruck werden je Charge normkonform dokumentiert.',
         'doc-v1-h': 'Kein Eingriff in die Maschine',
         'doc-v1-p': 'DocuControl wird passiv zwischen HMI-Panel und Drucker geschaltet und liest die Chargenprotokolle direkt aus dem Druckdatenstrom. Die validierte Maschinensteuerung selbst wird nicht verändert und nicht einmal berührt.',
         'doc-v2-h': 'Kein Eingriff ins Kundennetzwerk',
@@ -232,6 +247,8 @@
         'doc-p2': 'Die Datenspeicherung erfolgt autark auf dem Gerät selbst und auf USB-Stick, optional zusätzlich per Netzwerk auf einem Server. Die Installation ist denkbar einfach: Der vorhandene LAN-Printserver wird abgeklemmt, DocuControl an gleicher Stelle angeschlossen — in der Regel in unter 30&nbsp;Minuten betriebsbereit.',
         'doc-h3': 'DocuControl in der Praxis',
         'doc-3d-hint': 'Schematisches 3D-Modell — klicken und ziehen zum Drehen',
+        'doc-device-h': 'Das Gerät',
+        'doc-device-p': 'Kompaktes Tischgerät mit hochauflösendem Bildschirm-Panel, integrierter Recheneinheit und schwenkbarem Doppelgelenk-Standfuß – flexibel neben jedem Sterilisator oder jeder Abfüllstation positionierbar. Passiv zwischengeschaltet, ohne Eingriff in die Maschine, robust ausgelegt für den Dauerbetrieb in Produktionsumgebungen.',
         'doc-s1-h': 'Live-Monitor',
         'doc-s1-p': 'Der Druckdatenstrom des Sterilisators wird live mitgelesen und Zeile für Zeile angezeigt — Phase, Druck und alle Temperaturfühler in Echtzeit, inklusive Freigabestatus am Ende der Charge.',
         'doc-s2-h': 'Chargenübersicht',
@@ -248,9 +265,12 @@
         'nav-impressum':  'Imprint',
         'foot-start':     'Home',
         'einsatz-back': '&#8592; Back to overview',
-        'doc-label': 'In-House Product',
+        'doc-label': 'Custom Solutions',
         'doc-h1':    'DocuControl',
-        'doc-intro': 'DocuControl fully automatically records sterilization processes and documents them in compliance with EN&nbsp;ISO&nbsp;17665 — as searchable PDF batch documentation with pressure and temperature curves as well as a web dashboard. The decisive advantage: <strong>DocuControl needs neither an intervention in the machine nor in your network to do this.</strong>',
+        'doc-intro': 'DocuControl fully automatically records batch and process data — from sterilization processes in steam autoclaves in compliance with EN&nbsp;ISO&nbsp;17665 to the filling of compressed gas cylinders — and documents them in a standards-compliant way as searchable PDF batch documentation with pressure and temperature curves as well as a web dashboard. The decisive advantage: <strong>DocuControl needs neither an intervention in the machine nor in your network to do this.</strong>',
+        'doc-proc-h': 'Documented Processes',
+        'doc-proc1': '<strong>Sterilization in the steam autoclave</strong> — batch records in compliance with EN&nbsp;ISO&nbsp;17665, with the complete pressure and temperature curve for each cycle.',
+        'doc-proc2': '<strong>Filling of oxygen and compressed gas cylinders</strong> — fill pressure, fill level and test pressure are documented in a standards-compliant way for each batch.',
         'doc-v1-h': 'No Intervention in the Machine',
         'doc-v1-p': 'DocuControl is passively connected between the HMI panel and the printer and reads the batch records directly from the print data stream. The validated machine control itself is not changed and not even touched.',
         'doc-v2-h': 'No Intervention in Your Network',
@@ -264,6 +284,8 @@
         'doc-p2': 'Data is stored locally on the device itself and on a USB stick, optionally also via network on a server. Installation is straightforward: the existing LAN print server is disconnected, DocuControl is connected in the same place — typically ready for operation in under 30 minutes.',
         'doc-h3': 'DocuControl in Practice',
         'doc-3d-hint': 'Schematic 3D model — click and drag to rotate',
+        'doc-device-h': 'The Device',
+        'doc-device-p': 'Compact desktop unit with a high-resolution screen panel, an integrated processing unit and a pivoting double-joint stand – can be flexibly positioned next to any sterilizer or filling station. Passively connected in between, with no intervention in the machine, built for continuous operation in production environments.',
         'doc-s1-h': 'Live Monitor',
         'doc-s1-p': 'The sterilizer\'s print data stream is read live and displayed line by line — phase, pressure and all temperature sensors in real time, including the release status at the end of the batch.',
         'doc-s2-h': 'Batch Overview',

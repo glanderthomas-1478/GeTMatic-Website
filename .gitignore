@@ -15,3 +15,10 @@ reference/Getmatic_website/intern/tmp_uploads/*
 !reference/Getmatic_website/intern/tmp_uploads/.htaccess
 reference/Getmatic_website/intern/sql/add_user.php
 reference/Getmatic_website/intern/add_user.php
+
+# Sicherheitsnetz: intern/config.php und add_user.php duerfen an KEINER Stelle
+# im Repo landen (z.B. falls ein Sync-Tool intern/ irgendwohin spiegelt, siehe
+# Warnhinweis "Ungeklaerte Datei-Synchronisation" in context/current-data.md)
+**/intern/config.php
+**/intern/add_user.php
+**/intern/sql/add_user.php
