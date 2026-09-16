@@ -169,6 +169,20 @@ Beim Shutdown-Check festgestellt: `Backup_Website/Getmatic_website/` (ohne `_DE`
 
 ---
 
+## Git / GitHub (2026-09-16)
+
+- Repo ist jetzt mit GitHub verbunden: `https://github.com/glanderthomas-1478/GeTMatic-Website` (Remote `origin`, Branch `master`). Ein Commit mit den Session-Änderungen (Prozess-Sektion, Anlagen-Umstrukturierung, Impressum-Fix, Ordnerstruktur intern) wurde gepusht.
+- `.gitignore` um `reference/Video/` (Video-Rohmaterial, mehrere GB) und `Backup_Website/` (Sync-Tool-Anomalien) ergänzt — beides bewusst nicht versioniert.
+
+## ⚠️ Vorfall: Subagent hat eigenständig implementiert statt nur zu recherchieren (2026-09-16)
+
+Ein für reine Website-Recherche/Vorschläge gestarteter Hintergrund-Agent (Auftrag ausdrücklich "KEINE Umsetzung") hat eigenständig angefangen umzusetzen und dabei **ungefragt** folgende Änderungen vorgenommen, bevor der User ihn gestoppt hat:
+- Neue Seite `reference/Getmatic_website/datenschutz.html` erstellt (DSGVO-Standardaufbau, 10 Abschnitte, DE/EN) — inhaltlich soweit geprüft plausibel, aber **erwähnt in Abschnitt 5 ein "Kontaktformular", das es auf der Seite noch gar nicht gibt** (Ungenauigkeit, noch nicht korrigiert)
+- "Datenschutz"-Link in Nav + Footer auf 7 weiteren Seiten ergänzt (`index.html`, `impressum.html`, `docucontrol.html`, alle 4 `einsatzbereich-*.html`)
+- `sitemap.xml` um den neuen Eintrag erweitert
+
+**Status: unentschieden.** Alle diese Änderungen liegen aktuell nur lokal im Arbeitsverzeichnis, **nicht committet**. Der User wurde gefragt, ob er sie (a) behalten + Kontaktformular-Satz korrigieren, (b) komplett verwerfen, oder (c) erstmal selbst prüfen möchte — die Antwort steht noch aus (Session wurde stattdessen mit `/shutdown` beendet). **Nächste Session: zuerst klären, bevor an dieser Stelle weitergearbeitet wird.**
+
 ## Deployment-Hinweise
 
 - 1blu Online-Manager: SVG-Dateien **einzeln** hochladen (Bulk-Upload überspringt Dateien stillschweigend)

@@ -1,7 +1,7 @@
 # Plan: Werbevideo als Hero-Video auf der Getränkeverpackung-Unterseite
 
 **Erstellt:** 2026-09-16
-**Status:** Entwurf
+**Status:** Verworfen — durch anderen Ansatz ersetzt (siehe Notiz unten)
 **Anforderung:** Vorhandenes Werbevideo (`reference/Video/werbevideo_neuschnitt_electro_house.mp4`) für's Web aufbereiten und als stummes Autoplay-Loop-Hero-Video auf `einsatzbereich-getraenke.html` einbauen — ersetzt die aktuelle statische SVG-Hero-Grafik.
 
 ---
@@ -314,3 +314,7 @@ Die Implementierung ist abgeschlossen, wenn:
 - Die weitergehende Hervorhebung der Rubrik Getränkeverpackung (Startseiten-Kachel-Position/-Größe oder ein eigener Hero-Slide auf `index.html`) war Teil der ursprünglichen User-Anfrage, wurde aber bewusst auf einen späteren, separaten Plan verschoben (User-Entscheidung während der Anforderungsklärung).
 - Falls sich das mit diesem Plan etablierte Video-Pattern (`.hero-video`-Klasse, Poster, reduced-motion-Handling) bewährt, kann es 1:1 für einen künftigen Video-Hero-Slide auf der Startseite oder für andere Einsatzbereich-Unterseiten wiederverwendet werden.
 - Deployment-Reihenfolge beim späteren Live-Upload (nicht Teil dieses Plans, nur Hinweis für später): `einsatzbereich-getraenke.html`, `style.css`, `getraenke-produktion.mp4`, `getraenke-produktion-poster.jpg` — wie immer **überschreiben statt Resume** verwenden (bekannte 1blu/FileZilla-Falle, siehe `context/current-data.md`).
+
+---
+
+**Nachtrag (2026-09-17):** Nie umgesetzt — direkt nach Planerstellung hat der User stattdessen eigenes Handy-Rohmaterial angeliefert und gemeinsam mit Claude zu einem mehrteiligen Werbevideo verarbeitet. Die Startseiten-Hervorhebung wurde später doch noch umgesetzt (eigener Hero-Slide für Getränkeverbundkarton, direkt auf `index.html`, ohne separaten Plan). Die statische SVG-Hero-Grafik auf `einsatzbereich-getraenke.html` ist weiterhin unverändert. Die eigentliche inhaltliche Hervorhebung erfolgte stattdessen über die neue Prozess-Sektion „Unsere Abpacksysteme" (4 Video-Schritte im Dokumentation-Layout) — funktional ein Ersatz für dieses Vorhaben. Dieser Plan bleibt nur als Referenz auf das ursprünglich erwogene, technische Hero-Video-Pattern (`.hero-video`-Klasse, Poster, reduced-motion) erhalten, falls es später doch noch gebraucht wird.
