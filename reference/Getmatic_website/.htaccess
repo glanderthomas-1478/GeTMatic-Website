@@ -4,3 +4,6 @@
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^(www\.)?glander-led\.de$ [NC]
 RewriteRule ^(.*)$ https://www.getmatic.de/$1 [R=301,L]
+
+# 301-Redirect: Rubrik Lebensmittelindustrie entfernt (2026-09-16) -> Startseite
+RewriteRule ^einsatzbereich-lebensmittel\.html$ / [R=301,L]

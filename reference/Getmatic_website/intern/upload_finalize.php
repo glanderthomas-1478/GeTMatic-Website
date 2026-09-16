@@ -86,8 +86,8 @@ if (!rename($tmpPartPath, $destination)) {
 
 $stmt = $db->prepare(
     'INSERT INTO intern_files
-        (original_filename, stored_filename, mime_type, filesize_bytes, uploaded_by)
-     VALUES (:original, :stored, :mime, :size, :user_id)'
+        (original_filename, stored_filename, mime_type, filesize_bytes, uploaded_by, folder_id)
+     VALUES (:original, :stored, :mime, :size, :user_id, :folder_id)'
 );
 $stmt->execute([
     'original' => $originalFilename,
@@ -95,6 +95,7 @@ $stmt->execute([
     'mime' => $validation['mime'],
     'size' => $actualSize,
     'user_id' => current_user_id(),
+    'folder_id' => $session['folder_id'],
 ]);
 
 $stmt = $db->prepare('UPDATE intern_upload_sessions SET status = "completed" WHERE token = :token');

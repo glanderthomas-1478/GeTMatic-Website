@@ -2,6 +2,11 @@
 -- Einmalig im 1blu-Datenbank-Tool (phpMyAdmin o.ä.) ausfuehren.
 -- Alle Tabellen mit Praefix "intern_", um Kollisionen mit anderen
 -- Anwendungen in derselben Datenbank zu vermeiden.
+--
+-- Hinweis fuer bestehende Installationen: dieses Schema enthaelt bereits die
+-- Ordnerstruktur (intern_folders + folder_id-Spalten). Wurde schema.sql bei
+-- dir schon einmal ausgefuehrt, benutze stattdessen
+-- sql/migration_2026-09-16_ordner.sql fuer die Nachruestung.
 
 CREATE TABLE intern_users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -12,8 +17,22 @@ CREATE TABLE intern_users (
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- Virtuelle Ordnerstruktur (nur in der Datenbank). Physische Dateien bleiben
+-- unabhaengig von Ordnern immer flach in files/ mit zufaelligem Dateinamen -
+-- Ordner sind reine Organisationshilfe, keine echten Verzeichnisse.
+CREATE TABLE intern_folders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    parent_id INT NULL,
+    created_by INT NOT NULL,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (parent_id) REFERENCES intern_folders(id) ON DELETE CASCADE,
+    FOREIGN KEY (created_by) REFERENCES intern_users(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 -- filesize_bytes bewusst BIGINT statt INT: bei bis zu 20 GB pro Datei
 -- (~21.5 Milliarden Bytes) wuerde ein normaler INT (max. ~2.1 Milliarden) ueberlaufen.
+-- folder_id NULL = Wurzelebene.
 CREATE TABLE intern_files (
     id INT AUTO_INCREMENT PRIMARY KEY,
     original_filename VARCHAR(255) NOT NULL,
@@ -21,8 +40,10 @@ CREATE TABLE intern_files (
     mime_type VARCHAR(100) NOT NULL,
     filesize_bytes BIGINT UNSIGNED NOT NULL,
     uploaded_by INT NOT NULL,
+    folder_id INT NULL,
     uploaded_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (uploaded_by) REFERENCES intern_users(id)
+    FOREIGN KEY (uploaded_by) REFERENCES intern_users(id),
+    FOREIGN KEY (folder_id) REFERENCES intern_folders(id) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE intern_login_attempts (
@@ -41,7 +62,9 @@ CREATE TABLE intern_upload_sessions (
     total_size_bytes BIGINT UNSIGNED NOT NULL,
     received_bytes BIGINT UNSIGNED NOT NULL DEFAULT 0,
     created_by INT NOT NULL,
+    folder_id INT NULL,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     status ENUM('in_progress','completed','failed') NOT NULL DEFAULT 'in_progress',
-    FOREIGN KEY (created_by) REFERENCES intern_users(id)
+    FOREIGN KEY (created_by) REFERENCES intern_users(id),
+    FOREIGN KEY (folder_id) REFERENCES intern_folders(id) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

@@ -22,3 +22,12 @@ reference/Getmatic_website/intern/add_user.php
 **/intern/config.php
 **/intern/add_user.php
 **/intern/sql/add_user.php
+
+# Video-Rohmaterial und Zwischenstaende der Videobearbeitung (mehrere GB,
+# gehoert nicht ins Git-Repo) — fertige, web-optimierte Videos fuer die
+# Website liegen stattdessen direkt in reference/Getmatic_website/
+reference/Video/
+
+# Sync-Tool-Anomalien (siehe "Ungeklaerte Datei-Synchronisation" in
+# context/current-data.md) — bewusst nicht versioniert
+Backup_Website/

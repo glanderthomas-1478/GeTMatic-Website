@@ -56,6 +56,16 @@ if ($chunkIndex === 0) {
         json_fail('Nicht genuegend freier Speicherplatz auf dem Server.', 507);
     }
 
+    $folderId = (($_POST['folder_id'] ?? '') !== '') ? (int) $_POST['folder_id'] : null;
+
+    if ($folderId !== null) {
+        $checkStmt = $db->prepare('SELECT id FROM intern_folders WHERE id = :id LIMIT 1');
+        $checkStmt->execute(['id' => $folderId]);
+        if (!$checkStmt->fetch()) {
+            $folderId = null; // ungueltige Ordner-ID -> Wurzelebene statt Abbruch
+        }
+    }
+
     // Falls ein alter, verwaister .part mit demselben Token existiert (sollte
     // wegen zufaelligem Token praktisch nie vorkommen) - sauber neu beginnen.
     if (is_file($tmpPartPath)) {
@@ -64,14 +74,15 @@ if ($chunkIndex === 0) {
 
     $stmt = $db->prepare(
         'INSERT INTO intern_upload_sessions
-            (token, original_filename, total_size_bytes, received_bytes, created_by, status)
-         VALUES (:token, :filename, :total_size, 0, :user_id, "in_progress")'
+            (token, original_filename, total_size_bytes, received_bytes, created_by, folder_id, status)
+         VALUES (:token, :filename, :total_size, 0, :user_id, :folder_id, "in_progress")'
     );
     $stmt->execute([
         'token' => $token,
         'filename' => $originalFilename,
         'total_size' => $totalSize,
         'user_id' => current_user_id(),
+        'folder_id' => $folderId,
     ]);
 }
 

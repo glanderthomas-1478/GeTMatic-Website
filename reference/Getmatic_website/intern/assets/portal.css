@@ -261,6 +261,30 @@
 
 .portal-inline-form { display: inline; }
 
+/* ---------- Ordner ---------- */
+
+.portal-breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: var(--space-3);
+}
+.portal-breadcrumb a { color: var(--teal); }
+.portal-breadcrumb a:hover { color: var(--teal-dark); }
+
+.portal-folder-list {
+  list-style: none;
+  margin: 0 0 var(--space-3);
+  padding: 0;
+}
+.portal-folder-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+.portal-folder-icon { margin-right: 6px; }
+
 /* ---------- Mobile ---------- */
 
 @media (max-width: 640px) {

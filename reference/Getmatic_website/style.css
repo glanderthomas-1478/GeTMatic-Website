@@ -1103,6 +1103,33 @@ body {
   color: #fff;
 }
 
+.einsatz-prozess {
+  margin-bottom: var(--space-6);
+}
+
+.einsatz-prozess-header {
+  text-align: center;
+  margin-bottom: var(--space-5);
+}
+
+.prozess-frame {
+  aspect-ratio: 951 / 372;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-header);
+  border: 2px solid #000;
+}
+
+.prozess-video {
+  display: block;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  border-radius: 6px;
+}
+
 /* Karten auf der Startseite jetzt klickbar -> als Link gerendert */
 .anlagen-link {
   display: inline-flex;

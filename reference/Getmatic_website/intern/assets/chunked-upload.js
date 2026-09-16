@@ -49,6 +49,7 @@
     if (chunkIndex === 0) {
       formData.append('filename', meta.filename);
       formData.append('total_size', String(meta.totalSize));
+      formData.append('folder_id', meta.folderId || '');
     }
 
     return postForm('upload_chunk.php', formData);
@@ -108,7 +109,7 @@
 
       var end = Math.min(offset + CHUNK_SIZE, file.size);
       var blob = file.slice(offset, end);
-      var meta = { filename: file.name, totalSize: file.size };
+      var meta = { filename: file.name, totalSize: file.size, folderId: ui.folderId };
 
       return uploadChunkWithRetry(ui.csrfToken, token, chunkIndex, blob, offset, meta)
         .then(function (data) {
@@ -132,9 +133,11 @@
     var statusEl = document.getElementById('upload-status');
     var submitBtn = document.getElementById('upload-submit-btn');
     var csrfToken = form.querySelector('input[name="csrf_token"]').value;
+    var folderIdInput = form.querySelector('input[name="folder_id"]');
 
     var ui = {
       csrfToken: csrfToken,
+      folderId: folderIdInput ? folderIdInput.value : '',
       setProgress: function (fraction) {
         var pct = Math.round(fraction * 100);
         progressBar.style.width = pct + '%';

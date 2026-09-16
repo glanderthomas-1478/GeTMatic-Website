@@ -9,6 +9,34 @@ require_login();
 $db = get_db();
 
 // -----------------------------------------------------------------
+// Ordner-Navigation: aktueller Ordner + Breadcrumb von der Wurzel aus
+// -----------------------------------------------------------------
+$currentFolderId = (isset($_GET['folder_id']) && $_GET['folder_id'] !== '') ? (int) $_GET['folder_id'] : null;
+
+$currentFolder = null;
+if ($currentFolderId !== null) {
+    $stmt = $db->prepare('SELECT * FROM intern_folders WHERE id = :id LIMIT 1');
+    $stmt->execute(['id' => $currentFolderId]);
+    $currentFolder = $stmt->fetch();
+    if (!$currentFolder) {
+        $currentFolderId = null; // ungueltige/geloeschte Ordner-ID -> zurueck zur Wurzel
+    }
+}
+
+$breadcrumb = [];
+$walkId = $currentFolderId;
+while ($walkId !== null) {
+    $stmt = $db->prepare('SELECT id, name, parent_id FROM intern_folders WHERE id = :id LIMIT 1');
+    $stmt->execute(['id' => $walkId]);
+    $folder = $stmt->fetch();
+    if (!$folder) {
+        break;
+    }
+    array_unshift($breadcrumb, $folder);
+    $walkId = $folder['parent_id'] !== null ? (int) $folder['parent_id'] : null;
+}
+
+// -----------------------------------------------------------------
 // Schritt 15: abgebrochene Chunk-Uploads aufraeumen (aelter als 24h)
 // -----------------------------------------------------------------
 $stale = $db->query(
@@ -28,17 +56,30 @@ if ($stale) {
 }
 
 // -----------------------------------------------------------------
-// Dateiliste (gemeinsamer Pool, alle eingeloggten Nutzer sehen alles)
+// Unterordner + Dateiliste des aktuellen Ordners (gemeinsamer Pool,
+// alle eingeloggten Nutzer sehen alles)
 // -----------------------------------------------------------------
-$files = $db->query(
+$subfoldersStmt = $db->prepare(
+    'SELECT id, name FROM intern_folders WHERE parent_id <=> :folder_id ORDER BY name ASC'
+);
+$subfoldersStmt->execute(['folder_id' => $currentFolderId]);
+$subfolders = $subfoldersStmt->fetchAll();
+
+$filesStmt = $db->prepare(
     'SELECT f.id, f.original_filename, f.filesize_bytes, f.uploaded_at, u.display_name
      FROM intern_files f
      JOIN intern_users u ON u.id = f.uploaded_by
+     WHERE f.folder_id <=> :folder_id
      ORDER BY f.uploaded_at DESC'
-)->fetchAll();
+);
+$filesStmt->execute(['folder_id' => $currentFolderId]);
+$files = $filesStmt->fetchAll();
 
 $token = csrf_token();
 $deleted = isset($_GET['deleted']);
+$folderCreated = isset($_GET['folder_created']);
+$folderDeleted = isset($_GET['folder_deleted']);
+$folderError = isset($_GET['folder_error']) ? (string) $_GET['folder_error'] : null;
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -64,14 +105,31 @@ $deleted = isset($_GET['deleted']);
   <main class="portal-main">
     <h1 class="portal-title">Dateien</h1>
 
+    <nav class="portal-breadcrumb" aria-label="Ordnerpfad">
+      <a href="index.php">Wurzelverzeichnis</a>
+      <?php foreach ($breadcrumb as $crumb): ?>
+        &raquo; <a href="index.php?folder_id=<?= (int) $crumb['id'] ?>"><?= htmlspecialchars($crumb['name']) ?></a>
+      <?php endforeach; ?>
+    </nav>
+
     <?php if ($deleted): ?>
       <p class="portal-flash-success">Datei gelöscht.</p>
+    <?php endif; ?>
+    <?php if ($folderCreated): ?>
+      <p class="portal-flash-success">Ordner angelegt.</p>
+    <?php endif; ?>
+    <?php if ($folderDeleted): ?>
+      <p class="portal-flash-success">Ordner gelöscht.</p>
+    <?php endif; ?>
+    <?php if ($folderError): ?>
+      <p class="portal-flash-error"><?= htmlspecialchars($folderError) ?></p>
     <?php endif; ?>
 
     <section class="portal-card">
       <h2>Neue Datei hochladen</h2>
       <form id="upload-form" class="portal-form" enctype="multipart/form-data">
         <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($token) ?>" />
+        <input type="hidden" name="folder_id" id="upload-folder-id" value="<?= $currentFolderId !== null ? (int) $currentFolderId : '' ?>" />
         <input type="file" id="upload-file-input" name="file" required />
         <button type="submit" id="upload-submit-btn" class="portal-btn">Hochladen</button>
       </form>
@@ -85,10 +143,41 @@ $deleted = isset($_GET['deleted']);
     </section>
 
     <section class="portal-card">
-      <h2>Vorhandene Dateien</h2>
+      <h2>Neuer Ordner</h2>
+      <form method="post" action="create_folder.php" class="portal-form">
+        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($token) ?>" />
+        <input type="hidden" name="parent_id" value="<?= $currentFolderId !== null ? (int) $currentFolderId : '' ?>" />
+        <input type="text" name="name" maxlength="100" placeholder="Ordnername" required />
+        <button type="submit" class="portal-btn">Ordner anlegen</button>
+      </form>
+    </section>
 
-      <?php if (!$files): ?>
-        <p class="portal-hint">Noch keine Dateien hochgeladen.</p>
+    <section class="portal-card">
+      <h2>Inhalt dieses Ordners</h2>
+
+      <?php if ($subfolders): ?>
+        <ul class="portal-folder-list">
+          <?php foreach ($subfolders as $folder): ?>
+            <li class="portal-folder-row">
+              <a href="index.php?folder_id=<?= (int) $folder['id'] ?>" class="portal-link">
+                <span class="portal-folder-icon" aria-hidden="true">&#128193;</span>
+                <?= htmlspecialchars($folder['name']) ?>
+              </a>
+              <form method="post" action="delete_folder.php" class="portal-inline-form"
+                    onsubmit="return confirm('Ordner „<?= htmlspecialchars(addslashes($folder['name'])) ?>“ wirklich löschen? (nur möglich, wenn er leer ist)');">
+                <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($token) ?>" />
+                <input type="hidden" name="id" value="<?= (int) $folder['id'] ?>" />
+                <button type="submit" class="portal-link portal-link-danger">Löschen</button>
+              </form>
+            </li>
+          <?php endforeach; ?>
+        </ul>
+      <?php endif; ?>
+
+      <?php if (!$files && !$subfolders): ?>
+        <p class="portal-hint">Dieser Ordner ist leer.</p>
+      <?php elseif (!$files): ?>
+        <p class="portal-hint">Keine Dateien in diesem Ordner.</p>
       <?php else: ?>
         <div class="portal-table-wrap">
           <table class="portal-table">
