@@ -9,6 +9,8 @@ require_once __DIR__ . '/db.php';
 const SESSION_IDLE_TIMEOUT_SECONDS = 30 * 60; // 30 Minuten
 const LOGIN_MAX_ATTEMPTS = 5;
 const LOGIN_LOCKOUT_WINDOW_MINUTES = 15;
+// Datenschutz (DSGVO Art. 5 Abs. 1 lit. e): Login-Versuche inkl. IP nach dieser Frist loeschen
+const LOGIN_ATTEMPTS_RETENTION_DAYS = 30;
 
 /**
  * HTTPS wird primaer per .htaccess (Server-Ebene) erzwungen, siehe
@@ -84,6 +86,12 @@ function record_login_attempt(string $username, bool $success): void
         'ip' => current_ip(),
         'success' => $success ? 1 : 0,
     ]);
+
+    // Alte Eintraege bei jedem Login-Versuch mit aufraeumen (kein Cronjob noetig)
+    $db->prepare(
+        'DELETE FROM intern_login_attempts
+         WHERE attempted_at < (NOW() - INTERVAL :days DAY)'
+    )->execute(['days' => LOGIN_ATTEMPTS_RETENTION_DAYS]);
 }
 
 function attempt_login(string $username, string $password): bool

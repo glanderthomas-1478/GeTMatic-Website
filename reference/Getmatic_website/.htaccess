@@ -5,5 +5,19 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} ^(www\.)?glander-led\.de$ [NC]
 RewriteRule ^(.*)$ https://www.getmatic.de/$1 [R=301,L]
 
+# HTTPS erzwingen (Datenschutzerklaerung sagt SSL/TLS zu) - /intern/ hat eigene Regel
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
 # 301-Redirect: Rubrik Lebensmittelindustrie entfernt (2026-09-16) -> Startseite
 RewriteRule ^einsatzbereich-lebensmittel\.html$ / [R=301,L]
+
+# 301-Redirect: Rubrik Transport entfernt (2026-09-24) -> Startseite
+RewriteRule ^einsatzbereich-transport\.html$ / [R=301,L]
+
+# Testumgebung bearingcontrol.de nicht indexieren (gleiche Dateien wie getmatic.de,
+# Regel greift nur, wenn die Seite ueber bearingcontrol.de aufgerufen wird)
+<IfModule mod_headers.c>
+  SetEnvIfNoCase Host "bearingcontrol\.de$" TESTUMGEBUNG
+  Header set X-Robots-Tag "noindex, nofollow" env=TESTUMGEBUNG
+</IfModule>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="GeTMatic – SPS-Automatisierung für die Papierindustrie. Rollenschneider, Querschneider, Kalander. Step7/TIA Portal, Antriebsverbund-Steuerung für Papierproduktion. Krefeld." />
-  <meta name="keywords" content="getmatic, GeTMatic, Automatisierung Papierindustrie, SPS Rollenschneider, TIA Portal Kalander, Antriebsverbund Papierproduktion, Krefeld" />
+  <meta name="description" content="GeTMatic – SPS-Automatisierung für die Papierindustrie. Rollenschneider, Querschneider, Kalander. Step7/TIA Portal, Antriebsverbund-Steuerung für Papierproduktion, Förder- und Verpackungsanlagen. Krefeld." />
+  <meta name="keywords" content="getmatic, GeTMatic, Automatisierung Papierindustrie, SPS Rollenschneider, TIA Portal Kalander, Antriebsverbund Papierproduktion, Fördertechnik, Verpackungsanlagen, Krefeld" />
   <meta name="author" content="Thomas Glander – GeTMatic" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.getmatic.de/einsatzbereich-papier.html" />
@@ -37,9 +37,19 @@
       <nav class="main-nav" aria-label="Hauptnavigation">
         <ul>
           <li><a href="index.html#leistungen" data-i18n="nav-leistungen">Leistungen</a></li>
-          <li><a href="index.html#anlagen" data-i18n="nav-anlagen">Anlagen</a></li>
+          <li class="nav-dropdown">
+            <a href="index.html#anlagen" data-i18n="nav-anlagen">Anlagen</a>
+            <ul class="nav-dropdown-menu">
+              <li><a href="einsatzbereich-getraenke.html" data-i18n="nav-drop-getraenke">Getränkeverbundkarton</a></li>
+              <li><a href="docucontrol.html" data-i18n="nav-drop-doku">Dokumentation</a></li>
+              <li><a href="einsatzbereich-medizin.html" data-i18n="nav-drop-medizin">Medizin &amp; Sterilisation</a></li>
+              <li><a href="einsatzbereich-papier.html" data-i18n="nav-drop-papier">Papierindustrie</a></li>
+              <li><a href="index.html#anlagen" class="nav-dropdown-all" data-i18n="nav-drop-alle">Alle Einsatzbereiche &#8594;</a></li>
+            </ul>
+          </li>
           <li><a href="index.html#kontakt" data-i18n="nav-kontakt">Kontakt</a></li>
           <li><a href="impressum.html" data-i18n="nav-impressum">Impressum</a></li>
+          <li><a href="datenschutz.html" data-i18n="nav-datenschutz">Datenschutz</a></li>
         </ul>
       </nav>
       <div class="lang-switch">
@@ -82,6 +92,7 @@
       <div class="einsatz-content animate-in" style="--d:.2s">
         <p data-i18n="pap-p1">Rollenschneider, Querschneider, Kalander und Wickelmaschinen verarbeiten die Papierbahn unter hoher mechanischer Beanspruchung. Bahnspannungsregelung, die Synchronisation mehrerer Achsen und die zuverlässige Erkennung von Materialbrüchen sind dabei entscheidend für Produktionssicherheit und Ausschussvermeidung.</p>
         <p data-i18n="pap-p2">Wir realisieren die Antriebsverbund-Steuerung mit Step 7 und TIA Portal, sorgen für eine präzise Synchronisation der beteiligten Achsen und hinterlegen Rezeptverwaltungen für unterschiedliche Papiersorten und -formate. So lassen sich Umrüstzeiten verkürzen und die Anlage flexibel auf wechselnde Produktionsaufträge einstellen.</p>
+        <p data-i18n="pap-p3">Ergänzend zur Antriebsverbund-Steuerung achten wir auf eine klare Diagnose- und Störmeldeanzeige direkt an der Anlage, damit das Bedienpersonal Abweichungen schnell erkennt und Stillstandszeiten minimiert werden.</p>
       </div>
 
       <div class="einsatz-vorteile">
@@ -103,6 +114,32 @@
         </div>
       </div>
 
+      <div class="einsatz-content animate-in" style="--d:.2s">
+        <h2 style="font-family:var(--font-head);font-size:1.5rem;font-weight:700;color:var(--text-dark);margin-bottom:var(--space-2);" data-i18n="tra-h1">Transport &amp; Verpackung</h2>
+        <p data-i18n="tra-p1">Förderbänder, Sortieranlagen und Verpackungslinien sind das Rückgrat dynamischer Materialflüsse. Wechselnde Produktgrößen und -gewichte, hohe Taktraten und der Verbund mehrerer Anlagenabschnitte stellen hohe Anforderungen an die Steuerungstechnik.</p>
+        <p data-i18n="tra-p2">Wir programmieren die Förderlogik mit Step 7 und TIA Portal, parametrieren Frequenzumrichter für variable Bandgeschwindigkeiten und integrieren die nötige Sensorik – von Lichtschranken bis zu Wäge- und Erkennungssystemen. Dabei achten wir besonders auf saubere Schnittstellen zu vor- und nachgelagerten Anlagenteilen, damit der gesamte Linienverbund zuverlässig zusammenspielt.</p>
+        <p data-i18n="tra-p3">Für einen unterbrechungsfreien Betrieb legen wir zudem Wert auf durchdachte Störungsdiagnose und Not-Halt-Konzepte, damit Stillstandszeiten im Störfall so kurz wie möglich ausfallen.</p>
+      </div>
+
+      <div class="einsatz-vorteile">
+        <div class="einsatz-vorteil animate-in" style="--d:.1s">
+          <h3 data-i18n="tra-v1-h">Förderlogik &amp; Steuerung</h3>
+          <p data-i18n="tra-v1-p">Programmierung der Anlagenlogik mit Step 7 und TIA Portal, abgestimmt auf wechselnde Produkte und Taktzeiten.</p>
+        </div>
+        <div class="einsatz-vorteil animate-in" style="--d:.2s">
+          <h3 data-i18n="tra-v2-h">Antriebstechnik</h3>
+          <p data-i18n="tra-v2-p">Parametrierung von Frequenzumrichtern für präzise, variable Bandgeschwindigkeiten und sanfte Übergaben.</p>
+        </div>
+        <div class="einsatz-vorteil animate-in" style="--d:.3s">
+          <h3 data-i18n="tra-v3-h">Sensorintegration</h3>
+          <p data-i18n="tra-v3-p">Anbindung von Lichtschranken, Wäge- und Erkennungssystemen für zuverlässige Material- und Produkterkennung.</p>
+        </div>
+        <div class="einsatz-vorteil animate-in" style="--d:.4s">
+          <h3 data-i18n="tra-v4-h">Linienverbund</h3>
+          <p data-i18n="tra-v4-p">Saubere Schnittstellen zu vor- und nachgelagerten Anlagenteilen für einen zuverlässigen Gesamtprozess.</p>
+        </div>
+      </div>
+
       <a href="index.html#kontakt" class="einsatz-cta animate-in" data-i18n="pap-cta">Projekt anfragen</a>
 
     </div>
@@ -119,6 +156,7 @@
         <a href="index.html" data-i18n="foot-start">Startseite</a>
         <a href="index.html#leistungen" data-i18n="nav-leistungen">Leistungen</a>
         <a href="impressum.html" data-i18n="nav-impressum">Impressum</a>
+        <a href="datenschutz.html" data-i18n="nav-datenschutz">Datenschutz</a>
       </nav>
       <p class="footer-copy">&copy; 2019&ndash;2026 Getmatic.de</p>
     </div>
@@ -153,12 +191,19 @@
         'nav-anlagen':    'Anlagen',
         'nav-kontakt':    'Kontakt',
         'nav-impressum':  'Impressum',
+        'nav-datenschutz': 'Datenschutz',
+        'nav-drop-getraenke': 'Getränkeverbundkarton',
+        'nav-drop-doku':      'Dokumentation',
+        'nav-drop-medizin':   'Medizin & Sterilisation',
+        'nav-drop-papier':    'Papierindustrie',
+        'nav-drop-alle':      'Alle Einsatzbereiche &#8594;',
         'foot-start':     'Startseite',
         'einsatz-back': '&#8592; Zurück zur Übersicht',
         'pap-label': 'Einsatzbereich',
         'pap-h1':    'Papierindustrie',
         'pap-p1': 'Rollenschneider, Querschneider, Kalander und Wickelmaschinen verarbeiten die Papierbahn unter hoher mechanischer Beanspruchung. Bahnspannungsregelung, die Synchronisation mehrerer Achsen und die zuverlässige Erkennung von Materialbrüchen sind dabei entscheidend für Produktionssicherheit und Ausschussvermeidung.',
         'pap-p2': 'Wir realisieren die Antriebsverbund-Steuerung mit Step 7 und TIA Portal, sorgen für eine präzise Synchronisation der beteiligten Achsen und hinterlegen Rezeptverwaltungen für unterschiedliche Papiersorten und -formate. So lassen sich Umrüstzeiten verkürzen und die Anlage flexibel auf wechselnde Produktionsaufträge einstellen.',
+        'pap-p3': 'Ergänzend zur Antriebsverbund-Steuerung achten wir auf eine klare Diagnose- und Störmeldeanzeige direkt an der Anlage, damit das Bedienpersonal Abweichungen schnell erkennt und Stillstandszeiten minimiert werden.',
         'pap-v1-h': 'Bahnspannungsregelung',
         'pap-v1-p': 'Präzise Regelung der Bahnspannung über den gesamten Produktionsprozess hinweg.',
         'pap-v2-h': 'Achsensynchronisation',
@@ -167,6 +212,18 @@
         'pap-v3-p': 'Zuverlässige Erkennung von Bahnabrissen zur Vermeidung von Stillstandszeiten und Ausschuss.',
         'pap-v4-h': 'Rezeptverwaltung',
         'pap-v4-p': 'Hinterlegte Rezepte für unterschiedliche Papiersorten und Formate, schneller Produktwechsel.',
+        'tra-h1':    'Transport &amp; Verpackung',
+        'tra-p1': 'Förderbänder, Sortieranlagen und Verpackungslinien sind das Rückgrat dynamischer Materialflüsse. Wechselnde Produktgrößen und -gewichte, hohe Taktraten und der Verbund mehrerer Anlagenabschnitte stellen hohe Anforderungen an die Steuerungstechnik.',
+        'tra-p2': 'Wir programmieren die Förderlogik mit Step 7 und TIA Portal, parametrieren Frequenzumrichter für variable Bandgeschwindigkeiten und integrieren die nötige Sensorik – von Lichtschranken bis zu Wäge- und Erkennungssystemen. Dabei achten wir besonders auf saubere Schnittstellen zu vor- und nachgelagerten Anlagenteilen, damit der gesamte Linienverbund zuverlässig zusammenspielt.',
+        'tra-p3': 'Für einen unterbrechungsfreien Betrieb legen wir zudem Wert auf durchdachte Störungsdiagnose und Not-Halt-Konzepte, damit Stillstandszeiten im Störfall so kurz wie möglich ausfallen.',
+        'tra-v1-h': 'Förderlogik &amp; Steuerung',
+        'tra-v1-p': 'Programmierung der Anlagenlogik mit Step 7 und TIA Portal, abgestimmt auf wechselnde Produkte und Taktzeiten.',
+        'tra-v2-h': 'Antriebstechnik',
+        'tra-v2-p': 'Parametrierung von Frequenzumrichtern für präzise, variable Bandgeschwindigkeiten und sanfte Übergaben.',
+        'tra-v3-h': 'Sensorintegration',
+        'tra-v3-p': 'Anbindung von Lichtschranken, Wäge- und Erkennungssystemen für zuverlässige Material- und Produkterkennung.',
+        'tra-v4-h': 'Linienverbund',
+        'tra-v4-p': 'Saubere Schnittstellen zu vor- und nachgelagerten Anlagenteilen für einen zuverlässigen Gesamtprozess.',
         'pap-cta': 'Projekt anfragen'
       },
       en: {
@@ -175,12 +232,19 @@
         'nav-anlagen':    'Applications',
         'nav-kontakt':    'Contact',
         'nav-impressum':  'Imprint',
+        'nav-datenschutz': 'Privacy Policy',
+        'nav-drop-getraenke': 'Beverage Composite Carton',
+        'nav-drop-doku':      'Documentation',
+        'nav-drop-medizin':   'Medical & Sterilization',
+        'nav-drop-papier':    'Paper Industry',
+        'nav-drop-alle':      'All Applications &#8594;',
         'foot-start':     'Home',
         'einsatz-back': '&#8592; Back to overview',
         'pap-label': 'Area of Application',
         'pap-h1':    'Paper Industry',
         'pap-p1': 'Roll cutters, cross cutters, calenders and rewinders process the paper web under high mechanical stress. Web tension control, the synchronization of several axes, and reliable detection of web breaks are crucial for production safety and avoiding waste.',
         'pap-p2': 'We implement the drive-coupled control with Step 7 and TIA Portal, ensure precise synchronization of the involved axes, and store recipes for different paper types and formats. This shortens changeover times and lets the plant adapt flexibly to changing production orders.',
+        'pap-p3': 'In addition to the drive-coupled control system, we ensure clear diagnostics and fault indication directly on the machine, so operating staff can quickly identify deviations and minimize downtime.',
         'pap-v1-h': 'Web Tension Control',
         'pap-v1-p': 'Precise control of web tension throughout the entire production process.',
         'pap-v2-h': 'Axis Synchronization',
@@ -189,6 +253,18 @@
         'pap-v3-p': 'Reliable detection of web breaks to avoid downtime and waste.',
         'pap-v4-h': 'Recipe Management',
         'pap-v4-p': 'Stored recipes for different paper types and formats, fast product changeovers.',
+        'tra-h1':    'Transport &amp; Packaging',
+        'tra-p1': 'Conveyor belts, sorting systems and packaging lines are the backbone of dynamic material flows. Changing product sizes and weights, high cycle rates and the interplay of several plant sections place high demands on control technology.',
+        'tra-p2': 'We program the conveyor logic with Step 7 and TIA Portal, parameterize frequency inverters for variable belt speeds, and integrate the required sensors – from light barriers to weighing and recognition systems. We pay particular attention to clean interfaces with upstream and downstream plant sections so the entire line works together reliably.',
+        'tra-p3': 'For uninterrupted operation, we also place great importance on well-designed fault diagnostics and emergency-stop concepts, so that downtime in the event of a fault is kept as short as possible.',
+        'tra-v1-h': 'Conveyor Logic &amp; Control',
+        'tra-v1-p': 'Programming of plant logic with Step 7 and TIA Portal, tailored to changing products and cycle times.',
+        'tra-v2-h': 'Drive Technology',
+        'tra-v2-p': 'Parameterization of frequency inverters for precise, variable belt speeds and smooth transitions.',
+        'tra-v3-h': 'Sensor Integration',
+        'tra-v3-p': 'Integration of light barriers, weighing and recognition systems for reliable material and product detection.',
+        'tra-v4-h': 'Line Integration',
+        'tra-v4-p': 'Clean interfaces with upstream and downstream plant sections for a reliable overall process.',
         'pap-cta': 'Request a Project'
       }
     };

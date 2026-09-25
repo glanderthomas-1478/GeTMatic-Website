@@ -10,9 +10,6 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>Impressum – GeTMatic Automatisierung</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -29,9 +26,19 @@
       <nav class="main-nav" aria-label="Hauptnavigation">
         <ul>
           <li><a href="index.html#leistungen" data-i18n="nav-leistungen">Leistungen</a></li>
-          <li><a href="index.html#anlagen" data-i18n="nav-anlagen">Anlagen</a></li>
+          <li class="nav-dropdown">
+            <a href="index.html#anlagen" data-i18n="nav-anlagen">Anlagen</a>
+            <ul class="nav-dropdown-menu">
+              <li><a href="einsatzbereich-getraenke.html" data-i18n="nav-drop-getraenke">Getränkeverbundkarton</a></li>
+              <li><a href="docucontrol.html" data-i18n="nav-drop-doku">Dokumentation</a></li>
+              <li><a href="einsatzbereich-medizin.html" data-i18n="nav-drop-medizin">Medizin &amp; Sterilisation</a></li>
+              <li><a href="einsatzbereich-papier.html" data-i18n="nav-drop-papier">Papierindustrie</a></li>
+              <li><a href="index.html#anlagen" class="nav-dropdown-all" data-i18n="nav-drop-alle">Alle Einsatzbereiche &#8594;</a></li>
+            </ul>
+          </li>
           <li><a href="index.html#kontakt" data-i18n="nav-kontakt">Kontakt</a></li>
           <li><a href="impressum.html" style="color:#fff" data-i18n="nav-impressum">Impressum</a></li>
+          <li><a href="datenschutz.html" data-i18n="nav-datenschutz">Datenschutz</a></li>
         </ul>
       </nav>
       <div class="lang-switch">
@@ -143,7 +150,7 @@
 
       <div class="legal-section">
         <h3><span class="legal-num">4.</span> <span data-i18n="imp-sec4-h">Datenschutz</span></h3>
-        <p data-i18n="imp-sec4-p">Durch den Besuch der Website des Anbieters können Informationen über den Zugriff (Datum, Uhrzeit, betrachtete Seite) gespeichert werden. Diese Daten gehören nicht zu den personenbezogenen Daten, sondern sind anonymisiert. Sie werden ausschließlich zu statistischen Zwecken ausgewertet. Eine Weitergabe an Dritte, zu kommerziellen oder nichtkommerziellen Zwecken, findet nicht statt. Der Anbieter weist ausdrücklich darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen und nicht lückenlos vor dem Zugriff durch Dritte geschützt werden kann. Die Verwendung der Kontaktdaten des Impressums zur gewerblichen Werbung ist ausdrücklich nicht erwünscht, es sei denn der Anbieter hatte zuvor seine schriftliche Einwilligung erteilt oder es besteht bereits eine Geschäftsbeziehung. Der Anbieter und alle auf dieser Website genannten Personen widersprechen hiermit jeder kommerziellen Verwendung und Weitergabe ihrer Daten.</p>
+        <p data-i18n="imp-sec4-p">Informationen zur Verarbeitung personenbezogener Daten beim Besuch dieser Website finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>. Die Verwendung der Kontaktdaten des Impressums zur gewerblichen Werbung ist ausdrücklich nicht erwünscht, es sei denn, der Anbieter hat zuvor seine schriftliche Einwilligung erteilt oder es besteht bereits eine Geschäftsbeziehung.</p>
       </div>
 
       <div class="legal-section">
@@ -167,6 +174,7 @@
         <a href="index.html" data-i18n="foot-start">Startseite</a>
         <a href="index.html#leistungen" data-i18n="nav-leistungen">Leistungen</a>
         <a href="impressum.html" data-i18n="nav-impressum">Impressum</a>
+        <a href="datenschutz.html" data-i18n="nav-datenschutz">Datenschutz</a>
       </nav>
       <p class="footer-copy">&copy; 2019 Getmatic.de</p>
     </div>
@@ -201,6 +209,12 @@
         'nav-anlagen':    'Anlagen',
         'nav-kontakt':    'Kontakt',
         'nav-impressum':  'Impressum',
+        'nav-datenschutz': 'Datenschutz',
+        'nav-drop-getraenke': 'Getränkeverbundkarton',
+        'nav-drop-doku':      'Dokumentation',
+        'nav-drop-medizin':   'Medizin & Sterilisation',
+        'nav-drop-papier':    'Papierindustrie',
+        'nav-drop-alle':      'Alle Einsatzbereiche &#8594;',
         'foot-start':     'Startseite',
         'imp-label': 'Rechtliches',
         'imp-h1':    'Impressum',
@@ -219,7 +233,7 @@
         'imp-sec3-h': 'Urheber- und Leistungsschutzrechte',
         'imp-sec3-p': 'Die auf dieser Website veröffentlichten Inhalte unterliegen dem deutschen Urheber- und Leistungsschutzrecht. Jede vom deutschen Urheber- und Leistungsschutzrecht nicht zugelassene Verwertung bedarf der vorherigen schriftlichen Zustimmung des Anbieters oder jeweiligen Rechteinhabers. Dies gilt insbesondere für Vervielfältigung, Bearbeitung, Übersetzung, Einspeicherung, Verarbeitung bzw. Wiedergabe von Inhalten in Datenbanken oder anderen elektronischen Medien und Systemen. Inhalte und Rechte Dritter sind dabei als solche gekennzeichnet. Die unerlaubte Vervielfältigung oder Weitergabe einzelner Inhalte oder kompletter Seiten ist nicht gestattet und strafbar. Lediglich die Herstellung von Kopien und Downloads für den persönlichen, privaten und nicht kommerziellen Gebrauch ist erlaubt. Die Darstellung dieser Website in fremden Frames ist nur mit schriftlicher Erlaubnis zulässig.',
         'imp-sec4-h': 'Datenschutz',
-        'imp-sec4-p': 'Durch den Besuch der Website des Anbieters können Informationen über den Zugriff (Datum, Uhrzeit, betrachtete Seite) gespeichert werden. Diese Daten gehören nicht zu den personenbezogenen Daten, sondern sind anonymisiert. Sie werden ausschließlich zu statistischen Zwecken ausgewertet. Eine Weitergabe an Dritte, zu kommerziellen oder nichtkommerziellen Zwecken, findet nicht statt. Der Anbieter weist ausdrücklich darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen und nicht lückenlos vor dem Zugriff durch Dritte geschützt werden kann. Die Verwendung der Kontaktdaten des Impressums zur gewerblichen Werbung ist ausdrücklich nicht erwünscht, es sei denn der Anbieter hatte zuvor seine schriftliche Einwilligung erteilt oder es besteht bereits eine Geschäftsbeziehung. Der Anbieter und alle auf dieser Website genannten Personen widersprechen hiermit jeder kommerziellen Verwendung und Weitergabe ihrer Daten.',
+        'imp-sec4-p': 'Informationen zur Verarbeitung personenbezogener Daten beim Besuch dieser Website finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>. Die Verwendung der Kontaktdaten des Impressums zur gewerblichen Werbung ist ausdrücklich nicht erwünscht, es sei denn, der Anbieter hat zuvor seine schriftliche Einwilligung erteilt oder es besteht bereits eine Geschäftsbeziehung.',
         'imp-sec5-h': 'Besondere Nutzungsbedingungen',
         'imp-sec5-p': 'Soweit besondere Bedingungen für einzelne Nutzungen dieser Website von den vorgenannten Nummern 1. bis 4. abweichen, wird an entsprechender Stelle ausdrücklich darauf hingewiesen. In diesem Falle gelten im jeweiligen Einzelfall die besonderen Nutzungsbedingungen.'
       },
@@ -229,6 +243,12 @@
         'nav-anlagen':    'Applications',
         'nav-kontakt':    'Contact',
         'nav-impressum':  'Imprint',
+        'nav-datenschutz': 'Privacy Policy',
+        'nav-drop-getraenke': 'Beverage Composite Carton',
+        'nav-drop-doku':      'Documentation',
+        'nav-drop-medizin':   'Medical & Sterilization',
+        'nav-drop-papier':    'Paper Industry',
+        'nav-drop-alle':      'All Applications &#8594;',
         'foot-start':     'Home',
         'imp-label': 'Legal',
         'imp-h1':    'Imprint',
@@ -247,7 +267,7 @@
         'imp-sec3-h': 'Copyright and Performance Protection Rights',
         'imp-sec3-p': 'The content published on this website is subject to German copyright and performance protection law. Any use not permitted under German copyright and performance protection law requires the prior written consent of the provider or the respective rights holder. This applies in particular to reproduction, editing, translation, storage, processing, or reproduction of content in databases or other electronic media and systems. Third-party content and rights are identified as such. Unauthorized reproduction or distribution of individual content or entire pages is not permitted and is punishable by law. Only the production of copies and downloads for personal, private, and non-commercial use is permitted. The display of this website in third-party frames is only permitted with written permission.',
         'imp-sec4-h': 'Data Protection',
-        'imp-sec4-p': 'When you visit the provider\'s website, information about the access (date, time, page viewed) may be stored. This data does not constitute personal data but is anonymized. It is evaluated exclusively for statistical purposes. The data will not be disclosed to third parties for commercial or non-commercial purposes. The provider expressly points out that data transmission over the Internet (e.g., when communicating by e-mail) may have security gaps and cannot be completely protected against access by third parties. The use of contact details published in the imprint for commercial advertising is expressly not desired, unless the provider has given prior written consent or there is already a business relationship. The provider and all persons named on this website hereby object to any commercial use and disclosure of their data.',
+        'imp-sec4-p': 'Information on the processing of personal data when visiting this website can be found in our <a href="datenschutz.html">Privacy Policy</a>. The use of contact details published in the imprint for commercial advertising is expressly not desired, unless the provider has given prior written consent or there is already a business relationship.',
         'imp-sec5-h': 'Special Terms of Use',
         'imp-sec5-p': 'Insofar as special conditions for individual uses of this website deviate from the aforementioned points 1 to 4, this will be expressly pointed out at the relevant location. In this case, the special terms of use shall apply in the respective individual case.'
       }

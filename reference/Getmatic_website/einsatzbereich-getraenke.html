@@ -37,9 +37,19 @@
       <nav class="main-nav" aria-label="Hauptnavigation">
         <ul>
           <li><a href="index.html#leistungen" data-i18n="nav-leistungen">Leistungen</a></li>
-          <li><a href="index.html#anlagen" data-i18n="nav-anlagen">Anlagen</a></li>
+          <li class="nav-dropdown">
+            <a href="index.html#anlagen" data-i18n="nav-anlagen">Anlagen</a>
+            <ul class="nav-dropdown-menu">
+              <li><a href="einsatzbereich-getraenke.html" data-i18n="nav-drop-getraenke">Getränkeverbundkarton</a></li>
+              <li><a href="docucontrol.html" data-i18n="nav-drop-doku">Dokumentation</a></li>
+              <li><a href="einsatzbereich-medizin.html" data-i18n="nav-drop-medizin">Medizin &amp; Sterilisation</a></li>
+              <li><a href="einsatzbereich-papier.html" data-i18n="nav-drop-papier">Papierindustrie</a></li>
+              <li><a href="index.html#anlagen" class="nav-dropdown-all" data-i18n="nav-drop-alle">Alle Einsatzbereiche &#8594;</a></li>
+            </ul>
+          </li>
           <li><a href="index.html#kontakt" data-i18n="nav-kontakt">Kontakt</a></li>
           <li><a href="impressum.html" data-i18n="nav-impressum">Impressum</a></li>
+          <li><a href="datenschutz.html" data-i18n="nav-datenschutz">Datenschutz</a></li>
         </ul>
       </nav>
       <div class="lang-switch">
@@ -107,7 +117,7 @@
         <div class="einsatz-prozess-header animate-in">
           <div class="einsatz-label" data-i18n="get-prozess-label">Prozess im Detail</div>
           <h2 style="font-family:var(--font-head);font-size:1.5rem;font-weight:700;color:var(--text-dark);margin-bottom:var(--space-2);" data-i18n="get-prozess-h2">Unsere Abpacksysteme</h2>
-          <p style="max-width:760px;margin:0 auto;color:var(--text);line-height:1.8;" data-i18n="get-prozess-intro">Für die Faltschachtel-Klebemaschinen befüllen unsere Abpacksysteme Versandkartons automatisch mit gefalteten und geklebten Faltschachteln. Sie sind äußerst benutzerfreundlich und effizient und können Verpackungen verschiedener Größen und Formen befüllen. Dies ermöglicht es Ihnen, die manuelle Arbeit in der Weiterverarbeitung erheblich zu reduzieren, Ihre Produktionskosten zu senken und gleichzeitig die Produktivität Ihrer Faltschachtel-Klebemaschinen deutlich zu steigern.</p>
+          <p class="einsatz-prozess-intro" data-i18n="get-prozess-intro">Für die Falt&shy;schachtel-Klebe&shy;maschinen befüllen unsere Abpack&shy;systeme Versand&shy;kartons automatisch mit gefalteten und geklebten Falt&shy;schachteln. Sie sind äußerst benutzer&shy;freundlich und effizient und können Ver&shy;packungen verschiedener Größen und Formen befüllen. Dies ermög&shy;licht es Ihnen, die manuelle Arbeit in der Weiter&shy;verarbeitung erheblich zu reduzieren, Ihre Produktions&shy;kosten zu senken und gleich&shy;zeitig die Produk&shy;tivität Ihrer Falt&shy;schachtel-Klebe&shy;maschinen deutlich zu steigern.</p>
         </div>
 
         <div class="einsatz-screens">
@@ -177,6 +187,7 @@
         <a href="index.html" data-i18n="foot-start">Startseite</a>
         <a href="index.html#leistungen" data-i18n="nav-leistungen">Leistungen</a>
         <a href="impressum.html" data-i18n="nav-impressum">Impressum</a>
+        <a href="datenschutz.html" data-i18n="nav-datenschutz">Datenschutz</a>
       </nav>
       <p class="footer-copy">&copy; 2019&ndash;2026 Getmatic.de</p>
     </div>
@@ -218,6 +229,12 @@
         'nav-anlagen':    'Anlagen',
         'nav-kontakt':    'Kontakt',
         'nav-impressum':  'Impressum',
+        'nav-datenschutz': 'Datenschutz',
+        'nav-drop-getraenke': 'Getränkeverbundkarton',
+        'nav-drop-doku':      'Dokumentation',
+        'nav-drop-medizin':   'Medizin & Sterilisation',
+        'nav-drop-papier':    'Papierindustrie',
+        'nav-drop-alle':      'Alle Einsatzbereiche &#8594;',
         'foot-start':     'Startseite',
         'einsatz-back': '&#8592; Zurück zur Übersicht',
         'get-label': 'Einsatzbereich',
@@ -234,7 +251,7 @@
         'get-v4-p': 'Anlagensteuerung ausgerichtet auf maximale Verfügbarkeit und Linieneffizienz.',
         'get-prozess-label': 'Prozess im Detail',
         'get-prozess-h2': 'Unsere Abpacksysteme',
-        'get-prozess-intro': 'Für die Faltschachtel-Klebemaschinen befüllen unsere Abpacksysteme Versandkartons automatisch mit gefalteten und geklebten Faltschachteln. Sie sind äußerst benutzerfreundlich und effizient und können Verpackungen verschiedener Größen und Formen befüllen. Dies ermöglicht es Ihnen, die manuelle Arbeit in der Weiterverarbeitung erheblich zu reduzieren, Ihre Produktionskosten zu senken und gleichzeitig die Produktivität Ihrer Faltschachtel-Klebemaschinen deutlich zu steigern.',
+        'get-prozess-intro': 'Für die Falt&shy;schachtel-Klebe&shy;maschinen befüllen unsere Abpack&shy;systeme Versand&shy;kartons automatisch mit gefalteten und geklebten Falt&shy;schachteln. Sie sind äußerst benutzer&shy;freundlich und effizient und können Ver&shy;packungen verschiedener Größen und Formen befüllen. Dies ermög&shy;licht es Ihnen, die manuelle Arbeit in der Weiter&shy;verarbeitung erheblich zu reduzieren, Ihre Produktions&shy;kosten zu senken und gleich&shy;zeitig die Produk&shy;tivität Ihrer Falt&shy;schachtel-Klebe&shy;maschinen deutlich zu steigern.',
         'get-schritt1-h': 'Faltschachtel',
         'get-schritt1-p': 'Aus dem flachen Zuschnitt entsteht in Sekundenbruchteilen eine stabile Faltschachtel – automatisch geformt und sofort bereit zur Befüllung.',
         'get-schritt-pack-h': 'Packanlage',
@@ -251,6 +268,12 @@
         'nav-anlagen':    'Applications',
         'nav-kontakt':    'Contact',
         'nav-impressum':  'Imprint',
+        'nav-datenschutz': 'Privacy Policy',
+        'nav-drop-getraenke': 'Beverage Composite Carton',
+        'nav-drop-doku':      'Documentation',
+        'nav-drop-medizin':   'Medical & Sterilization',
+        'nav-drop-papier':    'Paper Industry',
+        'nav-drop-alle':      'All Applications &#8594;',
         'foot-start':     'Home',
         'einsatz-back': '&#8592; Back to overview',
         'get-label': 'Area of Application',

@@ -76,9 +76,19 @@
       <nav class="main-nav" aria-label="Hauptnavigation">
         <ul>
           <li><a href="#leistungen" data-i18n="nav-leistungen">Leistungen</a></li>
-          <li><a href="#anlagen" data-i18n="nav-anlagen">Anlagen</a></li>
+          <li class="nav-dropdown">
+            <a href="#anlagen" data-i18n="nav-anlagen">Anlagen</a>
+            <ul class="nav-dropdown-menu">
+              <li><a href="einsatzbereich-getraenke.html" data-i18n="nav-drop-getraenke">Getränkeverbundkarton</a></li>
+              <li><a href="docucontrol.html" data-i18n="nav-drop-doku">Dokumentation</a></li>
+              <li><a href="einsatzbereich-medizin.html" data-i18n="nav-drop-medizin">Medizin &amp; Sterilisation</a></li>
+              <li><a href="einsatzbereich-papier.html" data-i18n="nav-drop-papier">Papierindustrie</a></li>
+              <li><a href="#anlagen" class="nav-dropdown-all" data-i18n="nav-drop-alle">Alle Einsatzbereiche &#8594;</a></li>
+            </ul>
+          </li>
           <li><a href="#kontakt" data-i18n="nav-kontakt">Kontakt</a></li>
           <li><a href="impressum.html" data-i18n="nav-impressum">Impressum</a></li>
+          <li><a href="datenschutz.html" data-i18n="nav-datenschutz">Datenschutz</a></li>
         </ul>
       </nav>
       <div class="lang-switch">
@@ -111,16 +121,24 @@
     <div class="hero-gallery">
       <button class="gallery-btn prev" aria-label="Vorheriges Bild">&#8592;</button>
       <div class="hero-slides">
-        <div class="hero-slide active" style="--bg: url('Systeme.svg')">
+        <div class="hero-slide active">
+          <div class="hero-slide-bg" style="--bg: url('Systeme.svg')"></div>
           <div class="hero-overlay"></div>
           <div class="hero-content">
             <p class="hero-tag" data-i18n="hero1-tag">Automatisierungstechnik &mdash; Krefeld</p>
             <h1 data-i18n="hero1-h1">Präzision.<br/>Prozesse.<br/>Lösungen.</h1>
             <p class="hero-sub" data-i18n="hero1-sub">Von der Prozessoptimierung bis zur Komplettlösung für Maschinen und deren Prozesse.</p>
+            <div class="hero-pills">
+              <span class="hero-pill">SPS</span>
+              <span class="hero-pill">Antriebstechnik</span>
+              <span class="hero-pill">TIA Portal</span>
+              <span class="hero-pill">Einplatinencomputer</span>
+            </div>
             <a href="#leistungen" class="btn-primary" data-i18n="hero1-btn">Unsere Leistungen</a>
           </div>
         </div>
-        <div class="hero-slide" style="--bg: url('getraenkeverpackung.svg')">
+        <div class="hero-slide">
+          <div class="hero-slide-bg" style="--bg: url('getraenkeverpackung.svg')"></div>
           <div class="hero-overlay"></div>
           <div class="hero-content">
             <p class="hero-tag" data-i18n="heroGetr-tag">Getränkeverbundkarton</p>
@@ -129,7 +147,8 @@
             <a href="einsatzbereich-getraenke.html" class="btn-primary" data-i18n="heroGetr-btn">Getränkeverbundkarton entdecken</a>
           </div>
         </div>
-        <div class="hero-slide" style="--bg: url('dokumentation.svg')">
+        <div class="hero-slide">
+          <div class="hero-slide-bg" style="--bg: url('dokumentation.svg')"></div>
           <div class="hero-overlay"></div>
           <div class="hero-content">
             <p class="hero-tag" data-i18n="hero2-tag">Individuelle Lösungen &mdash; DocuControl</p>
@@ -138,16 +157,18 @@
             <a href="docucontrol.html" class="btn-primary" data-i18n="hero2-btn">DocuControl entdecken</a>
           </div>
         </div>
-        <div class="hero-slide" style="--bg: url('medizin-sterilisation.svg')">
+        <div class="hero-slide">
+          <div class="hero-slide-bg" style="--bg: url('medizin-sterilisation.svg')"></div>
           <div class="hero-overlay"></div>
           <div class="hero-content">
             <p class="hero-tag" data-i18n="hero3-tag">Medizin &amp; Sterilisation</p>
             <h1 data-i18n="hero3-h1">Präzision für<br/>Pharma &amp; Medizin</h1>
-            <p class="hero-sub" data-i18n="hero3-sub">Automatisierte Sterilisationsprozesse im Dampf-Autoklav — präzise Steuerung von Temperatur, Druck und Zykluszeiten.</p>
+            <p class="hero-sub" data-i18n="hero3-sub">Prozessanalyse für Dampf-Autoklaven und Reinigungs- und Desinfektionsgeräte — Temperatur, Druck und Zykluszeiten im Blick.</p>
             <a href="#kontakt" class="btn-primary" data-i18n="hero3-btn">Kontakt aufnehmen</a>
           </div>
         </div>
-        <div class="hero-slide" style="--bg: url('antriebstechnik.svg')">
+        <div class="hero-slide">
+          <div class="hero-slide-bg" style="--bg: url('antriebstechnik.svg')"></div>
           <div class="hero-overlay"></div>
           <div class="hero-content">
             <p class="hero-tag" data-i18n="hero4-tag">Siemens S7 · Step 7 · TIA Portal</p>
@@ -159,6 +180,33 @@
       </div>
       <button class="gallery-btn next" aria-label="Nächstes Bild">&#8594;</button>
       <div class="hero-dots" role="tablist" aria-label="Bildauswahl"></div>
+      <a href="#leistungen" class="hero-scrollcue" aria-label="Nach unten scrollen">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Stats-Band -->
+  <section class="stats-band">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-tile animate-in" style="--d:.1s">
+          <div class="stat-num" data-count="4">0</div>
+          <div class="stat-label" data-i18n="stat1-label">Einsatzbereiche</div>
+        </div>
+        <div class="stat-tile animate-in" style="--d:.2s">
+          <div class="stat-num" data-count="3">0</div>
+          <div class="stat-label" data-i18n="stat2-label">Branchen</div>
+        </div>
+        <div class="stat-tile animate-in" style="--d:.3s">
+          <div class="stat-num-text" data-i18n="stat3-num">S7-300&nbsp;&ndash;&nbsp;S7-1500</div>
+          <div class="stat-label" data-i18n="stat3-label">SPS-Systeme</div>
+        </div>
+        <div class="stat-tile animate-in" style="--d:.4s">
+          <div class="stat-num-text" data-i18n="stat4-num">seit 2019</div>
+          <div class="stat-label" data-i18n="stat4-label">Am Markt</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -207,7 +255,7 @@
             </svg>
           </div>
           <h3 data-i18n="leis3-h">Visualisierung</h3>
-          <p data-i18n="leis3-p">Entwicklung von HMI-Lösungen und SCADA-Systemen für transparente Prozessüberwachung und -steuerung.</p>
+          <p data-i18n="leis3-p">HMI- und SCADA-Lösungen für transparente Prozessüberwachung und -steuerung – am Bedienpanel oder browserbasiert auf Einplatinencomputern, mit Live-Daten direkt an der Maschine.</p>
         </div>
 
         <div class="leistung-card animate-in" style="--d:.4s">
@@ -217,10 +265,65 @@
               <path d="M24 6v36M6 16l18 10 18-10" stroke="currentColor" stroke-width="1.5"/>
             </svg>
           </div>
-          <h3 data-i18n="leis4-h">Komplettlösungen</h3>
-          <p data-i18n="leis4-p">Ganzheitliche Automatisierungslösungen von der Planung über die Programmierung bis zur Inbetriebnahme.</p>
+          <h3 data-i18n="leis4-h">Komplettlösungen &amp; Einplatinencomputer</h3>
+          <p data-i18n="leis4-p">Ganzheitliche Automatisierung von der Planung bis zur Inbetriebnahme — inklusive Embedded-Lösungen auf Einplatinencomputer-Basis wie DocuControl.</p>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Unser Vorgehen -->
+  <section class="vorgehen">
+    <div class="container">
+      <div class="section-label animate-in" data-i18n="vorg-label">So arbeiten wir</div>
+      <h2 class="section-title animate-in" style="--d:.05s" data-i18n="vorg-title">Unser Vorgehen</h2>
+      <div class="vorgehen-steps">
+        <div class="vorgehen-step animate-in" style="--d:.1s">
+          <div class="vorgehen-num">01</div>
+          <h3 data-i18n="vorg1-h">Anfrage &amp; Erstgespräch</h3>
+          <p data-i18n="vorg1-p">Sie schildern Ihr Automatisierungsvorhaben — telefonisch, per E-Mail oder vor Ort.</p>
+        </div>
+        <div class="vorgehen-step animate-in" style="--d:.2s">
+          <div class="vorgehen-num">02</div>
+          <h3 data-i18n="vorg2-h">Analyse &amp; Konzept</h3>
+          <p data-i18n="vorg2-p">Prüfung der bestehenden Anlage bzw. Anforderungen, Erarbeitung eines passenden Steuerungs- oder Dokumentationskonzepts.</p>
+        </div>
+        <div class="vorgehen-step animate-in" style="--d:.3s">
+          <div class="vorgehen-num">03</div>
+          <h3 data-i18n="vorg3-h">Programmierung &amp; Umsetzung</h3>
+          <p data-i18n="vorg3-p">Realisierung mit Step 7, TIA Portal oder als individuelle Embedded-Lösung — laufend mit Ihnen abgestimmt.</p>
+        </div>
+        <div class="vorgehen-step animate-in" style="--d:.4s">
+          <div class="vorgehen-num">04</div>
+          <h3 data-i18n="vorg4-h">Inbetriebnahme &amp; Support</h3>
+          <p data-i18n="vorg4-p">Test, Inbetriebnahme vor Ort und Ansprechbarkeit auch nach Projektabschluss.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Warum GeTMatic -->
+  <section class="warum-band">
+    <div class="container">
+      <div class="section-label animate-in" data-i18n="warum-label">Vertrauen &amp; Erfahrung</div>
+      <h2 class="section-title animate-in" style="--d:.05s" data-i18n="warum-title">Warum GeTMatic</h2>
+      <div class="warum-grid">
+        <div class="warum-item animate-in" style="--d:.1s">
+          <span class="warum-num">01</span>
+          <div><h3 data-i18n="warum1-h">Direkter Ansprechpartner</h3>
+          <p data-i18n="warum1-p">Als Einzelunternehmer sind Sie direkt mit mir im Kontakt — keine Warteschleifen, kein Wechsel der Ansprechperson.</p></div>
+        </div>
+        <div class="warum-item animate-in" style="--d:.2s">
+          <span class="warum-num">02</span>
+          <div><h3 data-i18n="warum2-h">Erfahrung in sensiblen Branchen</h3>
+          <p data-i18n="warum2-p">Praxis in Industrie, Pharma und Medizintechnik — inklusive der dort geltenden Dokumentations- und Validierungsanforderungen.</p></div>
+        </div>
+        <div class="warum-item animate-in" style="--d:.3s">
+          <span class="warum-num">03</span>
+          <div><h3 data-i18n="warum4-h">Individuelle Lösungen</h3>
+          <p data-i18n="warum4-p">Maßgeschneiderte Steuerungs- und Dokumentationslösungen wie DocuControl — statt Standard von der Stange.</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -258,7 +361,7 @@
           <div class="anlagen-body">
             <span class="anlagen-num">03</span>
             <h3 data-i18n="anl5-h">Medizin &amp; Sterilisation</h3>
-            <p data-i18n="anl5-p">Automatisierte Sterilisationsprozesse im Dampf-Autoklav. Präzise Steuerung von Temperatur, Druck und Zykluszeiten nach EN&nbsp;ISO&nbsp;17665.</p>
+            <p data-i18n="anl5-p">Analyse von Sterilisations- und RDG-Prozessen mit Step&nbsp;7 – Temperatur, Druck und Zykluszeiten nach EN&nbsp;ISO&nbsp;17665 bzw. 15883, ohne Änderung der validierten Software.</p>
             <a href="einsatzbereich-medizin.html" class="anlagen-link" data-i18n="anl5-link">Mehr erfahren &#8594;</a>
           </div>
         </article>
@@ -268,20 +371,11 @@
           <div class="anlagen-body">
             <span class="anlagen-num">04</span>
             <h3 data-i18n="anl2-h">Papierindustrie</h3>
-            <p data-i18n="anl2-p">Rollenschneider, Querschneider, Kalander — präzise gesteuert. Zuverlässige Automatisierung für anspruchsvolle Produktionsprozesse.</p>
+            <p data-i18n="anl2-p">Rollenschneider, Querschneider, Kalander sowie Förder- und Verpackungsanlagen — präzise gesteuert. Zuverlässige Automatisierung für anspruchsvolle Produktionsprozesse.</p>
             <a href="einsatzbereich-papier.html" class="anlagen-link" data-i18n="anl2-link">Mehr erfahren &#8594;</a>
           </div>
         </article>
 
-        <article class="anlagen-item animate-in" style="--d:.5s">
-          <a href="einsatzbereich-transport.html" class="anlagen-img" style="--img: url('transportanlage.svg')" role="img" aria-label="Transportanlage Förderband Sortieranlage"></a>
-          <div class="anlagen-body">
-            <span class="anlagen-num">05</span>
-            <h3 data-i18n="anl1-h">Transport</h3>
-            <p data-i18n="anl1-p">Dynamische Prozesse in der Förder- und Verpackungstechnik. Höchste Präzision bei kontinuierlichen Materialflüssen.</p>
-            <a href="einsatzbereich-transport.html" class="anlagen-link" data-i18n="anl1-link">Mehr erfahren &#8594;</a>
-          </div>
-        </article>
 
       </div>
     </div>
@@ -322,6 +416,7 @@
           <a href="#leistungen" data-i18n="nav-leistungen">Leistungen</a>
           <a href="#anlagen" data-i18n="nav-anlagen">Anlagen</a>
           <a href="impressum.html" data-i18n="nav-impressum">Impressum</a>
+        <a href="datenschutz.html" data-i18n="nav-datenschutz">Datenschutz</a>
         </nav>
         <p class="footer-copy">&copy; 2019&ndash;2026 Getmatic.de</p>
       </div>
@@ -339,6 +434,12 @@
         'nav-anlagen':    'Anlagen',
         'nav-kontakt':    'Kontakt',
         'nav-impressum':  'Impressum',
+        'nav-datenschutz': 'Datenschutz',
+        'nav-drop-getraenke': 'Getränkeverbundkarton',
+        'nav-drop-doku':      'Dokumentation',
+        'nav-drop-medizin':   'Medizin & Sterilisation',
+        'nav-drop-papier':    'Papierindustrie',
+        'nav-drop-alle':      'Alle Einsatzbereiche &#8594;',
         // Hero
         'hero1-tag': 'Automatisierungstechnik &mdash; Krefeld',
         'hero1-h1':  'Präzision.<br/>Prozesse.<br/>Lösungen.',
@@ -354,7 +455,7 @@
         'hero2-btn': 'DocuControl entdecken',
         'hero3-tag': 'Medizin &amp; Sterilisation',
         'hero3-h1':  'Präzision für<br/>Pharma &amp; Medizin',
-        'hero3-sub': 'Automatisierte Sterilisationsprozesse im Dampf-Autoklav — präzise Steuerung von Temperatur, Druck und Zykluszeiten.',
+        'hero3-sub': 'Prozessanalyse für Dampf-Autoklaven und Reinigungs- und Desinfektionsgeräte — Temperatur, Druck und Zykluszeiten im Blick.',
         'hero3-btn': 'Kontakt aufnehmen',
         'hero4-tag': 'Siemens S7 · Step 7 · TIA Portal',
         'hero4-h1':  'SPS &amp; Antriebe<br/>aus einer Hand',
@@ -368,30 +469,54 @@
         'leis2-h': 'Antriebstechnik',
         'leis2-p': 'Projektierung, Parametrierung und Optimierung von Frequenzumrichtern und Servoantrieben namhafter Hersteller.',
         'leis3-h': 'Visualisierung',
-        'leis3-p': 'Entwicklung von HMI-Lösungen und SCADA-Systemen für transparente Prozessüberwachung und -steuerung.',
-        'leis4-h': 'Komplettlösungen',
-        'leis4-p': 'Ganzheitliche Automatisierungslösungen von der Planung über die Programmierung bis zur Inbetriebnahme.',
+        'leis3-p': 'HMI- und SCADA-Lösungen für transparente Prozessüberwachung und -steuerung – am Bedienpanel oder browserbasiert auf Einplatinencomputern, mit Live-Daten direkt an der Maschine.',
+        'leis4-h': 'Komplettlösungen &amp; Einplatinencomputer',
+        'leis4-p': 'Ganzheitliche Automatisierung von der Planung bis zur Inbetriebnahme — inklusive Embedded-Lösungen auf Einplatinencomputer-Basis wie DocuControl.',
         // Anlagen
         'anl-label': 'Referenzen &amp; Branchen',
         'anl-title': 'Unsere Einsatzbereiche',
-        'anl1-h': 'Transport',
-        'anl1-p': 'Dynamische Prozesse in der Förder- und Verpackungstechnik. Höchste Präzision bei kontinuierlichen Materialflüssen.',
-        'anl1-link': 'Mehr erfahren &#8594;',
         'anl2-h': 'Papierindustrie',
-        'anl2-p': 'Rollenschneider, Querschneider, Kalander — präzise gesteuert. Zuverlässige Automatisierung für anspruchsvolle Produktionsprozesse.',
+        'anl2-p': 'Rollenschneider, Querschneider, Kalander sowie Förder- und Verpackungsanlagen — präzise gesteuert. Zuverlässige Automatisierung für anspruchsvolle Produktionsprozesse.',
         'anl2-link': 'Mehr erfahren &#8594;',
         'anl4-h': 'Getränkeverbundkarton',
         'anl4-p': 'Aseptische Kartonverpackungslinien. SPS-Steuerung von Faltung, Siegel und Abpackprozessen mit bis zu 18.000 Packungen pro Stunde.',
         'anl4-link': 'Mehr erfahren &#8594;',
         'anl5-h': 'Medizin &amp; Sterilisation',
-        'anl5-p': 'Automatisierte Sterilisationsprozesse im Dampf-Autoklav. Präzise Steuerung von Temperatur, Druck und Zykluszeiten nach EN&nbsp;ISO&nbsp;17665.',
+        'anl5-p': 'Analyse von Sterilisations- und RDG-Prozessen mit Step&nbsp;7 – Temperatur, Druck und Zykluszeiten nach EN&nbsp;ISO&nbsp;17665 bzw. 15883, ohne Änderung der validierten Software.',
         'anl5-link': 'Mehr erfahren &#8594;',
         'anl6-h': 'Dokumentation',
         'anl6-p': 'Automatische Erfassung und Auswertung von Sterilisations- und Abfüllprozessen. Messwerte werden vollständig aufgezeichnet und normkonform als PDF aufbereitet — bereit zur Weitergabe an den Kunden und zur Archivierung.',
         'anl6-link': 'Mehr erfahren &#8594;',
+        // Warum GeTMatic
+        'warum-label': 'Vertrauen &amp; Erfahrung',
+        'warum-title': 'Warum GeTMatic',
+        'warum1-h': 'Direkter Ansprechpartner',
+        'warum1-p': 'Als Einzelunternehmer sind Sie direkt mit mir im Kontakt — keine Warteschleifen, kein Wechsel der Ansprechperson.',
+        'warum2-h': 'Erfahrung in sensiblen Branchen',
+        'warum2-p': 'Praxis in Industrie, Pharma und Medizintechnik — inklusive der dort geltenden Dokumentations- und Validierungsanforderungen.',
+        'warum4-h': 'Individuelle Lösungen',
+        'warum4-p': 'Maßgeschneiderte Steuerungs- und Dokumentationslösungen wie DocuControl — statt Standard von der Stange.',
         // Kontakt
         'kont-h': 'Projekt anfragen',
         'kont-p': 'Sie haben ein Automatisierungsprojekt? Wir beraten Sie gerne persönlich.',
+        // Stats
+        'stat1-label': 'Einsatzbereiche',
+        'stat2-label': 'Branchen',
+        'stat3-num':   'S7-300&nbsp;&ndash;&nbsp;S7-1500',
+        'stat3-label': 'SPS-Systeme',
+        'stat4-num':   'seit 2019',
+        'stat4-label': 'Am Markt',
+        // Unser Vorgehen
+        'vorg-label': 'So arbeiten wir',
+        'vorg-title': 'Unser Vorgehen',
+        'vorg1-h': 'Anfrage &amp; Erstgespräch',
+        'vorg1-p': 'Sie schildern Ihr Automatisierungsvorhaben — telefonisch, per E-Mail oder vor Ort.',
+        'vorg2-h': 'Analyse &amp; Konzept',
+        'vorg2-p': 'Prüfung der bestehenden Anlage bzw. Anforderungen, Erarbeitung eines passenden Steuerungs- oder Dokumentationskonzepts.',
+        'vorg3-h': 'Programmierung &amp; Umsetzung',
+        'vorg3-p': 'Realisierung mit Step 7, TIA Portal oder als individuelle Embedded-Lösung — laufend mit Ihnen abgestimmt.',
+        'vorg4-h': 'Inbetriebnahme &amp; Support',
+        'vorg4-p': 'Test, Inbetriebnahme vor Ort und Ansprechbarkeit auch nach Projektabschluss.',
         // Footer
         'foot-start': 'Startseite'
       },
@@ -401,6 +526,12 @@
         'nav-anlagen':    'Applications',
         'nav-kontakt':    'Contact',
         'nav-impressum':  'Imprint',
+        'nav-datenschutz': 'Privacy Policy',
+        'nav-drop-getraenke': 'Beverage Composite Carton',
+        'nav-drop-doku':      'Documentation',
+        'nav-drop-medizin':   'Medical & Sterilization',
+        'nav-drop-papier':    'Paper Industry',
+        'nav-drop-alle':      'All Applications &#8594;',
         // Hero
         'hero1-tag': 'Automation Technology &mdash; Krefeld',
         'hero1-h1':  'Precision.<br/>Processes.<br/>Solutions.',
@@ -416,7 +547,7 @@
         'hero2-btn': 'Discover DocuControl',
         'hero3-tag': 'Medical &amp; Sterilization',
         'hero3-h1':  'Precision for<br/>Pharma &amp; Medical',
-        'hero3-sub': 'Automated sterilization processes in steam autoclaves — precise control of temperature, pressure and cycle times.',
+        'hero3-sub': 'Process analysis for steam autoclaves and washer-disinfectors — temperature, pressure and cycle times at a glance.',
         'hero3-btn': 'Get in touch',
         'hero4-tag': 'Siemens S7 · Step 7 · TIA Portal',
         'hero4-h1':  'PLC &amp; Drives<br/>from One Source',
@@ -430,30 +561,54 @@
         'leis2-h': 'Drive Technology',
         'leis2-p': 'Engineering, parameterization and optimization of frequency inverters and servo drives from leading manufacturers.',
         'leis3-h': 'Visualization',
-        'leis3-p': 'Development of HMI solutions and SCADA systems for transparent process monitoring and control.',
-        'leis4-h': 'Complete Solutions',
-        'leis4-p': 'Holistic automation solutions from planning through programming to commissioning and beyond.',
+        'leis3-p': 'HMI and SCADA solutions for transparent process monitoring and control – on operator panels or browser-based on single-board computers, with live data right at the machine.',
+        'leis4-h': 'Complete Solutions &amp; Single-Board Computers',
+        'leis4-p': 'Holistic automation from planning to commissioning — including embedded solutions based on single-board computers such as DocuControl.',
         // Anlagen
         'anl-label': 'References &amp; Industries',
         'anl-title': 'Our Areas of Application',
-        'anl1-h': 'Transport',
-        'anl1-p': 'Dynamic processes in conveyor and packaging technology. Maximum precision in continuous material flows.',
-        'anl1-link': 'Learn more &#8594;',
         'anl2-h': 'Paper Industry',
-        'anl2-p': 'Roll cutters, cross cutters, calenders — precisely controlled. Reliable automation for demanding production processes.',
+        'anl2-p': 'Roll cutters, cross cutters, calenders as well as conveyor and packaging systems — precisely controlled. Reliable automation for demanding production processes.',
         'anl2-link': 'Learn more &#8594;',
         'anl4-h': 'Beverage Composite Carton',
         'anl4-p': 'Aseptic carton packaging lines. PLC control of folding, sealing and packing processes at up to 18,000 packs per hour.',
         'anl4-link': 'Learn more &#8594;',
         'anl5-h': 'Medical &amp; Sterilization',
-        'anl5-p': 'Automated sterilization processes in steam autoclaves. Precise control of temperature, pressure and cycle times to EN&nbsp;ISO&nbsp;17665.',
+        'anl5-p': 'Analysis of sterilization and washer-disinfector processes with Step&nbsp;7 – temperature, pressure and cycle times to EN&nbsp;ISO&nbsp;17665 and 15883, without modifying the validated software.',
         'anl5-link': 'Learn more &#8594;',
         'anl6-h': 'Documentation',
         'anl6-p': 'Automatic recording and evaluation of sterilization and filling processes. Measurement data is fully captured and prepared as standards-compliant PDFs — ready for customer delivery and archiving.',
         'anl6-link': 'Learn more &#8594;',
+        // Warum GeTMatic
+        'warum-label': 'Trust &amp; Experience',
+        'warum-title': 'Why GeTMatic',
+        'warum1-h': 'A Direct Point of Contact',
+        'warum1-p': 'As a sole proprietor, you deal directly with me — no call queues, no changing contact person.',
+        'warum2-h': 'Experience in Sensitive Industries',
+        'warum2-p': 'Practical experience in industry, pharma and medical technology — including the documentation and validation requirements that apply there.',
+        'warum4-h': 'Custom Solutions',
+        'warum4-p': 'Tailored control and documentation solutions such as DocuControl — instead of off-the-shelf standard products.',
         // Kontakt
         'kont-h': 'Request a Project',
         'kont-p': 'You have an automation project? We\'ll be happy to advise you personally.',
+        // Stats
+        'stat1-label': 'Applications',
+        'stat2-label': 'Industries',
+        'stat3-num':   'S7-300&nbsp;&ndash;&nbsp;S7-1500',
+        'stat3-label': 'PLC Systems',
+        'stat4-num':   'since 2019',
+        'stat4-label': 'In Business',
+        // Unser Vorgehen
+        'vorg-label': 'How We Work',
+        'vorg-title': 'Our Process',
+        'vorg1-h': 'Inquiry &amp; Initial Discussion',
+        'vorg1-p': 'You describe your automation project — by phone, email, or on site.',
+        'vorg2-h': 'Analysis &amp; Concept',
+        'vorg2-p': 'Assessment of the existing system or requirements, development of a suitable control or documentation concept.',
+        'vorg3-h': 'Programming &amp; Implementation',
+        'vorg3-p': 'Realization with Step 7, TIA Portal, or as a custom embedded solution — coordinated with you throughout.',
+        'vorg4-h': 'Commissioning &amp; Support',
+        'vorg4-p': 'Testing, on-site commissioning, and availability even after project completion.',
         // Footer
         'foot-start': 'Home'
       }
@@ -562,6 +717,35 @@
       entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.12 });
     document.querySelectorAll('.animate-in').forEach(function(el) { observer.observe(el); });
+
+    // =========================================
+    // Stats-Band Zähl-Animation
+    // =========================================
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var statObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = parseInt(el.getAttribute('data-count'), 10);
+        if (prefersReducedMotion) {
+          el.textContent = target;
+          statObserver.unobserve(el);
+          return;
+        }
+        var duration = 900;
+        var startTime = null;
+        function step(ts) {
+          if (!startTime) startTime = ts;
+          var progress = Math.min((ts - startTime) / duration, 1);
+          el.textContent = Math.floor(progress * target);
+          if (progress < 1) requestAnimationFrame(step);
+          else el.textContent = target;
+        }
+        requestAnimationFrame(step);
+        statObserver.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-num').forEach(function(el) { statObserver.observe(el); });
   </script>
 
 </body>

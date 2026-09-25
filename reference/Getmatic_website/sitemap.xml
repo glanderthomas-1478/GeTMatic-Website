@@ -16,11 +16,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.getmatic.de/einsatzbereich-transport.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://www.getmatic.de/einsatzbereich-papier.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -32,6 +27,11 @@
   </url>
   <url>
     <loc>https://www.getmatic.de/impressum.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://www.getmatic.de/datenschutz.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>

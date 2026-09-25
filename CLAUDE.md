@@ -66,6 +66,15 @@ Session beenden — aufräumen, committen.
 
 ---
 
+## Deployment
+
+- Website-Quelle: `reference/Getmatic_website/` (FTP via FileZilla, 1blu)
+- **Erst testen:** `/www/bearingcontrol/` → www.bearingcontrol.de (Testumgebung, noindex per `.htaccess`)
+- **Dann live:** `/www/getmatic/` → www.getmatic.de
+- FileZilla-Standardaktion immer „Überschreiben“ (sonst 8-fach verkettete Dateien)
+
+---
+
 ## Kommunikation
 
 - Sprache: Deutsch und Englisch

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="GeTMatic – SPS-Automatisierung für Medizin &amp; Sterilisation. Dampf-Autoklaven nach EN ISO 17665, präzise Druck-, Temperatur- und Zykluszeitregelung. DocuControl Chargendokumentation für Kliniken. Krefeld." />
-  <meta name="keywords" content="getmatic, GeTMatic, Automatisierung Sterilisator, SPS Dampf-Autoklav, EN ISO 17665 Steuerung, TIA Portal Medizintechnik, DocuControl, Chargendokumentation Autoklav, Krefeld" />
+  <meta name="description" content="GeTMatic – Prozessanalyse für Medizin &amp; Sterilisation: Dampf-Autoklaven nach EN ISO 17665 und Reinigungs- und Desinfektionsgeräte (RDG) nach EN ISO 15883, Analyse mit Step 7 ohne Softwareänderung. DocuControl Chargendokumentation für Kliniken. Krefeld." />
+  <meta name="keywords" content="getmatic, GeTMatic, Automatisierung Sterilisator, SPS Dampf-Autoklav, EN ISO 17665, RDG, Reinigungs- und Desinfektionsgerät, EN ISO 15883, Step 7 Prozessanalyse, DocuControl, Chargendokumentation Autoklav, Krefeld" />
   <meta name="author" content="Thomas Glander – GeTMatic" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.getmatic.de/einsatzbereich-medizin.html" />
@@ -16,7 +16,7 @@
   <meta property="og:locale"      content="de_DE" />
   <meta property="og:site_name"   content="GeTMatic Automatisierungstechnik" />
   <meta property="og:title"       content="Medizin &amp; Sterilisation – GeTMatic Automatisierungstechnik" />
-  <meta property="og:description" content="Automatisierte Sterilisationsprozesse im Dampf-Autoklav nach EN ISO 17665. Krefeld." />
+  <meta property="og:description" content="Prozessanalyse für Dampf-Autoklaven (EN ISO 17665) und RDG (EN ISO 15883). Krefeld." />
   <meta property="og:image"       content="sterilisation.svg" />
 
   <title>Medizin &amp; Sterilisation – GeTMatic Automatisierungstechnik</title>
@@ -37,9 +37,19 @@
       <nav class="main-nav" aria-label="Hauptnavigation">
         <ul>
           <li><a href="index.html#leistungen" data-i18n="nav-leistungen">Leistungen</a></li>
-          <li><a href="index.html#anlagen" data-i18n="nav-anlagen">Anlagen</a></li>
+          <li class="nav-dropdown">
+            <a href="index.html#anlagen" data-i18n="nav-anlagen">Anlagen</a>
+            <ul class="nav-dropdown-menu">
+              <li><a href="einsatzbereich-getraenke.html" data-i18n="nav-drop-getraenke">Getränkeverbundkarton</a></li>
+              <li><a href="docucontrol.html" data-i18n="nav-drop-doku">Dokumentation</a></li>
+              <li><a href="einsatzbereich-medizin.html" data-i18n="nav-drop-medizin">Medizin &amp; Sterilisation</a></li>
+              <li><a href="einsatzbereich-papier.html" data-i18n="nav-drop-papier">Papierindustrie</a></li>
+              <li><a href="index.html#anlagen" class="nav-dropdown-all" data-i18n="nav-drop-alle">Alle Einsatzbereiche &#8594;</a></li>
+            </ul>
+          </li>
           <li><a href="index.html#kontakt" data-i18n="nav-kontakt">Kontakt</a></li>
           <li><a href="impressum.html" data-i18n="nav-impressum">Impressum</a></li>
+          <li><a href="datenschutz.html" data-i18n="nav-datenschutz">Datenschutz</a></li>
         </ul>
       </nav>
       <div class="lang-switch">
@@ -72,7 +82,7 @@
 
       <a href="index.html#anlagen" class="einsatz-back animate-in" data-i18n="einsatz-back">&#8592; Zurück zur Übersicht</a>
 
-      <div class="einsatz-hero animate-in" style="--img: url('sterilisation.svg'); --d:.1s" role="img" aria-label="Sterilisationsprozess Autoklav"></div>
+      <div class="einsatz-hero einsatz-hero--steri animate-in" style="--img: url('sterilisation.svg'); --d:.1s" role="img" aria-label="Sterilisationsprozess Autoklav"></div>
 
       <div class="einsatz-header animate-in" style="--d:.15s">
         <div class="einsatz-label" data-i18n="med-label">Einsatzbereich</div>
@@ -80,30 +90,31 @@
       </div>
 
       <div class="einsatz-content animate-in" style="--d:.2s">
-        <p data-i18n="med-p1">Automatisierte Sterilisationsprozesse im Dampf-Autoklav stellen höchste Anforderungen an Prozesssicherheit: Druck, Temperatur und Zykluszeiten müssen über den gesamten Prozess präzise geregelt und nach EN&nbsp;ISO&nbsp;17665 dokumentierbar sein. Da Patientensicherheit an erster Stelle steht, müssen Steuerungen zusätzlich strengen Validierungsanforderungen entsprechen.</p>
-        <p data-i18n="med-p2">Wir programmieren die Prozesssteuerung mit Step 7 und TIA Portal und stimmen die Regelung exakt auf die jeweiligen Sterilisationsprogramme ab – von Instrumentenzyklen bei 134&nbsp;°C über Bowie-Dick-Tests bis zu Vakuum-/Lecktests.</p>
+        <p data-i18n="med-p1">Sterilisationsprozesse im Dampf-Autoklav und Aufbereitungsprozesse in Reinigungs- und Desinfektionsgeräten (RDG) stellen höchste Anforderungen an Prozesssicherheit: Druck, Temperatur und Zykluszeiten müssen über den gesamten Prozess eingehalten und nach EN&nbsp;ISO&nbsp;17665 bzw. EN&nbsp;ISO&nbsp;15883 dokumentierbar sein. Da Patientensicherheit an erster Stelle steht, unterliegen die Steuerungen zusätzlich strengen Validierungsanforderungen.</p>
+        <p data-i18n="med-p2">Mit Step&nbsp;7 analysieren wir die Prozesse bestehender Anlagen – von Instrumentenzyklen bei 134&nbsp;°C über Bowie-Dick-Tests bis zu Vakuum-/Lecktests. Die Steuerungssoftware selbst bleibt dabei unverändert: Bei Medizinprodukten darf die validierte Software aus rechtlichen Gründen nicht geändert werden.</p>
+        <p data-i18n="med-p3">Dieselbe Prozessanalyse bieten wir auch für Reinigungs- und Desinfektionsgeräte (RDG) an – Reinigung, thermische Desinfektion und Trocknung werden anhand der Prozess- und Messdaten nachvollziehbar ausgewertet.</p>
       </div>
 
       <div class="einsatz-crosslink animate-in" style="--d:.25s" data-i18n="med-crosslink">
-        Ergänzend zur Prozesssteuerung bieten wir mit <a href="docucontrol.html">DocuControl</a> eine eigene Lösung zur automatischen, normkonformen Chargendokumentation für genau diese Anlagen – ganz ohne Eingriff in die Maschine oder das Klinik-Netzwerk.
+        Für Sterilisatoren und RDG bieten wir mit <a href="docucontrol.html">DocuControl</a> zusätzlich eine eigene Lösung zur automatischen, normkonformen Chargendokumentation – ganz ohne Eingriff in die Maschine oder das Klinik-Netzwerk.
       </div>
 
       <div class="einsatz-vorteile">
         <div class="einsatz-vorteil animate-in" style="--d:.1s">
-          <h3 data-i18n="med-v1-h">Druck- &amp; Temperaturregelung</h3>
-          <p data-i18n="med-v1-p">Präzise Regelung über den gesamten Sterilisationszyklus hinweg.</p>
+          <h3 data-i18n="med-v1-h">Prozessanalyse mit Step 7</h3>
+          <p data-i18n="med-v1-p">Auswertung von Druck-, Temperatur- und Zeitverläufen über den gesamten Zyklus.</p>
         </div>
         <div class="einsatz-vorteil animate-in" style="--d:.2s">
-          <h3 data-i18n="med-v2-h">EN ISO 17665</h3>
-          <p data-i18n="med-v2-p">Steuerung ausgelegt auf normkonforme, dokumentierbare Sterilisationsprozesse.</p>
+          <h3 data-i18n="med-v2-h">EN ISO 17665 &amp; 15883</h3>
+          <p data-i18n="med-v2-p">Analyse ausgerichtet auf die Normen für Dampfsterilisation und RDG.</p>
         </div>
         <div class="einsatz-vorteil animate-in" style="--d:.3s">
-          <h3 data-i18n="med-v3-h">Validierte Steuerungslogik</h3>
-          <p data-i18n="med-v3-p">Berücksichtigung der besonderen Validierungsanforderungen im Medizinumfeld.</p>
+          <h3 data-i18n="med-v3-h">Keine Softwareänderung</h3>
+          <p data-i18n="med-v3-p">Die validierte Steuerungssoftware bleibt unangetastet – rechtssicher im Medizinprodukte-Umfeld.</p>
         </div>
         <div class="einsatz-vorteil animate-in" style="--d:.4s">
           <h3 data-i18n="med-v4-h">Programmvielfalt</h3>
-          <p data-i18n="med-v4-p">Abstimmung auf Instrumentenzyklen, Bowie-Dick- und Vakuum-/Lecktests.</p>
+          <p data-i18n="med-v4-p">Instrumentenzyklen, Bowie-Dick- und Vakuum-/Lecktests sowie RDG-Programme.</p>
         </div>
       </div>
 
@@ -123,6 +134,7 @@
         <a href="index.html" data-i18n="foot-start">Startseite</a>
         <a href="index.html#leistungen" data-i18n="nav-leistungen">Leistungen</a>
         <a href="impressum.html" data-i18n="nav-impressum">Impressum</a>
+        <a href="datenschutz.html" data-i18n="nav-datenschutz">Datenschutz</a>
       </nav>
       <p class="footer-copy">&copy; 2019&ndash;2026 Getmatic.de</p>
     </div>
@@ -157,21 +169,28 @@
         'nav-anlagen':    'Anlagen',
         'nav-kontakt':    'Kontakt',
         'nav-impressum':  'Impressum',
+        'nav-datenschutz': 'Datenschutz',
+        'nav-drop-getraenke': 'Getränkeverbundkarton',
+        'nav-drop-doku':      'Dokumentation',
+        'nav-drop-medizin':   'Medizin & Sterilisation',
+        'nav-drop-papier':    'Papierindustrie',
+        'nav-drop-alle':      'Alle Einsatzbereiche &#8594;',
         'foot-start':     'Startseite',
         'einsatz-back': '&#8592; Zurück zur Übersicht',
         'med-label': 'Einsatzbereich',
         'med-h1':    'Medizin &amp; Sterilisation',
-        'med-p1': 'Automatisierte Sterilisationsprozesse im Dampf-Autoklav stellen höchste Anforderungen an Prozesssicherheit: Druck, Temperatur und Zykluszeiten müssen über den gesamten Prozess präzise geregelt und nach EN&nbsp;ISO&nbsp;17665 dokumentierbar sein. Da Patientensicherheit an erster Stelle steht, müssen Steuerungen zusätzlich strengen Validierungsanforderungen entsprechen.',
-        'med-p2': 'Wir programmieren die Prozesssteuerung mit Step 7 und TIA Portal und stimmen die Regelung exakt auf die jeweiligen Sterilisationsprogramme ab – von Instrumentenzyklen bei 134&nbsp;°C über Bowie-Dick-Tests bis zu Vakuum-/Lecktests.',
-        'med-crosslink': 'Ergänzend zur Prozesssteuerung bieten wir mit <a href="docucontrol.html">DocuControl</a> eine eigene Lösung zur automatischen, normkonformen Chargendokumentation für genau diese Anlagen – ganz ohne Eingriff in die Maschine oder das Klinik-Netzwerk.',
-        'med-v1-h': 'Druck- &amp; Temperaturregelung',
-        'med-v1-p': 'Präzise Regelung über den gesamten Sterilisationszyklus hinweg.',
-        'med-v2-h': 'EN ISO 17665',
-        'med-v2-p': 'Steuerung ausgelegt auf normkonforme, dokumentierbare Sterilisationsprozesse.',
-        'med-v3-h': 'Validierte Steuerungslogik',
-        'med-v3-p': 'Berücksichtigung der besonderen Validierungsanforderungen im Medizinumfeld.',
+        'med-p1': 'Sterilisationsprozesse im Dampf-Autoklav und Aufbereitungsprozesse in Reinigungs- und Desinfektionsgeräten (RDG) stellen höchste Anforderungen an Prozesssicherheit: Druck, Temperatur und Zykluszeiten müssen über den gesamten Prozess eingehalten und nach EN&nbsp;ISO&nbsp;17665 bzw. EN&nbsp;ISO&nbsp;15883 dokumentierbar sein. Da Patientensicherheit an erster Stelle steht, unterliegen die Steuerungen zusätzlich strengen Validierungsanforderungen.',
+        'med-p2': 'Mit Step&nbsp;7 analysieren wir die Prozesse bestehender Anlagen – von Instrumentenzyklen bei 134&nbsp;°C über Bowie-Dick-Tests bis zu Vakuum-/Lecktests. Die Steuerungssoftware selbst bleibt dabei unverändert: Bei Medizinprodukten darf die validierte Software aus rechtlichen Gründen nicht geändert werden.',
+        'med-p3': 'Dieselbe Prozessanalyse bieten wir auch für Reinigungs- und Desinfektionsgeräte (RDG) an – Reinigung, thermische Desinfektion und Trocknung werden anhand der Prozess- und Messdaten nachvollziehbar ausgewertet.',
+        'med-crosslink': 'Für Sterilisatoren und RDG bieten wir mit <a href="docucontrol.html">DocuControl</a> zusätzlich eine eigene Lösung zur automatischen, normkonformen Chargendokumentation – ganz ohne Eingriff in die Maschine oder das Klinik-Netzwerk.',
+        'med-v1-h': 'Prozessanalyse mit Step 7',
+        'med-v1-p': 'Auswertung von Druck-, Temperatur- und Zeitverläufen über den gesamten Zyklus.',
+        'med-v2-h': 'EN ISO 17665 &amp; 15883',
+        'med-v2-p': 'Analyse ausgerichtet auf die Normen für Dampfsterilisation und RDG.',
+        'med-v3-h': 'Keine Softwareänderung',
+        'med-v3-p': 'Die validierte Steuerungssoftware bleibt unangetastet – rechtssicher im Medizinprodukte-Umfeld.',
         'med-v4-h': 'Programmvielfalt',
-        'med-v4-p': 'Abstimmung auf Instrumentenzyklen, Bowie-Dick- und Vakuum-/Lecktests.',
+        'med-v4-p': 'Instrumentenzyklen, Bowie-Dick- und Vakuum-/Lecktests sowie RDG-Programme.',
         'med-cta': 'Projekt anfragen'
       },
       en: {
@@ -180,21 +199,28 @@
         'nav-anlagen':    'Applications',
         'nav-kontakt':    'Contact',
         'nav-impressum':  'Imprint',
+        'nav-datenschutz': 'Privacy Policy',
+        'nav-drop-getraenke': 'Beverage Composite Carton',
+        'nav-drop-doku':      'Documentation',
+        'nav-drop-medizin':   'Medical & Sterilization',
+        'nav-drop-papier':    'Paper Industry',
+        'nav-drop-alle':      'All Applications &#8594;',
         'foot-start':     'Home',
         'einsatz-back': '&#8592; Back to overview',
         'med-label': 'Area of Application',
         'med-h1':    'Medical &amp; Sterilization',
-        'med-p1': 'Automated sterilization processes in steam autoclaves place the highest demands on process safety: pressure, temperature, and cycle times must be precisely controlled throughout the entire process and documentable to EN&nbsp;ISO&nbsp;17665. Since patient safety comes first, controls must also meet strict validation requirements.',
-        'med-p2': 'We program the process control with Step 7 and TIA Portal and tune the control precisely to the respective sterilization programs – from instrument cycles at 134&nbsp;°C through Bowie-Dick tests to vacuum/leak tests.',
-        'med-crosslink': 'In addition to process control, our own <a href="docucontrol.html">DocuControl</a> solution provides automatic, standards-compliant batch documentation for exactly these systems – without any intervention in the machine or the clinic network.',
-        'med-v1-h': 'Pressure &amp; Temperature Control',
-        'med-v1-p': 'Precise control throughout the entire sterilization cycle.',
-        'med-v2-h': 'EN ISO 17665',
-        'med-v2-p': 'Control designed for standards-compliant, documentable sterilization processes.',
-        'med-v3-h': 'Validated Control Logic',
-        'med-v3-p': 'Accounting for the special validation requirements in the medical environment.',
+        'med-p1': 'Sterilization processes in steam autoclaves and reprocessing in washer-disinfectors (WD) place the highest demands on process safety: pressure, temperature, and cycle times must be maintained throughout the entire process and documentable to EN&nbsp;ISO&nbsp;17665 and EN&nbsp;ISO&nbsp;15883 respectively. Since patient safety comes first, controls are also subject to strict validation requirements.',
+        'med-p2': 'Using Step&nbsp;7, we analyze the processes of existing systems – from instrument cycles at 134&nbsp;°C through Bowie-Dick tests to vacuum/leak tests. The control software itself remains unchanged: for medical devices, validated software may not be modified for legal reasons.',
+        'med-p3': 'We offer the same process analysis for washer-disinfectors (WD) – cleaning, thermal disinfection, and drying are evaluated transparently based on process and measurement data.',
+        'med-crosslink': 'For sterilizers and washer-disinfectors, our own <a href="docucontrol.html">DocuControl</a> solution additionally provides automatic, standards-compliant batch documentation – without any intervention in the machine or the clinic network.',
+        'med-v1-h': 'Process Analysis with Step 7',
+        'med-v1-p': 'Evaluation of pressure, temperature, and time curves throughout the entire cycle.',
+        'med-v2-h': 'EN ISO 17665 &amp; 15883',
+        'med-v2-p': 'Analysis aligned with the standards for steam sterilization and washer-disinfectors.',
+        'med-v3-h': 'No Software Changes',
+        'med-v3-p': 'The validated control software remains untouched – legally compliant in the medical device environment.',
         'med-v4-h': 'Program Variety',
-        'med-v4-p': 'Tuned to instrument cycles, Bowie-Dick and vacuum/leak tests.',
+        'med-v4-p': 'Instrument cycles, Bowie-Dick and vacuum/leak tests as well as WD programs.',
         'med-cta': 'Request a Project'
       }
     };
