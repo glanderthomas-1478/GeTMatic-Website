@@ -80,8 +80,9 @@
             <a href="#anlagen" data-i18n="nav-anlagen">Anlagen</a>
             <ul class="nav-dropdown-menu">
               <li><a href="einsatzbereich-getraenke.html" data-i18n="nav-drop-getraenke">Getränkeverbundkarton</a></li>
-              <li><a href="docucontrol.html" data-i18n="nav-drop-doku">Dokumentation</a></li>
+              <li><a href="visioncontrol.html" data-i18n="nav-drop-qualitaet">Qualitätskontrolle</a></li>
               <li><a href="einsatzbereich-medizin.html" data-i18n="nav-drop-medizin">Medizin &amp; Sterilisation</a></li>
+              <li><a href="docucontrol.html" data-i18n="nav-drop-doku">Dokumentation</a></li>
               <li><a href="einsatzbereich-papier.html" data-i18n="nav-drop-papier">Papierindustrie</a></li>
               <li><a href="#anlagen" class="nav-dropdown-all" data-i18n="nav-drop-alle">Alle Einsatzbereiche &#8594;</a></li>
             </ul>
@@ -191,7 +192,7 @@
     <div class="container">
       <div class="stats-grid">
         <div class="stat-tile animate-in" style="--d:.1s">
-          <div class="stat-num" data-count="4">0</div>
+          <div class="stat-num" data-count="5">0</div>
           <div class="stat-label" data-i18n="stat1-label">Einsatzbereiche</div>
         </div>
         <div class="stat-tile animate-in" style="--d:.2s">
@@ -347,12 +348,12 @@
         </article>
 
         <article class="anlagen-item animate-in" style="--d:.2s">
-          <a href="docucontrol.html" class="anlagen-img" style="--img: url('dokumentation.svg')" role="img" aria-label="Technische Dokumentation Schaltplan Handbuch"></a>
+          <a href="visioncontrol.html" class="anlagen-img" style="--img: url('qualitaetskontrolle.svg')" role="img" aria-label="Kamerabasierte Qualitätskontrolle mit Ausschleusung"></a>
           <div class="anlagen-body">
             <span class="anlagen-num">02</span>
-            <h3 data-i18n="anl6-h">Dokumentation</h3>
-            <p data-i18n="anl6-p">Automatische Erfassung und Auswertung von Sterilisations- und Abfüllprozessen. Messwerte werden vollständig aufgezeichnet und normkonform als PDF aufbereitet — bereit zur Weitergabe an den Kunden und zur Archivierung.</p>
-            <a href="docucontrol.html" class="anlagen-link" data-i18n="anl6-link">Mehr erfahren &#8594;</a>
+            <h3 data-i18n="anl7-h">Qualitätskontrolle</h3>
+            <p data-i18n="anl7-p">VisionControl: Kamera-Inspektion im laufenden Prozess — mit automatischer Bildauswertung und taktgenauer Ausschleusung fehlerhafter Teile. Branchenübergreifend einsetzbar.</p>
+            <a href="visioncontrol.html" class="anlagen-link" data-i18n="anl7-link">Mehr erfahren &#8594;</a>
           </div>
         </article>
 
@@ -367,9 +368,19 @@
         </article>
 
         <article class="anlagen-item animate-in" style="--d:.4s">
-          <a href="einsatzbereich-papier.html" class="anlagen-img" style="--img: url('papierindustrie.svg')" role="img" aria-label="Papierindustrie Rollenschneider Anlage"></a>
+          <a href="docucontrol.html" class="anlagen-img" style="--img: url('dokumentation.svg')" role="img" aria-label="Technische Dokumentation Schaltplan Handbuch"></a>
           <div class="anlagen-body">
             <span class="anlagen-num">04</span>
+            <h3 data-i18n="anl6-h">Dokumentation</h3>
+            <p data-i18n="anl6-p">Automatische Erfassung und Auswertung von Sterilisations- und Abfüllprozessen. Messwerte werden vollständig aufgezeichnet und normkonform als PDF aufbereitet — bereit zur Weitergabe an den Kunden und zur Archivierung.</p>
+            <a href="docucontrol.html" class="anlagen-link" data-i18n="anl6-link">Mehr erfahren &#8594;</a>
+          </div>
+        </article>
+
+        <article class="anlagen-item animate-in" style="--d:.5s">
+          <a href="einsatzbereich-papier.html" class="anlagen-img" style="--img: url('papierindustrie.svg')" role="img" aria-label="Papierindustrie Rollenschneider Anlage"></a>
+          <div class="anlagen-body">
+            <span class="anlagen-num">05</span>
             <h3 data-i18n="anl2-h">Papierindustrie</h3>
             <p data-i18n="anl2-p">Rollenschneider, Querschneider, Kalander sowie Förder- und Verpackungsanlagen — präzise gesteuert. Zuverlässige Automatisierung für anspruchsvolle Produktionsprozesse.</p>
             <a href="einsatzbereich-papier.html" class="anlagen-link" data-i18n="anl2-link">Mehr erfahren &#8594;</a>
@@ -439,6 +450,7 @@
         'nav-drop-doku':      'Dokumentation',
         'nav-drop-medizin':   'Medizin & Sterilisation',
         'nav-drop-papier':    'Papierindustrie',
+        'nav-drop-qualitaet': 'Qualitätskontrolle',
         'nav-drop-alle':      'Alle Einsatzbereiche &#8594;',
         // Hero
         'hero1-tag': 'Automatisierungstechnik &mdash; Krefeld',
@@ -478,6 +490,9 @@
         'anl2-h': 'Papierindustrie',
         'anl2-p': 'Rollenschneider, Querschneider, Kalander sowie Förder- und Verpackungsanlagen — präzise gesteuert. Zuverlässige Automatisierung für anspruchsvolle Produktionsprozesse.',
         'anl2-link': 'Mehr erfahren &#8594;',
+        'anl7-h': 'Qualitätskontrolle',
+        'anl7-p': 'VisionControl: Kamera-Inspektion im laufenden Prozess — mit automatischer Bildauswertung und taktgenauer Ausschleusung fehlerhafter Teile. Branchenübergreifend einsetzbar.',
+        'anl7-link': 'Mehr erfahren &#8594;',
         'anl4-h': 'Getränkeverbundkarton',
         'anl4-p': 'Aseptische Kartonverpackungslinien. SPS-Steuerung von Faltung, Siegel und Abpackprozessen mit bis zu 18.000 Packungen pro Stunde.',
         'anl4-link': 'Mehr erfahren &#8594;',
@@ -531,6 +546,7 @@
         'nav-drop-doku':      'Documentation',
         'nav-drop-medizin':   'Medical & Sterilization',
         'nav-drop-papier':    'Paper Industry',
+        'nav-drop-qualitaet': 'Quality Inspection',
         'nav-drop-alle':      'All Applications &#8594;',
         // Hero
         'hero1-tag': 'Automation Technology &mdash; Krefeld',
@@ -570,6 +586,9 @@
         'anl2-h': 'Paper Industry',
         'anl2-p': 'Roll cutters, cross cutters, calenders as well as conveyor and packaging systems — precisely controlled. Reliable automation for demanding production processes.',
         'anl2-link': 'Learn more &#8594;',
+        'anl7-h': 'Quality Inspection',
+        'anl7-p': 'VisionControl: camera inspection during the running process — with automatic image analysis and cycle-synchronized rejection of defective parts. Applicable across industries.',
+        'anl7-link': 'Learn more &#8594;',
         'anl4-h': 'Beverage Composite Carton',
         'anl4-p': 'Aseptic carton packaging lines. PLC control of folding, sealing and packing processes at up to 18,000 packs per hour.',
         'anl4-link': 'Learn more &#8594;',

@@ -1293,6 +1293,10 @@ body {
 }
 .einsatz-crosslink a:hover { border-bottom-color: var(--teal); }
 
+/* Volle Breite für Text + Hinweis-Kasten (visioncontrol.html) */
+.einsatz-page--breit .einsatz-content { max-width: none; }
+.einsatz-page--breit .einsatz-crosslink { display: flex; justify-content: center; text-align: center; width: 100%; box-sizing: border-box; font-weight: 600; -webkit-text-stroke: 0.4px currentColor; }
+
 .docu-3d-row {
   margin-bottom: var(--space-6);
   direction: rtl;
@@ -1492,6 +1496,14 @@ body {
   height: 100%;
   max-width: 100%;
   border-radius: 6px;
+}
+
+/* Rahmen in Logo-Cyan (Faltschachtel-Video) */
+.prozess-video--rahmen {
+  box-sizing: border-box;
+  border: 5px solid var(--teal-light);
+  border-left-width: 24px;
+  border-right-width: 24px;
 }
 
 /* Generischer FAQ-Baustein (aktuell nur auf docucontrol.html verwendet) */
