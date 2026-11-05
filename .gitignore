@@ -28,6 +28,15 @@ reference/Getmatic_website/intern/add_user.php
 # Website liegen stattdessen direkt in reference/Getmatic_website/
 reference/Video/
 
+# Einmalige Server-Skripte mit geheimem Namen/Schluessel
+outputs/migration-*.php
+outputs/pruefung-*.php
+
+# Remotion-Skills: lokale Installation mit absoluten Symlinks, wiederherstellbar
+# ueber video-remotion/skills-lock.json (npx remotion skills add)
+video-remotion/.claude/
+video-remotion/.agents/
+
 # Sync-Tool-Anomalien (siehe "Ungeklaerte Datei-Synchronisation" in
 # context/current-data.md) — bewusst nicht versioniert
 Backup_Website/

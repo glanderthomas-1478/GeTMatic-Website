@@ -44,7 +44,8 @@ Ein 2.000-Token-Plan verhindert einen 30.000-Token-Fehlschlag.
 ├── plans/                 # Implementierungspläne
 ├── outputs/               # Texte, Assets, Deliverables
 ├── reference/             # Design-Referenzen, Code-Patterns, Vorlagen
-└── scripts/               # Automatisierungsskripte
+├── scripts/               # Automatisierungsskripte
+└── video-remotion/        # Videos per Code (Remotion): `npm run dev` = Vorschau, `npx remotion render` = Export nach out/
 ```
 
 ---
@@ -71,7 +72,8 @@ Session beenden — aufräumen, committen.
 - Website-Quelle: `reference/Getmatic_website/` (FTP via FileZilla, 1blu)
 - **Erst testen:** `/www/bearingcontrol/` → www.bearingcontrol.de (Testumgebung, noindex per `.htaccess`)
 - **Dann live:** `/www/getmatic/` → www.getmatic.de
-- FileZilla-Standardaktion immer „Überschreiben“ (sonst 8-fach verkettete Dateien)
+- FileZilla: Standardaktion „Überschreiben“ und nur 1 gleichzeitige Übertragung. Das allein hat den Defekt (8-fach verkettete Dateien) nicht verhindert: betroffene Dateien erst auf dem Server löschen, nach jedem Upload Größen vergleichen
+- `intern/config.php` und `intern/files/` beim Upload nie anfassen, `intern/sql/` nicht hochladen
 
 ---
 

@@ -51,14 +51,20 @@ $start = 0;
 $end = $size - 1;
 $isRangeRequest = false;
 
-if (!empty($_SERVER['HTTP_RANGE']) && preg_match('/bytes=(\d*)-(\d*)/', $_SERVER['HTTP_RANGE'], $m)) {
+// Nur ein einzelner Bereich wird unterstuetzt, alles andere liefert die ganze Datei.
+if (!empty($_SERVER['HTTP_RANGE'])
+    && preg_match('/^bytes=(\d*)-(\d*)$/', trim($_SERVER['HTTP_RANGE']), $m)
+    && ($m[1] !== '' || $m[2] !== '')) {
     $isRangeRequest = true;
 
-    if ($m[1] !== '') {
+    if ($m[1] === '') {
+        // "bytes=-500": die letzten 500 Bytes
+        $start = max($size - (int) $m[2], 0);
+    } else {
         $start = (int) $m[1];
-    }
-    if ($m[2] !== '') {
-        $end = (int) $m[2];
+        if ($m[2] !== '') {
+            $end = min((int) $m[2], $size - 1);
+        }
     }
 
     if ($start > $end || $start >= $size) {

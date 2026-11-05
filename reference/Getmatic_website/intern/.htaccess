@@ -13,6 +13,9 @@ Options -Indexes
     RewriteEngine On
     RewriteRule ^includes/ - [F,L]
 
+    # sql/ enthaelt nur Einrichtungsdateien (Tabellenaufbau), nie oeffentlich
+    RewriteRule ^sql/ - [F,L]
+
     # HTTPS auf Server-Ebene erzwingen (zuverlaessiger als eine PHP-Pruefung,
     # die je nach Proxy-/Server-Setup $_SERVER['HTTPS'] uneinheitlich sieht
     # und sonst in eine Redirect-Schleife laufen kann).

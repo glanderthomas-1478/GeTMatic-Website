@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="490 112 640 382" width="1280" height="764" role="img" aria-label="Prozessablauf: Zuschnitt von der Rolle, Zuschnitttransport, Sealer, Packanlage, Verschließer">
+  <defs>
+    <linearGradient id="gpBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0a1628"/><stop offset="50%" stop-color="#0d1f3c"/><stop offset="100%" stop-color="#071020"/></linearGradient>
+    <linearGradient id="gpPanel" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1a2a45"/><stop offset="100%" stop-color="#0f1e35"/></linearGradient>
+    <linearGradient id="gpBlau" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1976d2"/><stop offset="100%" stop-color="#0d47a1"/></linearGradient>
+    <linearGradient id="gpSchirm" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#001830"/><stop offset="100%" stop-color="#002244"/></linearGradient>
+    <linearGradient id="gpKarton" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#b98a58"/><stop offset="100%" stop-color="#7f5d3a"/></linearGradient>
+    <pattern id="gpFein" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M 8 0 L 0 0 0 8" fill="none" stroke="#152540" stroke-width="0.3" opacity="0.5"/></pattern>
+    <pattern id="gpGrob" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a3050" stroke-width="0.5" opacity="0.4"/></pattern>
+    <marker id="gpPfeil" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#5ad7d7"/></marker>
+    <filter id="gpSchatten" x="-5%" y="-5%" width="110%" height="115%"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#000" flood-opacity="0.45"/></filter>
+    <filter id="gpGlow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.2"/></filter>
+  </defs>
+  <rect width="1200" height="620" fill="url(#gpBg)"/>
+  <rect width="1200" height="620" fill="url(#gpFein)"/>
+  <rect width="1200" height="620" fill="url(#gpGrob)"/>
+  <ellipse cx="250" cy="280" rx="320" ry="200" fill="#1976d2" opacity="0.05"/>
+  <ellipse cx="860" cy="300" rx="380" ry="240" fill="#209d9d" opacity="0.06"/>
+  <path d="M0 50 V0 H100 M1100 0 H1200 V50 M0 570 V620 H100 M1200 570 V620 H1100" fill="none" stroke="#1976d2" stroke-width="1.5" opacity="0.5"/>
+<g transform="translate(512 128) scale(.92) translate(-505 -80)">
+<rect x="505" y="80" width="645" height="306" rx="9" fill="url(#gpPanel)" stroke="#1976d2" stroke-width="3" filter="url(#gpSchatten)"/>
+<rect x="514" y="89" width="627" height="288" rx="4" fill="url(#gpSchirm)" stroke="#1a3050"/>
+<path d="M514 113 v-20 a4 4 0 0 1 4 -4 h619 a4 4 0 0 1 4 4 v20 z" fill="url(#gpBlau)"/>
+<text x="527" y="106" font-size="11" fill="white" font-weight="bold" font-family="monospace">Prozessübersicht — Abpacklinie — Automatik</text>
+<circle cx="1096" cy="101" r="4.5" fill="#4caf50"/>
+<circle cx="1111" cy="101" r="4.5" fill="#ff9800"/>
+<circle cx="1126" cy="101" r="4.5" fill="#f44336"/>
+<rect x="516" y="122" width="121" height="178" rx="4" fill="#0d1e35" fill-opacity="0.75" stroke="#1a3050"/>
+<rect x="516" y="122" width="121" height="20" rx="4" fill="#00796b" opacity="0.9"/>
+<text x="576.5" y="135.5" font-size="8" fill="white" text-anchor="middle" font-weight="bold" font-family="monospace">01 ZUSCHNITT</text>
+<rect x="640" y="122" width="121" height="178" rx="4" fill="#0d1e35" fill-opacity="0.75" stroke="#1a3050"/>
+<rect x="640" y="122" width="121" height="20" rx="4" fill="#00796b" opacity="0.9"/>
+<text x="700.5" y="135.5" font-size="8" fill="white" text-anchor="middle" font-weight="bold" font-family="monospace">02 TRANSPORT</text>
+<rect x="764" y="122" width="121" height="178" rx="4" fill="#0d1e35" fill-opacity="0.75" stroke="#1a3050"/>
+<rect x="764" y="122" width="121" height="20" rx="4" fill="#00796b" opacity="0.9"/>
+<text x="824.5" y="135.5" font-size="8" fill="white" text-anchor="middle" font-weight="bold" font-family="monospace">03 SEALER</text>
+<rect x="888" y="122" width="121" height="178" rx="4" fill="#0d1e35" fill-opacity="0.75" stroke="#1a3050"/>
+<rect x="888" y="122" width="121" height="20" rx="4" fill="#00796b" opacity="0.9"/>
+<text x="948.5" y="135.5" font-size="8" fill="white" text-anchor="middle" font-weight="bold" font-family="monospace">04 PACKANLAGE</text>
+<rect x="1012" y="122" width="121" height="178" rx="4" fill="#0d1e35" fill-opacity="0.75" stroke="#1a3050"/>
+<rect x="1012" y="122" width="121" height="20" rx="4" fill="#00796b" opacity="0.9"/>
+<text x="1072.5" y="135.5" font-size="8" fill="white" text-anchor="middle" font-weight="bold" font-family="monospace">05 VERSCHLIESSER</text>
+<rect x="521" y="268" width="111" height="7" rx="3.5" fill="#37474f" stroke="#546e7a" stroke-width="0.8"/>
+<circle cx="528" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="542" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="556" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="570" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="584" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="598" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="612" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="626" cy="271.5" r="2" fill="#78909c"/>
+<text x="550" y="178" font-size="6.5" fill="#90caf9" text-anchor="middle" font-family="monospace">VON ROLLE</text>
+<path d="M568 228 C576 252 582 265 596 265" fill="none" stroke="#dfe9ee" stroke-width="2.4"/>
+<circle cx="550" cy="210" r="25" fill="#dfe9ee" stroke="#90caf9" stroke-width="0.8"/>
+<circle cx="550" cy="210" r="19" fill="none" stroke="#209d9d" stroke-width="1.2"/>
+<circle cx="550" cy="210" r="15" fill="none" stroke="#dfe9ee" stroke-width="1.2"/>
+<circle cx="550" cy="210" r="10" fill="none" stroke="#209d9d" stroke-width="1.2"/>
+<circle cx="550" cy="210" r="5" fill="#37474f" stroke="#78909c"/>
+<path d="M598 226 v26 l-3 8 l-3 -8 v-26 z" transform="translate(3 0)" fill="#90a4ae" stroke="#cfd8dc" stroke-width="0.5"/>
+<rect x="608" y="264" width="21" height="3" rx="0.8" fill="#dfe9ee" stroke="#90caf9" stroke-width="0.3"/>
+<rect x="614.3" y="264" width="8.4" height="3" fill="#209d9d"/>
+<rect x="645" y="268" width="111" height="7" rx="3.5" fill="#37474f" stroke="#546e7a" stroke-width="0.8"/>
+<circle cx="652" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="666" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="680" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="694" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="708" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="722" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="736" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="750" cy="271.5" r="2" fill="#78909c"/>
+<rect x="648" y="264" width="21" height="3" rx="0.8" fill="#dfe9ee" stroke="#90caf9" stroke-width="0.3"/>
+<rect x="654.3" y="264" width="8.4" height="3" fill="#209d9d"/>
+<rect x="675" y="264" width="21" height="3" rx="0.8" fill="#dfe9ee" stroke="#90caf9" stroke-width="0.3"/>
+<rect x="681.3" y="264" width="8.4" height="3" fill="#209d9d"/>
+<rect x="702" y="264" width="21" height="3" rx="0.8" fill="#dfe9ee" stroke="#90caf9" stroke-width="0.3"/>
+<rect x="708.3" y="264" width="8.4" height="3" fill="#209d9d"/>
+<rect x="729" y="264" width="21" height="3" rx="0.8" fill="#dfe9ee" stroke="#90caf9" stroke-width="0.3"/>
+<rect x="735.3" y="264" width="8.4" height="3" fill="#209d9d"/>
+<path d="M670 250 L732 250" stroke="#5ad7d7" stroke-width="1.6" marker-end="url(#gpPfeil)" fill="none"/>
+<circle cx="700.5" cy="198" r="6" fill="#0d1e35" stroke="#5ad7d7" stroke-width="1.4"/>
+<path d="M700.5 204 L685.5 242 H715.5 Z" fill="#5ad7d7" opacity="0.14"/>
+<text x="700.5" y="186" font-size="6.5" fill="#5ad7d7" text-anchor="middle" font-family="monospace">SENSOR</text>
+<rect x="769" y="268" width="111" height="7" rx="3.5" fill="#37474f" stroke="#546e7a" stroke-width="0.8"/>
+<circle cx="776" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="790" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="804" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="818" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="832" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="846" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="860" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="874" cy="271.5" r="2" fill="#78909c"/>
+<rect x="807" y="224" width="35" height="44" rx="1.5" fill="#dfe9ee" stroke="#90caf9" stroke-width="0.6"/>
+<rect x="807" y="242.5" width="35" height="12.3" fill="#209d9d"/>
+<rect x="786" y="164" width="77" height="9" rx="2" fill="#546e7a"/>
+<rect x="790" y="173" width="7" height="95" fill="#37474f"/>
+<rect x="852" y="173" width="7" height="95" fill="#37474f"/>
+<rect x="821" y="173" width="7" height="18" fill="#78909c"/>
+<rect x="803" y="191" width="43" height="13" rx="2" fill="#37474f" stroke="#ff9800" stroke-width="0.9"/>
+<rect x="806" y="210" width="37" height="6" rx="2" fill="#ff9800" opacity="0.5" filter="url(#gpGlow)"/>
+<rect x="807" y="212" width="35" height="3" rx="1" fill="#ffb74d"/>
+<text x="824.5" y="159" font-size="6.5" fill="#ffb74d" text-anchor="middle" font-family="monospace">SIEGELN</text>
+<circle cx="897" cy="157" r="3.2" fill="#4caf50"/>
+<text x="903" y="159.5" font-size="6.5" fill="#90caf9" font-family="monospace">1-REIHIG</text>
+<circle cx="953" cy="157" r="3.2" fill="#4caf50"/>
+<text x="959" y="159.5" font-size="6.5" fill="#90caf9" font-family="monospace">2-REIHIG</text>
+<rect x="912" y="169" width="73" height="6" rx="3" fill="#37474f" stroke="#546e7a" stroke-width="0.7"/>
+<rect x="920" y="180" width="20" height="25" rx="1.5" fill="#dfe9ee" stroke="#90caf9" stroke-width="0.6"/>
+<rect x="920" y="190.5" width="20" height="7.0" fill="#209d9d"/>
+<rect x="957" y="180" width="20" height="25" rx="1.5" fill="#dfe9ee" stroke="#90caf9" stroke-width="0.6"/>
+<rect x="957" y="190.5" width="20" height="7.0" fill="#209d9d"/>
+<path d="M930 207 L930 220" stroke="#5ad7d7" stroke-width="1.6" marker-end="url(#gpPfeil)" fill="none"/>
+<path d="M967 207 L967 220" stroke="#5ad7d7" stroke-width="1.6" marker-end="url(#gpPfeil)" fill="none"/>
+<path d="M909 232 l-11 -9 h13 l9 9 z" fill="#a37a4f" stroke="#ff9800" stroke-width="0.7"/>
+<path d="M988 232 l11 -9 h-13 l-9 9 z" fill="#a37a4f" stroke="#ff9800" stroke-width="0.7"/>
+<rect x="909" y="232" width="79" height="36" rx="1.5" fill="url(#gpKarton)" stroke="#ff9800" stroke-width="1"/>
+<rect x="893" y="268" width="111" height="7" rx="3.5" fill="#37474f" stroke="#546e7a" stroke-width="0.8"/>
+<circle cx="900" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="914" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="928" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="942" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="956" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="970" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="984" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="998" cy="271.5" r="2" fill="#78909c"/>
+<rect x="1019" y="234" width="31" height="34" rx="1.5" fill="none" stroke="#ff9800" stroke-width="1" stroke-dasharray="3 2.4" opacity="0.8"/>
+<text x="1034.5" y="228" font-size="5.8" fill="#ffb74d" text-anchor="middle" font-family="monospace">NÄCHSTER</text>
+<rect x="1059" y="228" width="66" height="40" rx="1.5" fill="url(#gpKarton)" stroke="#ff9800" stroke-width="1"/>
+<rect x="1087.0" y="228" width="10" height="40" fill="#209d9d" opacity="0.85"/>
+<path d="M1065 260 h54" stroke="#ffe0b2" stroke-width="0.6" opacity="0.5"/>
+<rect x="1088.5" y="176" width="7" height="34" fill="#78909c"/>
+<rect x="1061" y="210" width="62" height="11" rx="2" fill="#37474f" stroke="#5ad7d7" stroke-width="0.9"/>
+<circle cx="1112" cy="221" r="4.5" fill="#209d9d" stroke="#5ad7d7" stroke-width="0.7"/>
+<circle cx="1072" cy="221" r="4.5" fill="#209d9d" stroke="#5ad7d7" stroke-width="0.7"/>
+<text x="1092" y="171" font-size="6.5" fill="#a5d6a7" text-anchor="middle" font-family="monospace">SCHLIESSEN</text>
+<rect x="1017" y="268" width="111" height="7" rx="3.5" fill="#37474f" stroke="#546e7a" stroke-width="0.8"/>
+<circle cx="1024" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="1038" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="1052" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="1066" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="1080" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="1094" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="1108" cy="271.5" r="2" fill="#78909c"/>
+<circle cx="1122" cy="271.5" r="2" fill="#78909c"/>
+<path d="M1068 286 L1118 286" stroke="#5ad7d7" stroke-width="1.6" marker-end="url(#gpPfeil)" fill="none"/>
+<circle cx="638.5" cy="271.5" r="6" fill="#5ad7d7" opacity="0.4" filter="url(#gpGlow)"/>
+<circle cx="638.5" cy="271.5" r="3.2" fill="#5ad7d7"/>
+<circle cx="762.5" cy="271.5" r="6" fill="#5ad7d7" opacity="0.4" filter="url(#gpGlow)"/>
+<circle cx="762.5" cy="271.5" r="3.2" fill="#5ad7d7"/>
+<circle cx="886.5" cy="271.5" r="6" fill="#5ad7d7" opacity="0.4" filter="url(#gpGlow)"/>
+<circle cx="886.5" cy="271.5" r="3.2" fill="#5ad7d7"/>
+<circle cx="1010.5" cy="271.5" r="6" fill="#5ad7d7" opacity="0.4" filter="url(#gpGlow)"/>
+<circle cx="1010.5" cy="271.5" r="3.2" fill="#5ad7d7"/>
+<rect x="519" y="306" width="617" height="60" rx="3" fill="#0d1e35" stroke="#1a3050"/>
+<text x="531" y="322" font-size="8" fill="#5ad7d7" font-family="monospace">ANLAGENSTATUS</text>
+<circle cx="535" cy="343" r="4.5" fill="#4caf50"/>
+<text x="545" y="346" font-size="8" fill="#90caf9" font-family="monospace">AUTOMATIK</text>
+<circle cx="653" cy="343" r="4.5" fill="#42a5f5"/>
+<text x="663" y="346" font-size="8" fill="#90caf9" font-family="monospace">BAND LÄUFT</text>
+<circle cx="783" cy="343" r="4.5" fill="#ff9800"/>
+<text x="793" y="346" font-size="8" fill="#90caf9" font-family="monospace">KARTONWECHSEL AUTOMATISCH</text>
+<rect x="505.5" y="396" width="121" height="60" rx="6" fill="#0d1e35" stroke="#1976d2" stroke-width="1.6"/>
+<rect x="505.5" y="396" width="5" height="60" rx="2.5" fill="#1976d2"/>
+<text x="517.5" y="414" font-size="10" fill="white" font-weight="bold" font-family="monospace">Zuschnitt</text>
+<text x="517.5" y="429" font-size="8.8" fill="#42a5f5" font-family="monospace">Von der Rolle</text>
+<text x="517.5" y="444" font-size="5.9" fill="#78909c" font-family="monospace">Bahn abwickeln, schneiden</text>
+<rect x="635.5" y="396" width="121" height="60" rx="6" fill="#0d1e35" stroke="#209d9d" stroke-width="1.6"/>
+<rect x="635.5" y="396" width="5" height="60" rx="2.5" fill="#209d9d"/>
+<text x="647.5" y="414" font-size="10" fill="white" font-weight="bold" font-family="monospace">Transport</text>
+<text x="647.5" y="429" font-size="8.8" fill="#5ad7d7" font-family="monospace">Zum Sealer</text>
+<text x="647.5" y="444" font-size="5.9" fill="#78909c" font-family="monospace">Zuschnitte sensorüberwacht</text>
+<rect x="765.5" y="396" width="121" height="60" rx="6" fill="#0d1e35" stroke="#ff9800" stroke-width="1.6"/>
+<rect x="765.5" y="396" width="5" height="60" rx="2.5" fill="#ff9800"/>
+<text x="777.5" y="414" font-size="10" fill="white" font-weight="bold" font-family="monospace">Sealer</text>
+<text x="777.5" y="429" font-size="8.8" fill="#ffb74d" font-family="monospace">Siegeln</text>
+<text x="777.5" y="444" font-size="5.9" fill="#78909c" font-family="monospace">Packung wird versiegelt</text>
+<rect x="895.5" y="396" width="121" height="60" rx="6" fill="#0d1e35" stroke="#4caf50" stroke-width="1.6"/>
+<rect x="895.5" y="396" width="5" height="60" rx="2.5" fill="#4caf50"/>
+<text x="907.5" y="414" font-size="10" fill="white" font-weight="bold" font-family="monospace">Packanlage</text>
+<text x="907.5" y="429" font-size="8.8" fill="#81c784" font-family="monospace">1- oder 2-reihig</text>
+<text x="907.5" y="444" font-size="5.9" fill="#78909c" font-family="monospace">Umschaltung ohne Umbau</text>
+<rect x="1025.5" y="396" width="121" height="60" rx="6" fill="#0d1e35" stroke="#9c6fd6" stroke-width="1.6"/>
+<rect x="1025.5" y="396" width="5" height="60" rx="2.5" fill="#9c6fd6"/>
+<text x="1037.5" y="414" font-size="10" fill="white" font-weight="bold" font-family="monospace">Verschließer</text>
+<text x="1037.5" y="429" font-size="8.8" fill="#c3a4ec" font-family="monospace">Karton schließen</text>
+<text x="1037.5" y="444" font-size="5.9" fill="#78909c" font-family="monospace">Nächster steht bereit</text>
+</g>
+<text x="600" y="600" font-size="8" fill="#1a3a5a" text-anchor="middle" letter-spacing="3" font-family="monospace">GeTMatic Automatisierungstechnik · Krefeld</text>
+</svg>

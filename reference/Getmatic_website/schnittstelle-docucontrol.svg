@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img" aria-label="DocuControl wird passiv zwischen HMI-Panel und Drucker geschaltet und speichert Protokolle">
+<defs>
+<linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0a1628"/><stop offset="50%" stop-color="#0d1f3c"/><stop offset="100%" stop-color="#071020"/></linearGradient>
+<linearGradient id="panel" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1a2a45"/><stop offset="100%" stop-color="#0f1e35"/></linearGradient>
+<linearGradient id="blau" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1976d2"/><stop offset="100%" stop-color="#0d47a1"/></linearGradient>
+<linearGradient id="teal" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#00796b"/><stop offset="100%" stop-color="#209d9d"/></linearGradient>
+<linearGradient id="stahl" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#546e7a"/><stop offset="100%" stop-color="#37474f"/></linearGradient>
+<pattern id="f" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M 8 0 L 0 0 0 8" fill="none" stroke="#152540" stroke-width="0.3" opacity="0.5"/></pattern>
+<pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a3050" stroke-width="0.5" opacity="0.4"/></pattern>
+<marker id="pf" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#5ad7d7"/></marker>
+<filter id="sch" x="-5%" y="-5%" width="110%" height="115%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.45"/></filter>
+<filter id="gl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>
+<rect width="800" height="450" fill="url(#bg)"/><rect width="800" height="450" fill="url(#f)"/><rect width="800" height="450" fill="url(#g)"/>
+<ellipse cx="240" cy="202" rx="240" ry="180" fill="#1976d2" opacity="0.06"/>
+<ellipse cx="576" cy="225" rx="256" ry="189" fill="#209d9d" opacity="0.08"/>
+<rect x="26" y="62" width="190" height="196" rx="10" fill="url(#panel)" stroke="#1e3a5a" stroke-width="2" filter="url(#sch)"/>
+<path d="M26 96 v-24 a10 10 0 0 1 10 -10 h170 a10 10 0 0 1 10 10 v24 z" fill="url(#stahl)"/>
+<text x="121.0" y="84" font-size="12" fill="white" text-anchor="middle" font-weight="bold" font-family="monospace">HMI-PANEL</text>
+<rect x="46" y="112" width="150" height="92" rx="4" fill="#001830" stroke="#1976d2" stroke-width="1.4"/>
+<rect x="58" y="124" width="90" height="6" rx="2" fill="#42a5f5" opacity="0.7"/>
+<rect x="58" y="141" width="124" height="6" rx="2" fill="#42a5f5" opacity="0.7"/>
+<rect x="58" y="158" width="90" height="6" rx="2" fill="#42a5f5" opacity="0.7"/>
+<rect x="58" y="175" width="124" height="6" rx="2" fill="#42a5f5" opacity="0.7"/>
+<text x="121" y="234" font-size="8" fill="#a5d6a7" text-anchor="middle" font-family="monospace">Maschine bleibt unverändert</text>
+<rect x="304" y="42" width="192" height="236" rx="10" fill="url(#panel)" stroke="#1976d2" stroke-width="2" filter="url(#sch)"/>
+<path d="M304 76 v-24 a10 10 0 0 1 10 -10 h172 a10 10 0 0 1 10 10 v24 z" fill="url(#blau)"/>
+<text x="400.0" y="64" font-size="12" fill="white" text-anchor="middle" font-weight="bold" font-family="monospace">DOCUCONTROL</text>
+<rect x="322" y="92" width="156" height="104" rx="4" fill="#001830" stroke="#5ad7d7" stroke-width="1.4"/>
+<path d="M334 180 l14 -44 h52 l18 44 h42" fill="none" stroke="#5ad7d7" stroke-width="2"/>
+<circle cx="330" cy="220" r="4.5" fill="#4caf50"/>
+<text x="341" y="223.5" font-size="9" fill="#90caf9" text-anchor="start" font-family="monospace">PASSIV</text>
+<circle cx="330" cy="248" r="4.5" fill="#42a5f5"/>
+<text x="341" y="251.5" font-size="9" fill="#90caf9" text-anchor="start" font-family="monospace">AUTARK</text>
+<rect x="584" y="62" width="190" height="196" rx="10" fill="url(#panel)" stroke="#1e3a5a" stroke-width="2" filter="url(#sch)"/>
+<path d="M584 96 v-24 a10 10 0 0 1 10 -10 h170 a10 10 0 0 1 10 10 v24 z" fill="url(#stahl)"/>
+<text x="679.0" y="84" font-size="12" fill="white" text-anchor="middle" font-weight="bold" font-family="monospace">DRUCKER</text>
+<rect x="624" y="128" width="110" height="66" rx="5" fill="#37474f" stroke="#78909c" stroke-width="1"/>
+<rect x="640" y="104" width="78" height="26" rx="1" fill="#dfe9ee"/>
+<rect x="640" y="176" width="78" height="44" rx="1" fill="#dfe9ee"/>
+<rect x="648" y="186" width="62" height="3" rx="1" fill="#78909c"/>
+<rect x="648" y="195" width="62" height="3" rx="1" fill="#78909c"/>
+<rect x="648" y="204" width="62" height="3" rx="1" fill="#78909c"/>
+<path d="M216 160 H304" stroke="#5ad7d7" stroke-width="2.4" stroke-dasharray="7 6" marker-end="url(#pf)"/>
+<path d="M496 160 H584" stroke="#5ad7d7" stroke-width="2.4" stroke-dasharray="7 6" marker-end="url(#pf)"/>
+<text x="260" y="148" font-size="8" fill="#5ad7d7" text-anchor="middle" font-family="monospace">DRUCKDATEN</text>
+<text x="540" y="148" font-size="8" fill="#5ad7d7" text-anchor="middle" font-family="monospace">DRUCKDATEN</text>
+<path d="M400 278 L400 310" stroke="#5ad7d7" stroke-width="2" marker-end="url(#pf)" fill="none"/>
+<rect x="92" y="320" width="192" height="74" rx="6" fill="#0d1e35" stroke="#f44336" stroke-width="1.6"/>
+<rect x="92" y="320" width="7" height="74" rx="3" fill="#f44336"/>
+<text x="114" y="350" font-size="13" fill="white" text-anchor="start" font-weight="bold" font-family="monospace">PDF</text>
+<text x="114" y="372" font-size="9" fill="#90caf9" text-anchor="start" font-family="monospace">Chargenprotokoll</text>
+<rect x="304" y="320" width="192" height="74" rx="6" fill="#0d1e35" stroke="#42a5f5" stroke-width="1.6"/>
+<rect x="304" y="320" width="7" height="74" rx="3" fill="#42a5f5"/>
+<text x="326" y="350" font-size="13" fill="white" text-anchor="start" font-weight="bold" font-family="monospace">USB-STICK</text>
+<text x="326" y="372" font-size="9" fill="#90caf9" text-anchor="start" font-family="monospace">Autarke Ablage</text>
+<rect x="516" y="320" width="192" height="74" rx="6" fill="#0d1e35" stroke="#ff9800" stroke-width="1.6"/>
+<rect x="516" y="320" width="7" height="74" rx="3" fill="#ff9800"/>
+<text x="538" y="350" font-size="13" fill="white" text-anchor="start" font-weight="bold" font-family="monospace">NETZWERK</text>
+<text x="538" y="372" font-size="9" fill="#90caf9" text-anchor="start" font-family="monospace">Optional auf Server</text>
+</svg>

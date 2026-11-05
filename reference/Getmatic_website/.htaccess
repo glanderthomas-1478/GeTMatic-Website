@@ -15,6 +15,9 @@ RewriteRule ^einsatzbereich-lebensmittel\.html$ / [R=301,L]
 # 301-Redirect: Rubrik Transport entfernt (2026-09-24) -> Startseite
 RewriteRule ^einsatzbereich-transport\.html$ / [R=301,L]
 
+# 301-Redirect: Rubrik Papierindustrie entfernt (2026-11-05) -> Startseite
+RewriteRule ^einsatzbereich-papier\.html$ / [R=301,L]
+
 # Testumgebung bearingcontrol.de nicht indexieren (gleiche Dateien wie getmatic.de,
 # Regel greift nur, wenn die Seite ueber bearingcontrol.de aufgerufen wird)
 <IfModule mod_headers.c>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" width="1200" height="280" role="img" aria-label="Vorgehen in vier Schritten: Anlage ansehen, Aufgabe klären, Lösung entwickeln, System anbinden">
+<defs>
+<linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0a1628"/><stop offset="50%" stop-color="#0d1f3c"/><stop offset="100%" stop-color="#071020"/></linearGradient>
+<linearGradient id="panel" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1a2a45"/><stop offset="100%" stop-color="#0f1e35"/></linearGradient>
+<linearGradient id="blau" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1976d2"/><stop offset="100%" stop-color="#0d47a1"/></linearGradient>
+<linearGradient id="teal" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#00796b"/><stop offset="100%" stop-color="#209d9d"/></linearGradient>
+<linearGradient id="stahl" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#546e7a"/><stop offset="100%" stop-color="#37474f"/></linearGradient>
+<pattern id="f" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M 8 0 L 0 0 0 8" fill="none" stroke="#152540" stroke-width="0.3" opacity="0.5"/></pattern>
+<pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a3050" stroke-width="0.5" opacity="0.4"/></pattern>
+<marker id="pf" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#5ad7d7"/></marker>
+<filter id="sch" x="-5%" y="-5%" width="110%" height="115%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.45"/></filter>
+<filter id="gl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>
+<rect width="1200" height="280" fill="url(#bg)"/><rect width="1200" height="280" fill="url(#f)"/><rect width="1200" height="280" fill="url(#g)"/>
+<ellipse cx="360" cy="126" rx="360" ry="112" fill="#1976d2" opacity="0.06"/>
+<ellipse cx="864" cy="140" rx="384" ry="118" fill="#209d9d" opacity="0.08"/>
+<rect x="36" y="44" width="264" height="192" rx="10" fill="#0d1e35" stroke="#1976d2" stroke-width="1.8" filter="url(#sch)"/>
+<circle cx="168" cy="104" r="36" fill="#001830" stroke="#1976d2" stroke-width="3"/>
+<text x="168" y="114" font-size="26" fill="white" text-anchor="middle" font-weight="bold" font-family="monospace">01</text>
+<text x="168" y="178" font-size="14" fill="white" text-anchor="middle" font-weight="bold" font-family="monospace">ANLAGE ANSEHEN</text>
+<text x="168" y="204" font-size="11" fill="#90caf9" text-anchor="middle" font-family="monospace">Vorhandene Technik</text>
+<path d="M302 140 L322 140" stroke="#5ad7d7" stroke-width="3" marker-end="url(#pf)" fill="none"/>
+<rect x="324" y="44" width="264" height="192" rx="10" fill="#0d1e35" stroke="#209d9d" stroke-width="1.8" filter="url(#sch)"/>
+<circle cx="456" cy="104" r="36" fill="#001830" stroke="#209d9d" stroke-width="3"/>
+<text x="456" y="114" font-size="26" fill="white" text-anchor="middle" font-weight="bold" font-family="monospace">02</text>
+<text x="456" y="178" font-size="14" fill="white" text-anchor="middle" font-weight="bold" font-family="monospace">AUFGABE KLÄREN</text>
+<text x="456" y="204" font-size="11" fill="#90caf9" text-anchor="middle" font-family="monospace">Welche Funktion fehlt?</text>
+<path d="M590 140 L610 140" stroke="#5ad7d7" stroke-width="3" marker-end="url(#pf)" fill="none"/>
+<rect x="612" y="44" width="264" height="192" rx="10" fill="#0d1e35" stroke="#4caf50" stroke-width="1.8" filter="url(#sch)"/>
+<circle cx="744" cy="104" r="36" fill="#001830" stroke="#4caf50" stroke-width="3"/>
+<text x="744" y="114" font-size="26" fill="white" text-anchor="middle" font-weight="bold" font-family="monospace">03</text>
+<text x="744" y="178" font-size="14" fill="white" text-anchor="middle" font-weight="bold" font-family="monospace">LÖSUNG ENTWICKELN</text>
+<text x="744" y="204" font-size="11" fill="#90caf9" text-anchor="middle" font-family="monospace">Individuell abgestimmt</text>
+<path d="M878 140 L898 140" stroke="#5ad7d7" stroke-width="3" marker-end="url(#pf)" fill="none"/>
+<rect x="900" y="44" width="264" height="192" rx="10" fill="#0d1e35" stroke="#ff9800" stroke-width="1.8" filter="url(#sch)"/>
+<circle cx="1032" cy="104" r="36" fill="#001830" stroke="#ff9800" stroke-width="3"/>
+<text x="1032" y="114" font-size="26" fill="white" text-anchor="middle" font-weight="bold" font-family="monospace">04</text>
+<text x="1032" y="178" font-size="14" fill="white" text-anchor="middle" font-weight="bold" font-family="monospace">SYSTEM ANBINDEN</text>
+<text x="1032" y="204" font-size="11" fill="#90caf9" text-anchor="middle" font-family="monospace">Ohne Veränderung</text>
+</svg>

@@ -8,10 +8,10 @@ require_login();
 
 header('Content-Type: application/json; charset=utf-8');
 
-function json_fail(string $message, int $code = 400): void
+function json_fail(string $message, int $code = 400, array $extra = []): void
 {
     http_response_code($code);
-    echo json_encode(['ok' => false, 'error' => $message]);
+    echo json_encode(['ok' => false, 'error' => $message] + $extra);
     exit;
 }
 
@@ -66,24 +66,30 @@ if ($chunkIndex === 0) {
         }
     }
 
-    // Falls ein alter, verwaister .part mit demselben Token existiert (sollte
-    // wegen zufaelligem Token praktisch nie vorkommen) - sauber neu beginnen.
-    if (is_file($tmpPartPath)) {
-        unlink($tmpPartPath);
-    }
+    // Wiederholter erster Chunk (Antwort ging verloren): Session besteht schon.
+    $existsStmt = $db->prepare('SELECT id FROM intern_upload_sessions WHERE token = :token LIMIT 1');
+    $existsStmt->execute(['token' => $token]);
 
-    $stmt = $db->prepare(
-        'INSERT INTO intern_upload_sessions
-            (token, original_filename, total_size_bytes, received_bytes, created_by, folder_id, status)
-         VALUES (:token, :filename, :total_size, 0, :user_id, :folder_id, "in_progress")'
-    );
-    $stmt->execute([
-        'token' => $token,
-        'filename' => $originalFilename,
-        'total_size' => $totalSize,
-        'user_id' => current_user_id(),
-        'folder_id' => $folderId,
-    ]);
+    if (!$existsStmt->fetch()) {
+        // Falls ein alter, verwaister .part mit demselben Token existiert (sollte
+        // wegen zufaelligem Token praktisch nie vorkommen) - sauber neu beginnen.
+        if (is_file($tmpPartPath)) {
+            unlink($tmpPartPath);
+        }
+
+        $stmt = $db->prepare(
+            'INSERT INTO intern_upload_sessions
+                (token, original_filename, total_size_bytes, received_bytes, created_by, folder_id, status)
+             VALUES (:token, :filename, :total_size, 0, :user_id, :folder_id, "in_progress")'
+        );
+        $stmt->execute([
+            'token' => $token,
+            'filename' => $originalFilename,
+            'total_size' => $totalSize,
+            'user_id' => current_user_id(),
+            'folder_id' => $folderId,
+        ]);
+    }
 }
 
 $stmt = $db->prepare(
@@ -99,24 +105,52 @@ if (!$session) {
 }
 
 $currentReceived = (int) $session['received_bytes'];
+$totalSize = (int) $session['total_size_bytes'];
+
+// Massgeblich ist, was wirklich auf der Platte liegt: Ist der .part kuerzer als
+// die Session meldet, geht es ab seinem tatsaechlichen Ende weiter.
+clearstatcache(true, $tmpPartPath);
+$partSize = is_file($tmpPartPath) ? (int) filesize($tmpPartPath) : 0;
+if ($partSize < $currentReceived) {
+    $currentReceived = $partSize;
+    $stmt = $db->prepare('UPDATE intern_upload_sessions SET received_bytes = :received WHERE token = :token');
+    $stmt->execute(['received' => $currentReceived, 'token' => $token]);
+}
 
 if ($expectedOffset !== null && $expectedOffset !== $currentReceived) {
     // Client und Server sind nicht synchron (z.B. nach Verbindungsabbruch) -
     // aktuellen Stand zurueckmelden, damit der Client dort weitermacht.
-    json_fail('Offset stimmt nicht ueberein.', 409);
+    json_fail('Offset stimmt nicht ueberein.', 409, ['received_bytes' => $currentReceived]);
 }
 
 $chunkPath = $_FILES['chunk']['tmp_name'];
 $chunkSize = (int) $_FILES['chunk']['size'];
 
+if ($chunkSize > CHUNK_SIZE_BYTES || $currentReceived + $chunkSize > $totalSize) {
+    json_fail('Chunk ueberschreitet die angemeldete Dateigroesse.', 413);
+}
+
 $in = fopen($chunkPath, 'rb');
-$out = fopen($tmpPartPath, 'ab');
+$out = fopen($tmpPartPath, 'c+b');
 
 if (!$in || !$out) {
     json_fail('Konnte Chunk nicht speichern.', 500);
 }
 
-stream_copy_to_stream($in, $out);
+// Reste eines abgebrochenen Schreibvorgangs entfernen, dann exakt am Offset anhaengen.
+ftruncate($out, $currentReceived);
+fseek($out, $currentReceived);
+
+$written = stream_copy_to_stream($in, $out);
+fflush($out);
+
+if ($written !== $chunkSize) {
+    ftruncate($out, $currentReceived);
+    fclose($in);
+    fclose($out);
+    json_fail('Chunk konnte nicht vollstaendig gespeichert werden.', 507);
+}
+
 fclose($in);
 fclose($out);
 

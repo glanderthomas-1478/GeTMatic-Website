@@ -33,7 +33,7 @@
             // statt nur "Unexpected end of JSON input" zu zeigen.
             data = { ok: false, error: 'Unerwartete Server-Antwort: ' + rawText.slice(0, 300) };
           }
-          return { httpOk: res.ok, data: data };
+          return { httpOk: res.ok, status: res.status, data: data };
         });
       });
   }
@@ -62,6 +62,11 @@
       attempt++;
       return uploadChunk(csrfToken, token, chunkIndex, blob, expectedOffset, meta)
         .then(function (result) {
+          // Server hat einen anderen Stand (z.B. Antwort ging verloren):
+          // kein Fehler, der Upload macht beim gemeldeten Offset weiter.
+          if (result.status === 409 && result.data && typeof result.data.received_bytes === 'number') {
+            return { ok: true, received_bytes: result.data.received_bytes };
+          }
           if (!result.httpOk || !result.data || result.data.ok !== true) {
             var message = (result.data && result.data.error) || 'Unbekannter Fehler beim Hochladen.';
             throw new Error(message);

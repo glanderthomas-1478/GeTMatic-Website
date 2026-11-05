@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 580" width="960" height="580" role="img" aria-label="Bestandsanlage bleibt unverändert, unser System wird angebunden und ergänzt neue Funktionen">
+<defs>
+<linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0a1628"/><stop offset="50%" stop-color="#0d1f3c"/><stop offset="100%" stop-color="#071020"/></linearGradient>
+<linearGradient id="panel" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1a2a45"/><stop offset="100%" stop-color="#0f1e35"/></linearGradient>
+<linearGradient id="blau" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1976d2"/><stop offset="100%" stop-color="#0d47a1"/></linearGradient>
+<linearGradient id="teal" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#00796b"/><stop offset="100%" stop-color="#209d9d"/></linearGradient>
+<linearGradient id="stahl" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#546e7a"/><stop offset="100%" stop-color="#37474f"/></linearGradient>
+<pattern id="f" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M 8 0 L 0 0 0 8" fill="none" stroke="#152540" stroke-width="0.3" opacity="0.5"/></pattern>
+<pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a3050" stroke-width="0.5" opacity="0.4"/></pattern>
+<marker id="pf" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#5ad7d7"/></marker>
+<filter id="sch" x="-5%" y="-5%" width="110%" height="115%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.45"/></filter>
+<filter id="gl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>
+<rect width="960" height="580" fill="url(#bg)"/><rect width="960" height="580" fill="url(#f)"/><rect width="960" height="580" fill="url(#g)"/>
+<ellipse cx="288" cy="261" rx="288" ry="232" fill="#1976d2" opacity="0.06"/>
+<ellipse cx="691" cy="290" rx="307" ry="244" fill="#209d9d" opacity="0.08"/>
+<rect x="40" y="60" width="350" height="400" rx="10" fill="url(#panel)" stroke="#1e3a5a" stroke-width="2" filter="url(#sch)"/>
+<path d="M40 94 v-24 a10 10 0 0 1 10 -10 h330 a10 10 0 0 1 10 10 v24 z" fill="url(#teal)"/>
+<text x="215.0" y="82" font-size="12" fill="white" text-anchor="middle" font-weight="bold" font-family="monospace">BESTANDSANLAGE</text>
+<rect x="90" y="160" width="250" height="170" rx="6" fill="url(#stahl)" stroke="#78909c" stroke-width="1"/>
+<rect x="102" y="174" width="105.0" height="85.0" rx="4" fill="#0d1e35" stroke="#546e7a" stroke-width="1"/>
+<circle cx="154" cy="216" r="27" fill="none" stroke="#78909c" stroke-width="3"/>
+<rect x="240.0" y="176" width="75.0" height="8" rx="2" fill="#263238"/>
+<rect x="240.0" y="191" width="75.0" height="8" rx="2" fill="#263238"/>
+<rect x="240.0" y="206" width="75.0" height="8" rx="2" fill="#263238"/>
+<rect x="82" y="330" width="266" height="7" rx="3" fill="#37474f" stroke="#546e7a" stroke-width="0.8"/>
+<circle cx="90" cy="333.5" r="1.8" fill="#78909c"/>
+<circle cx="106" cy="333.5" r="1.8" fill="#78909c"/>
+<circle cx="122" cy="333.5" r="1.8" fill="#78909c"/>
+<circle cx="138" cy="333.5" r="1.8" fill="#78909c"/>
+<circle cx="154" cy="333.5" r="1.8" fill="#78909c"/>
+<circle cx="170" cy="333.5" r="1.8" fill="#78909c"/>
+<circle cx="186" cy="333.5" r="1.8" fill="#78909c"/>
+<circle cx="202" cy="333.5" r="1.8" fill="#78909c"/>
+<circle cx="218" cy="333.5" r="1.8" fill="#78909c"/>
+<circle cx="234" cy="333.5" r="1.8" fill="#78909c"/>
+<circle cx="250" cy="333.5" r="1.8" fill="#78909c"/>
+<circle cx="266" cy="333.5" r="1.8" fill="#78909c"/>
+<circle cx="282" cy="333.5" r="1.8" fill="#78909c"/>
+<circle cx="298" cy="333.5" r="1.8" fill="#78909c"/>
+<circle cx="314" cy="333.5" r="1.8" fill="#78909c"/>
+<circle cx="330" cy="333.5" r="1.8" fill="#78909c"/>
+<rect x="104" y="337" width="8" height="26" rx="1" fill="#37474f"/>
+<rect x="318" y="337" width="8" height="26" rx="1" fill="#37474f"/>
+<rect x="156" y="400" width="118" height="24" rx="12" fill="#10301f" stroke="#4caf50" stroke-width="1.2"/>
+<path d="M172 411 v-3 a4 4 0 0 1 8 0 v3" fill="none" stroke="#81c784" stroke-width="1.6"/><rect x="169" y="411" width="14" height="8" rx="1.5" fill="#81c784"/>
+<text x="189" y="416" font-size="9" fill="#a5d6a7" text-anchor="start" font-weight="bold" font-family="monospace">UNVERÄNDERT</text>
+<text x="215" y="122" font-size="10.5" fill="#90caf9" text-anchor="middle" font-family="monospace">Ihre Anlage läuft wie bisher</text>
+<rect x="570" y="60" width="350" height="400" rx="10" fill="url(#panel)" stroke="#1976d2" stroke-width="2" filter="url(#sch)"/>
+<path d="M570 94 v-24 a10 10 0 0 1 10 -10 h330 a10 10 0 0 1 10 10 v24 z" fill="url(#blau)"/>
+<text x="745.0" y="82" font-size="12" fill="white" text-anchor="middle" font-weight="bold" font-family="monospace">UNSER SYSTEM</text>
+<rect x="592" y="112" width="306" height="112" rx="4" fill="#001830" stroke="#1976d2" stroke-width="1"/>
+<path d="M606 204 l36 -44 l34 26 l42 -58 l38 34 l34 -28 l28 16" fill="none" stroke="#5ad7d7" stroke-width="2.6" stroke-linejoin="round"/>
+<rect x="592" y="242" width="306" height="56" rx="6" fill="#0d1e35" stroke="#4caf50" stroke-width="1.6"/>
+<rect x="592" y="242" width="7" height="56" rx="3" fill="#4caf50"/>
+<circle cx="625" cy="270" r="10" fill="none" stroke="#4caf50" stroke-width="2"/><path d="M620 270 l4 4 l7 -8" fill="none" stroke="#4caf50" stroke-width="2"/>
+<text x="646" y="274" font-size="12" fill="white" text-anchor="start" font-weight="bold" font-family="monospace">DOKUMENTATION</text>
+<rect x="592" y="310" width="306" height="56" rx="6" fill="#0d1e35" stroke="#42a5f5" stroke-width="1.6"/>
+<rect x="592" y="310" width="7" height="56" rx="3" fill="#42a5f5"/>
+<circle cx="625" cy="338" r="10" fill="none" stroke="#42a5f5" stroke-width="2"/><path d="M620 338 l4 4 l7 -8" fill="none" stroke="#42a5f5" stroke-width="2"/>
+<text x="646" y="342" font-size="12" fill="white" text-anchor="start" font-weight="bold" font-family="monospace">QUALITÄTSPRÜFUNG</text>
+<rect x="592" y="378" width="306" height="56" rx="6" fill="#0d1e35" stroke="#ff9800" stroke-width="1.6"/>
+<rect x="592" y="378" width="7" height="56" rx="3" fill="#ff9800"/>
+<circle cx="625" cy="406" r="10" fill="none" stroke="#ff9800" stroke-width="2"/><path d="M620 406 l4 4 l7 -8" fill="none" stroke="#ff9800" stroke-width="2"/>
+<text x="646" y="410" font-size="12" fill="white" text-anchor="start" font-weight="bold" font-family="monospace">IHRE FUNKTION</text>
+<path d="M390 260 H570" stroke="#209d9d" stroke-width="6" opacity="0.5"/><path d="M390 260 H570" stroke="#5ad7d7" stroke-width="2" stroke-dasharray="8 8"/>
+<circle cx="390" cy="260" r="8" fill="#5ad7d7" opacity="0.4" filter="url(#gl)"/><circle cx="390" cy="260" r="4.5" fill="#5ad7d7"/>
+<circle cx="570" cy="260" r="8" fill="#5ad7d7" opacity="0.4" filter="url(#gl)"/><circle cx="570" cy="260" r="4.5" fill="#5ad7d7"/>
+<circle cx="480" cy="260" r="8" fill="#5ad7d7" opacity="0.4" filter="url(#gl)"/><circle cx="480" cy="260" r="4.5" fill="#5ad7d7"/>
+<text x="480" y="236" font-size="12" fill="#5ad7d7" text-anchor="middle" font-weight="bold" font-family="monospace">ANBINDUNG</text>
+<text x="480" y="288" font-size="10" fill="#a5d6a7" text-anchor="middle" font-family="monospace">ohne Veränderung</text>
+<text x="480" y="540" font-size="9" fill="#23456b" text-anchor="middle" font-family="monospace">GeTMatic Automatisierungstechnik · Krefeld</text>
+</svg>

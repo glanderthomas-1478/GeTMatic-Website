@@ -27,8 +27,13 @@ $db = get_db();
 $stmt = $db->prepare('SELECT * FROM intern_files WHERE id = :id LIMIT 1');
 $stmt->execute(['id' => $id]);
 $file = $stmt->fetch();
+$query = ['deleted' => 1];
 
 if ($file) {
+    if ($file['folder_id'] !== null) {
+        $query = ['folder_id' => (int) $file['folder_id']] + $query;
+    }
+
     $filesDir = realpath(__DIR__ . '/files');
     $path = realpath($filesDir . '/' . $file['stored_filename']);
 
@@ -40,4 +45,4 @@ if ($file) {
     $del->execute(['id' => $id]);
 }
 
-header('Location: index.php?deleted=1');
+header('Location: index.php?' . http_build_query($query));

@@ -11,5 +11,11 @@
 </IfModule>
 
 Options -Indexes -ExecCGI
-php_flag engine off
+# php_flag gibt es nur mit mod_php, sonst fuehrt die Zeile zu HTTP 500
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
 AddType text/plain .php .php3 .php4 .php5 .phtml .pl .cgi .sh

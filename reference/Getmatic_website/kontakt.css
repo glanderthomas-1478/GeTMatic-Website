@@ -1,0 +1,105 @@
+/* =========================================
+   KONTAKTFORMULAR (Kontaktbereich der Startseite)
+   nutzt die Variablen aus style.css
+   ========================================= */
+.kontakt-form {
+  background: var(--bg-white);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  padding: var(--space-5);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.kf-row { align-items: start; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+.kf-field { display: grid; gap: 6px; }
+
+.kontakt-form label {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: .3px;
+  color: var(--text-dark);
+}
+.kf-req { color: var(--accent-dark); }
+
+.kontakt-form input[type="text"],
+.kontakt-form input[type="email"],
+.kontakt-form input[type="tel"],
+.kontakt-form select,
+.kontakt-form textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--text-dark);
+  background: var(--bg-card);
+  border: 1.5px solid #C9D3D2;
+  border-radius: 6px;
+  padding: 12px 14px;
+  min-height: 48px;
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+}
+.kontakt-form textarea { resize: vertical; min-height: 160px; line-height: 1.55; }
+.kontakt-form select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--text) 50%), linear-gradient(135deg, var(--text) 50%, transparent 50%); background-position: calc(100% - 20px) 50%, calc(100% - 14px) 50%; background-size: 6px 6px; background-repeat: no-repeat; padding-right: 40px; }
+
+.kontakt-form input:focus,
+.kontakt-form select:focus,
+.kontakt-form textarea:focus {
+  outline: none;
+  border-color: var(--teal-dark);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(32,157,157,0.2);
+}
+.kontakt-form input[aria-invalid="true"],
+.kontakt-form textarea[aria-invalid="true"] { border-color: #C0392B; }
+
+.kf-hint { font-size: .9rem; color: #6B7272; margin: 0; }
+.kf-err  { font-size: .9rem; color: #B03A2E; margin: 0; font-weight: 600; }
+
+.kf-check { display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; }
+.kf-check input { width: 22px; height: 22px; margin-top: 2px; accent-color: var(--teal-dark); }
+.kf-check label { font-family: var(--font-body); font-weight: 400; font-size: .95rem; letter-spacing: 0; color: var(--text); }
+.kf-check a { color: #0B6E6E; text-decoration: underline; }
+
+.kf-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2); margin-top: var(--space-1); }
+.kf-submit { border: 0; cursor: pointer; min-height: 52px; }
+.kf-submit[disabled] { opacity: .6; cursor: wait; }
+.kf-note { font-size: .9rem; color: #6B7272; margin: 0; }
+
+/* Honeypot unsichtbar, aber nicht display:none (manche Bots prüfen das) */
+.kf-hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+
+.kf-status {
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.kf-status.ok  { background: #E3F4EE; color: #145A3E; border: 1px solid #9CD3BC; }
+.kf-status.err { background: #FBEAE8; color: #8E2B20; border: 1px solid #EBB3AC; }
+
+@media (max-width: 860px) {
+  .kf-row { grid-template-columns: minmax(0, 1fr); }
+  .kontakt-form { padding: var(--space-4) var(--space-3); }
+}
+
+/* =========================================
+   FORMULAR IM KONTAKTBEREICH DER STARTSEITE
+   Zeile 1: Überschrift, Zeile 2: Formular
+   ========================================= */
+.kontakt-cta--form { padding: var(--space-7) 0; scroll-margin-top: 80px; }
+.kontakt-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-6);
+  margin-bottom: var(--space-5);
+}
+.kontakt-cta--form .kontakt-text { flex: 1 1 420px; max-width: 620px; }
+.kontakt-cta--form .kontakt-text h2 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; }
+.kontakt-cta--form .kontakt-text p { font-size: 1.05rem; color: rgba(255,255,255,.78); margin: 0; }
+.kontakt-cta--form .kontakt-form { box-shadow: 0 24px 60px rgba(0,0,0,.35); border: 0; }
+.kontakt-cta--form .kf-status a { color: inherit; text-decoration: underline; }
+.kontakt-form input::placeholder, .kontakt-form textarea::placeholder { color: #8A9494; }

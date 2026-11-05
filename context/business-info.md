@@ -6,6 +6,8 @@
 
 **getmatic** — selbstständiges Unternehmen im Bereich Elektrotechnik, Automatisierung und Programmierung.
 
+- Rechtsform: laut Nutzer (2026-11-05) Einzelunternehmen, zugleich Handelsregistereintrag vorhanden; Impressum nennt „HRB 7961“. Passt nicht zusammen, Abgleich mit dem Registerauszug offen. Team Stand 2026-11-05: zu zweit, ab Januar 2027 zu dritt. Website-Texte deshalb in der „wir“-Form und ohne Personenzahl („kleines Team“).
+
 - Kunden: Industrie, Pharma, Medizin
 - Leistungen: SPS-Programmierung (TIA Portal S7), Antriebstechnik, Raspberry Pi / Embedded
 

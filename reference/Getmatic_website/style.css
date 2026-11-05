@@ -174,6 +174,14 @@ body {
   color: #fff;
 }
 
+/* Tablets: alles muss in eine Zeile passen, Hamburger-Menü erst ab 768 px */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .header-inner { gap: var(--space-1); padding: var(--space-2); }
+  .logo-claim { display: none; }
+  .main-nav ul { gap: 0; }
+  .main-nav a { padding: 10px 9px; font-size: 0.95rem; letter-spacing: 0.2px; }
+}
+
 /* Language switcher */
 .lang-switch {
   display: flex;
@@ -301,7 +309,7 @@ body {
 
 .hero-gallery {
   position: relative;
-  height: clamp(460px, 68vh, 720px);
+  height: clamp(560px, 68vh, 720px);
   overflow: hidden;
 }
 
@@ -386,7 +394,7 @@ body {
   top: 50%;
   left: clamp(24px, 6vw, 100px);
   transform: translateY(-50%);
-  max-width: 540px;
+  max-width: 640px;
 }
 
 .hero-tag {
@@ -476,6 +484,7 @@ body {
   height: 8px;
   border-radius: 50%;
   background: rgba(255,255,255,0.4);
+  background-clip: content-box;
   transition: background var(--transition), transform var(--transition);
   /* Touch-Area: visuell 8px, aber Finger trifft 28x28px */
   padding: 10px;
@@ -484,7 +493,13 @@ body {
 }
 .hero-dots button.active {
   background: var(--teal-light);
+  background-clip: content-box;
   transform: scale(1.4);
+}
+
+/* Slide Getränkeverbundkarton: auf schmalen Bildschirmen die Stationen statt der leeren linken Hälfte zeigen */
+@media (max-width: 860px) {
+  .hero-slide--prozess .hero-slide-bg { background-position: 78% center; }
 }
 
 /* Scroll-Hinweis */
@@ -530,6 +545,10 @@ body {
   font-weight: 800;
   color: var(--accent);
   line-height: 1;
+  height: clamp(2.4rem, 5vw, 3.4rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .stat-num { font-size: clamp(2.4rem, 5vw, 3.4rem); }
 .stat-num-text { font-size: clamp(1.3rem, 3vw, 1.7rem); }
@@ -1191,6 +1210,12 @@ body {
 }
 
 /* Medizin: Hochformat-SVG – nur Autoklav-Grafik (inkl. Manometer) zeigen statt Mitten-Anschnitt */
+.einsatz-hero--ganz {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #0b1a30;
+}
+
 .einsatz-hero--steri {
   background-image: var(--img), linear-gradient(#e5f1fd, #dcedfc);
   background-size: auto 288%, cover;
@@ -1623,7 +1648,7 @@ body {
   .leistungen-grid { grid-template-columns: 1fr; }
 
   /* Hero kleiner auf kleinen Phones */
-  .hero-gallery { height: 320px; }
+  .hero-gallery { height: 500px; }
   .hero-content { left: 14px; right: 14px; }
   .hero-content h1 { font-size: 1.9rem; letter-spacing: -0.5px; }
   .hero-sub { font-size: 0.9rem; }
@@ -1634,7 +1659,7 @@ body {
    ========================================= */
 @media (max-width: 380px) {
   .logo-t, .logo-matic { font-size: 1.55rem; }
-  .hero-gallery { height: 290px; }
+  .hero-gallery { height: 500px; }
   .hero-content h1 { font-size: 1.6rem; }
   .btn-primary { font-size: 0.9rem; padding: 12px 20px; }
   .section-title { font-size: 1.6rem; }
